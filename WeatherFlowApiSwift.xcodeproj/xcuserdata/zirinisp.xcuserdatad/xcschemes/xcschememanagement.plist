@@ -9,10 +9,45 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>WeatherFlowApiSwiftTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>647C0B8D1C2D47A5002C5A42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>647C0BA11C2D5E62002C5A42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>647C0BAA1C2D5E62002C5A42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>647C0BD01C2FF08B002C5A42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>647C0BD91C2FF08C002C5A42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>647C0BFE1C2FF0F0002C5A42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>647C0C071C2FF0F0002C5A42</key>
 		<dict>
 			<key>primary</key>
 			<true/>

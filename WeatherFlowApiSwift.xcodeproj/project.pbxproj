@@ -7,34 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		647C0B921C2D47A5002C5A42 /* WeatherFlowApiSwift.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 647C0B911C2D47A5002C5A42 /* WeatherFlowApiSwift.h */; };
-		647C0B941C2D47A5002C5A42 /* WeatherFlowApiSwift.m in Sources */ = {isa = PBXBuildFile; fileRef = 647C0B931C2D47A5002C5A42 /* WeatherFlowApiSwift.m */; };
+		1B36EBB3104ABDBCCE0D5E68 /* Pods_WeatherFlowApiSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F1E30756C5FAE71CA0D57C /* Pods_WeatherFlowApiSwiftTests.framework */; };
+		647C0C021C2FF0F0002C5A42 /* WeatherFlowApiSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 647C0C011C2FF0F0002C5A42 /* WeatherFlowApiSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		647C0C091C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */; };
+		647C0C0E1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */; };
+		647C0C161C2FF105002C5A42 /* WeatherFlowApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */; };
+		647C0C171C2FF105002C5A42 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0B9B1C2D480F002C5A42 /* Spot.swift */; };
+		647C0C181C2FF105002C5A42 /* SpotSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */; };
+		647C0C191C2FF105002C5A42 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC01C2DBCE2002C5A42 /* Profile.swift */; };
+		647C0C1A1C2FF105002C5A42 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBC1C2D6D27002C5A42 /* Status.swift */; };
+		647C0C1B1C2FF105002C5A42 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC21C2DBEEF002C5A42 /* Session.swift */; };
+		647C0C1C1C2FF105002C5A42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC41C2DC03E002C5A42 /* User.swift */; };
+		647C0C1D1C2FF105002C5A42 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC61C2DC45F002C5A42 /* ModelData.swift */; };
+		647C0C1E1C2FF105002C5A42 /* ModelDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */; };
+		647C0C1F1C2FF106002C5A42 /* WeatherFlowApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */; };
+		647C0C201C2FF106002C5A42 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0B9B1C2D480F002C5A42 /* Spot.swift */; };
+		647C0C211C2FF106002C5A42 /* SpotSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */; };
+		647C0C221C2FF106002C5A42 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC01C2DBCE2002C5A42 /* Profile.swift */; };
+		647C0C231C2FF106002C5A42 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBC1C2D6D27002C5A42 /* Status.swift */; };
+		647C0C241C2FF106002C5A42 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC21C2DBEEF002C5A42 /* Session.swift */; };
+		647C0C251C2FF106002C5A42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC41C2DC03E002C5A42 /* User.swift */; };
+		647C0C261C2FF106002C5A42 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC61C2DC45F002C5A42 /* ModelData.swift */; };
+		647C0C271C2FF106002C5A42 /* ModelDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */; };
+		75CF328705092071BF6A6702 /* Pods_WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DF3ACBE199035B49D92744 /* Pods_WeatherFlowApiSwift.framework */; };
+		A5BE13504467F54A9563A5D5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA02548EAC9E4E1EC364EF /* Pods.framework */; };
+		E62A05A612831F8A0C0BF5B3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA02548EAC9E4E1EC364EF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		647C0B8C1C2D47A5002C5A42 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				647C0B921C2D47A5002C5A42 /* WeatherFlowApiSwift.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXContainerItemProxy section */
+		647C0C0A1C2FF0F0002C5A42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 647C0B861C2D47A5002C5A42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 647C0BFE1C2FF0F0002C5A42;
+			remoteInfo = WeatherFlowApiSwift;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		647C0B8E1C2D47A5002C5A42 /* libWeatherFlowApiSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWeatherFlowApiSwift.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		647C0B911C2D47A5002C5A42 /* WeatherFlowApiSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherFlowApiSwift.h; sourceTree = "<group>"; };
-		647C0B931C2D47A5002C5A42 /* WeatherFlowApiSwift.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherFlowApiSwift.m; sourceTree = "<group>"; };
+		1230F172FF823FA718BF7A00 /* Pods-WeatherFlowApiSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwift/Pods-WeatherFlowApiSwift.release.xcconfig"; sourceTree = "<group>"; };
+		21A4ACFB77EEAC70DCFC2ECF /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwiftTests/Pods-WeatherFlowApiSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		30DF3ACBE199035B49D92744 /* Pods_WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		647C0B9B1C2D480F002C5A42 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		647C0BBA1C2D64FB002C5A42 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		647C0BBB1C2D6656002C5A42 /* WeatherFlowApiSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherFlowApiSwift.podspec; sourceTree = "<group>"; };
+		647C0BBC1C2D6D27002C5A42 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotSet.swift; sourceTree = "<group>"; };
+		647C0BC01C2DBCE2002C5A42 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		647C0BC21C2DBEEF002C5A42 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		647C0BC41C2DC03E002C5A42 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		647C0BC61C2DC45F002C5A42 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataSet.swift; sourceTree = "<group>"; };
+		647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwift.swift; sourceTree = "<group>"; };
+		647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		647C0C011C2FF0F0002C5A42 /* WeatherFlowApiSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherFlowApiSwift.h; sourceTree = "<group>"; };
+		647C0C031C2FF0F0002C5A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		647C0C081C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherFlowApiSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwiftTests.swift; sourceTree = "<group>"; };
+		647C0C0F1C2FF0F0002C5A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64F1E30756C5FAE71CA0D57C /* Pods_WeatherFlowApiSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4DA02548EAC9E4E1EC364EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8CD1A83DB3F6D759AD4919F /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwiftTests/Pods-WeatherFlowApiSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		DCE99A9B95658CFC50DF7450 /* Pods-WeatherFlowApiSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwift/Pods-WeatherFlowApiSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		647C0B8B1C2D47A5002C5A42 /* Frameworks */ = {
+		647C0BFB1C2FF0F0002C5A42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75CF328705092071BF6A6702 /* Pods_WeatherFlowApiSwift.framework in Frameworks */,
+				E62A05A612831F8A0C0BF5B3 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		647C0C051C2FF0F0002C5A42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				647C0C091C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework in Frameworks */,
+				1B36EBB3104ABDBCCE0D5E68 /* Pods_WeatherFlowApiSwiftTests.framework in Frameworks */,
+				A5BE13504467F54A9563A5D5 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,15 +97,21 @@
 		647C0B851C2D47A5002C5A42 = {
 			isa = PBXGroup;
 			children = (
+				647C0BBB1C2D6656002C5A42 /* WeatherFlowApiSwift.podspec */,
+				647C0BBA1C2D64FB002C5A42 /* Podfile */,
 				647C0B901C2D47A5002C5A42 /* WeatherFlowApiSwift */,
+				647C0C0C1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests */,
 				647C0B8F1C2D47A5002C5A42 /* Products */,
+				A04C3B92EEB3D2D958C5DDC7 /* Pods */,
+				F3B7F763FBF79A99892F738B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		647C0B8F1C2D47A5002C5A42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				647C0B8E1C2D47A5002C5A42 /* libWeatherFlowApiSwift.a */,
+				647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */,
+				647C0C081C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,22 +119,75 @@
 		647C0B901C2D47A5002C5A42 /* WeatherFlowApiSwift */ = {
 			isa = PBXGroup;
 			children = (
-				647C0B911C2D47A5002C5A42 /* WeatherFlowApiSwift.h */,
-				647C0B931C2D47A5002C5A42 /* WeatherFlowApiSwift.m */,
+				647C0C011C2FF0F0002C5A42 /* WeatherFlowApiSwift.h */,
+				647C0C031C2FF0F0002C5A42 /* Info.plist */,
+				647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */,
+				647C0B9B1C2D480F002C5A42 /* Spot.swift */,
+				647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */,
+				647C0BC01C2DBCE2002C5A42 /* Profile.swift */,
+				647C0BBC1C2D6D27002C5A42 /* Status.swift */,
+				647C0BC21C2DBEEF002C5A42 /* Session.swift */,
+				647C0BC41C2DC03E002C5A42 /* User.swift */,
+				647C0BC61C2DC45F002C5A42 /* ModelData.swift */,
+				647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */,
 			);
 			path = WeatherFlowApiSwift;
 			sourceTree = "<group>";
 		};
+		647C0C0C1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */,
+				647C0C0F1C2FF0F0002C5A42 /* Info.plist */,
+			);
+			path = WeatherFlowApiSwiftTests;
+			sourceTree = "<group>";
+		};
+		A04C3B92EEB3D2D958C5DDC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DCE99A9B95658CFC50DF7450 /* Pods-WeatherFlowApiSwift.debug.xcconfig */,
+				1230F172FF823FA718BF7A00 /* Pods-WeatherFlowApiSwift.release.xcconfig */,
+				21A4ACFB77EEAC70DCFC2ECF /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */,
+				D8CD1A83DB3F6D759AD4919F /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3B7F763FBF79A99892F738B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30DF3ACBE199035B49D92744 /* Pods_WeatherFlowApiSwift.framework */,
+				64F1E30756C5FAE71CA0D57C /* Pods_WeatherFlowApiSwiftTests.framework */,
+				B4DA02548EAC9E4E1EC364EF /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		647C0BFC1C2FF0F0002C5A42 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				647C0C021C2FF0F0002C5A42 /* WeatherFlowApiSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		647C0B8D1C2D47A5002C5A42 /* WeatherFlowApiSwift */ = {
+		647C0BFE1C2FF0F0002C5A42 /* WeatherFlowApiSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 647C0B971C2D47A5002C5A42 /* Build configuration list for PBXNativeTarget "WeatherFlowApiSwift" */;
+			buildConfigurationList = 647C0C101C2FF0F0002C5A42 /* Build configuration list for PBXNativeTarget "WeatherFlowApiSwift" */;
 			buildPhases = (
-				647C0B8A1C2D47A5002C5A42 /* Sources */,
-				647C0B8B1C2D47A5002C5A42 /* Frameworks */,
-				647C0B8C1C2D47A5002C5A42 /* CopyFiles */,
+				C9BBAB4E6FDBCBA28BF7C6DF /* Check Pods Manifest.lock */,
+				647C0BFA1C2FF0F0002C5A42 /* Sources */,
+				647C0BFB1C2FF0F0002C5A42 /* Frameworks */,
+				647C0BFC1C2FF0F0002C5A42 /* Headers */,
+				647C0BFD1C2FF0F0002C5A42 /* Resources */,
+				BE46DE57D564D50AF0DBB9BE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -83,8 +195,29 @@
 			);
 			name = WeatherFlowApiSwift;
 			productName = WeatherFlowApiSwift;
-			productReference = 647C0B8E1C2D47A5002C5A42 /* libWeatherFlowApiSwift.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		647C0C071C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 647C0C131C2FF0F0002C5A42 /* Build configuration list for PBXNativeTarget "WeatherFlowApiSwiftTests" */;
+			buildPhases = (
+				2AA4E7BD4B4F365C5AD78EFB /* Check Pods Manifest.lock */,
+				647C0C041C2FF0F0002C5A42 /* Sources */,
+				647C0C051C2FF0F0002C5A42 /* Frameworks */,
+				647C0C061C2FF0F0002C5A42 /* Resources */,
+				A8DA57F0FC9789B478F11E2D /* Embed Pods Frameworks */,
+				5562613529B3BCE5BFDEDB43 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				647C0C0B1C2FF0F0002C5A42 /* PBXTargetDependency */,
+			);
+			name = WeatherFlowApiSwiftTests;
+			productName = WeatherFlowApiSwiftTests;
+			productReference = 647C0C081C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -92,10 +225,14 @@
 		647C0B861C2D47A5002C5A42 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Pantelis Zirinis";
 				TargetAttributes = {
-					647C0B8D1C2D47A5002C5A42 = {
+					647C0BFE1C2FF0F0002C5A42 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					647C0C071C2FF0F0002C5A42 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -112,21 +249,150 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				647C0B8D1C2D47A5002C5A42 /* WeatherFlowApiSwift */,
+				647C0BFE1C2FF0F0002C5A42 /* WeatherFlowApiSwift */,
+				647C0C071C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		647C0BFD1C2FF0F0002C5A42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		647C0C061C2FF0F0002C5A42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2AA4E7BD4B4F365C5AD78EFB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5562613529B3BCE5BFDEDB43 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherFlowApiSwiftTests/Pods-WeatherFlowApiSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8DA57F0FC9789B478F11E2D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE46DE57D564D50AF0DBB9BE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeatherFlowApiSwift/Pods-WeatherFlowApiSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9BBAB4E6FDBCBA28BF7C6DF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		647C0B8A1C2D47A5002C5A42 /* Sources */ = {
+		647C0BFA1C2FF0F0002C5A42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				647C0B941C2D47A5002C5A42 /* WeatherFlowApiSwift.m in Sources */,
+				647C0C161C2FF105002C5A42 /* WeatherFlowApiSwift.swift in Sources */,
+				647C0C1A1C2FF105002C5A42 /* Status.swift in Sources */,
+				647C0C1B1C2FF105002C5A42 /* Session.swift in Sources */,
+				647C0C191C2FF105002C5A42 /* Profile.swift in Sources */,
+				647C0C181C2FF105002C5A42 /* SpotSet.swift in Sources */,
+				647C0C1E1C2FF105002C5A42 /* ModelDataSet.swift in Sources */,
+				647C0C1D1C2FF105002C5A42 /* ModelData.swift in Sources */,
+				647C0C171C2FF105002C5A42 /* Spot.swift in Sources */,
+				647C0C1C1C2FF105002C5A42 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		647C0C041C2FF0F0002C5A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				647C0C271C2FF106002C5A42 /* ModelDataSet.swift in Sources */,
+				647C0C241C2FF106002C5A42 /* Session.swift in Sources */,
+				647C0C0E1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift in Sources */,
+				647C0C261C2FF106002C5A42 /* ModelData.swift in Sources */,
+				647C0C221C2FF106002C5A42 /* Profile.swift in Sources */,
+				647C0C201C2FF106002C5A42 /* Spot.swift in Sources */,
+				647C0C251C2FF106002C5A42 /* User.swift in Sources */,
+				647C0C211C2FF106002C5A42 /* SpotSet.swift in Sources */,
+				647C0C1F1C2FF106002C5A42 /* WeatherFlowApiSwift.swift in Sources */,
+				647C0C231C2FF106002C5A42 /* Status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		647C0C0B1C2FF0F0002C5A42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 647C0BFE1C2FF0F0002C5A42 /* WeatherFlowApiSwift */;
+			targetProxy = 647C0C0A1C2FF0F0002C5A42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		647C0B951C2D47A5002C5A42 /* Debug */ = {
@@ -209,21 +475,69 @@
 			};
 			name = Release;
 		};
-		647C0B981C2D47A5002C5A42 /* Debug */ = {
+		647C0C111C2FF0F0002C5A42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCE99A9B95658CFC50DF7450 /* Pods-WeatherFlowApiSwift.debug.xcconfig */;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WeatherFlowApiSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paz-labs.WeatherFlowApiSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		647C0B991C2D47A5002C5A42 /* Release */ = {
+		647C0C121C2FF0F0002C5A42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1230F172FF823FA718BF7A00 /* Pods-WeatherFlowApiSwift.release.xcconfig */;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = WeatherFlowApiSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paz-labs.WeatherFlowApiSwift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		647C0C141C2FF0F0002C5A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21A4ACFB77EEAC70DCFC2ECF /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = WeatherFlowApiSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paz-labs.WeatherFlowApiSwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		647C0C151C2FF0F0002C5A42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8CD1A83DB3F6D759AD4919F /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = WeatherFlowApiSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paz-labs.WeatherFlowApiSwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -239,13 +553,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		647C0B971C2D47A5002C5A42 /* Build configuration list for PBXNativeTarget "WeatherFlowApiSwift" */ = {
+		647C0C101C2FF0F0002C5A42 /* Build configuration list for PBXNativeTarget "WeatherFlowApiSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				647C0B981C2D47A5002C5A42 /* Debug */,
-				647C0B991C2D47A5002C5A42 /* Release */,
+				647C0C111C2FF0F0002C5A42 /* Debug */,
+				647C0C121C2FF0F0002C5A42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		647C0C131C2FF0F0002C5A42 /* Build configuration list for PBXNativeTarget "WeatherFlowApiSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				647C0C141C2FF0F0002C5A42 /* Debug */,
+				647C0C151C2FF0F0002C5A42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

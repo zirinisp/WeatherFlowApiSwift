@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "647C0B8D1C2D47A5002C5A42"
-               BuildableName = "libWeatherFlowApiSwift.a"
+               BlueprintIdentifier = "647C0BA11C2D5E62002C5A42"
+               BuildableName = "WeatherFlowApiSwift.framework"
                BlueprintName = "WeatherFlowApiSwift"
                ReferencedContainer = "container:WeatherFlowApiSwift.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "647C0B8D1C2D47A5002C5A42"
-            BuildableName = "libWeatherFlowApiSwift.a"
+            BlueprintIdentifier = "647C0BA11C2D5E62002C5A42"
+            BuildableName = "WeatherFlowApiSwift.framework"
             BlueprintName = "WeatherFlowApiSwift"
             ReferencedContainer = "container:WeatherFlowApiSwift.xcodeproj">
          </BuildableReference>
@@ -63,8 +63,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "647C0B8D1C2D47A5002C5A42"
-            BuildableName = "libWeatherFlowApiSwift.a"
+            BlueprintIdentifier = "647C0BA11C2D5E62002C5A42"
+            BuildableName = "WeatherFlowApiSwift.framework"
             BlueprintName = "WeatherFlowApiSwift"
             ReferencedContainer = "container:WeatherFlowApiSwift.xcodeproj">
          </BuildableReference>
