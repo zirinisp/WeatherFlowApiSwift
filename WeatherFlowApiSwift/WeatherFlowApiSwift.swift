@@ -131,6 +131,7 @@ public class WeatherFlowApiSwift: NSObject {
     static var kArrowSize = "kArrowSize"
     
     public static var UpdateNotificationWeatherFlowApiToken = "kWeatherFlowApiTokenUpdateNotification"
+    public static var UpdateNotificationWeatherFlowRequestSent = "WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent" // Used to monitor server requests
     
     // MARK: - Units and Settings
     static public var unitDistance: WFUnitDistance {
@@ -443,6 +444,15 @@ public class WeatherFlowApiSwift: NSObject {
     
     // JSON Helper
     class func dictionaryFromURL(urlString: String) throws -> [String: AnyObject] {
+        let explode = urlString.explode("/")
+        if explode.count > 5 {
+            let requestString = explode[5]
+            let explodeRequest = requestString.explode("?")
+            if explodeRequest.count > 0 {
+                let request = explodeRequest[0]
+                NSNotificationCenter.defaultCenter().postNotificationName(WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent, object: self, userInfo: ["request" : request])
+            }
+        }
         if let url: NSURL = NSURL(string: urlString) {
             let (data, _, error) = NSURLSession.sharedSession().synchronousDataTaskWithURL(url)
             
