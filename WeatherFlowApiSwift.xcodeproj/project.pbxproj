@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B36EBB3104ABDBCCE0D5E68 /* Pods_WeatherFlowApiSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F1E30756C5FAE71CA0D57C /* Pods_WeatherFlowApiSwiftTests.framework */; };
+		646BF1241C59E60A004EFABE /* SpotStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BF1231C59E60A004EFABE /* SpotStats.swift */; };
 		647C0C021C2FF0F0002C5A42 /* WeatherFlowApiSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 647C0C011C2FF0F0002C5A42 /* WeatherFlowApiSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		647C0C091C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */; };
 		647C0C0E1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */; };
@@ -48,6 +49,7 @@
 		1230F172FF823FA718BF7A00 /* Pods-WeatherFlowApiSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwift/Pods-WeatherFlowApiSwift.release.xcconfig"; sourceTree = "<group>"; };
 		21A4ACFB77EEAC70DCFC2ECF /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwiftTests/Pods-WeatherFlowApiSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		30DF3ACBE199035B49D92744 /* Pods_WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		646BF1231C59E60A004EFABE /* SpotStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotStats.swift; sourceTree = "<group>"; };
 		647C0B9B1C2D480F002C5A42 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		647C0BBA1C2D64FB002C5A42 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		647C0BBB1C2D6656002C5A42 /* WeatherFlowApiSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherFlowApiSwift.podspec; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				647C0BC41C2DC03E002C5A42 /* User.swift */,
 				647C0BC61C2DC45F002C5A42 /* ModelData.swift */,
 				647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */,
+				646BF1231C59E60A004EFABE /* SpotStats.swift */,
 			);
 			path = WeatherFlowApiSwift;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				647C0C1B1C2FF105002C5A42 /* Session.swift in Sources */,
 				647C0C191C2FF105002C5A42 /* Profile.swift in Sources */,
 				647C0C181C2FF105002C5A42 /* SpotSet.swift in Sources */,
+				646BF1241C59E60A004EFABE /* SpotStats.swift in Sources */,
 				647C0C1E1C2FF105002C5A42 /* ModelDataSet.swift in Sources */,
 				647C0C1D1C2FF105002C5A42 /* ModelData.swift in Sources */,
 				647C0C171C2FF105002C5A42 /* Spot.swift in Sources */,

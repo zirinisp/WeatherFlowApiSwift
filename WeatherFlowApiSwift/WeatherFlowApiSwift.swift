@@ -124,6 +124,7 @@ public class WeatherFlowApiSwift: NSObject {
     static var getModelDataByLatLonURL = "/wxengine/rest/model/getModelDataByLatLon"
     static var getSpotSetByZoomLevelURL = "/wxengine/rest/spot/getSpotSetByZoomLevel"
     static var getSpotSetByListURL = "/wxengine/rest/spot/getSpotSetByList"
+    static var getSpotStatsURL = "/wxengine/rest/stat/getSpotStats"
     
     static var kArrowFillColor = "kArrowFillColor"
     static var kArrowStrokeColor = "kArrowStrokeColor"
@@ -356,7 +357,22 @@ public class WeatherFlowApiSwift: NSObject {
         let modelDataSet = ModelDataSet(dictionary: dictionary)
         return modelDataSet
     }
-    
+
+    public class func getSpotStatsBySpotID(spotID: Int, years: Int?) throws -> SpotStats? {
+        var parameters = [[NSObject: AnyObject]]()
+        parameters.append(self.spotIDDictionary(spotID))
+//        parameters += (self.unitsArray)
+        if let letYears = years {
+            let yearsParam: [[NSObject: AnyObject]] = [self.dictionaryWithParameter("years_back", value: "\(letYears)")]
+            parameters += yearsParam
+        }
+        parameters.append(self.formatDictionary)
+        let urlString: String = self.urlForService(getSpotStatsURL, andParameters: parameters)
+        let dictionary = try self.dictionaryFromURL(urlString)
+        let modelDataSet = SpotStats(dictionary: dictionary)
+        return modelDataSet
+    }
+
     // MARK: - UrlParameters Helpers
     public class func urlForService(service: String, andParameters parameters: [[NSObject: AnyObject]]) -> String {
         var string = String()
