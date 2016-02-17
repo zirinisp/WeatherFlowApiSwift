@@ -307,6 +307,7 @@ public class WeatherFlowApiSwift: NSObject {
         parameters += (self.unitsArray)
         parameters.append(self.spotSetByListDictionaryWithValue(list))
         parameters.append(self.formatDictionary)
+        parameters += self.searchArray
         let urlString: String = self.urlForService(getSpotSetByListURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
         return SpotSet(dictionary: dictionary)
