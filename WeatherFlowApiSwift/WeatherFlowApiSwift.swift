@@ -634,25 +634,3 @@ public class WeatherFlowApiSwift: NSObject {
     }*/
 }
 
-extension NSURLSession {
-    func synchronousDataTaskWithURL(url: NSURL) -> (NSData?, NSURLResponse?, NSError?) {
-        var data: NSData?
-        var response: NSURLResponse?
-        var error: NSError?
-        
-        let sem = dispatch_semaphore_create(0)
-        
-        let task = self.dataTaskWithURL(url, completionHandler: {
-            data = $0
-            response = $1
-            error = $2
-            dispatch_semaphore_signal(sem)
-        })
-        
-        task.resume()
-        
-        dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER)
-        
-        return (data, response, error)
-    }
-}
