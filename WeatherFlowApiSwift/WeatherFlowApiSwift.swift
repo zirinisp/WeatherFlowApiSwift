@@ -367,10 +367,11 @@ public class WeatherFlowApiSwift: NSObject {
             let yearsParam: [[NSObject: AnyObject]] = [self.dictionaryWithParameter("years_back", value: "\(letYears)")]
             parameters += yearsParam
         }
+        parameters += self.thresholdList
         parameters.append(self.formatDictionary)
         let urlString: String = self.urlForService(getSpotStatsURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
-        let modelDataSet = SpotStats(dictionary: dictionary)
+        let modelDataSet = SpotStats(spot_id: spotID, dictionary: dictionary)
         return modelDataSet
     }
 
@@ -408,6 +409,11 @@ public class WeatherFlowApiSwift: NSObject {
         }
     }
     
+    class var thresholdList: [[NSObject: AnyObject]] {
+        return [self.dictionaryWithParameter("threshold_list", value: "5,10,15,20,25")]
+    }
+    
+
     class func locationArray(location: CLLocationCoordinate2D) -> [[NSObject: AnyObject]] {
         let lat: String = String(format: "%0.5f", location.latitude)
         let lon: String = String(format: "%0.5f", location.longitude)
