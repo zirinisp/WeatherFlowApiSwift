@@ -48,6 +48,10 @@ public enum YearStatMonth: Int {
     case Oct
     case Nov
     case Dec
+    
+    public static let AllValues: [YearStatMonth] = {
+        return [.Jan, .Feb, .Mar, .Apr, .May, .Jun, .Jul, .Aug, .Sep, .Oct, .Nov, .Dec]
+    }()
 }
 
 public enum YearStatDirection: Int {
@@ -69,7 +73,7 @@ public enum YearStatDirection: Int {
     case NNW
     
     /// Initialize with direction in degrees
-    init?(direction: Int) {
+    public init?(direction: Int) {
         let offset = YearStatDirection.divident / 2.0
         var correctedDirection: Double = Double(direction) + offset
         while correctedDirection < 0 {
@@ -83,7 +87,7 @@ public enum YearStatDirection: Int {
         return 360.0 / Double(YearStatDirection.count)
     }
     
-    static let count: Int = {
+    public static let count: Int = {
         var max: Int = 0
         while let _ = YearStatDirection(rawValue: max) { max += 1 }
         return max
