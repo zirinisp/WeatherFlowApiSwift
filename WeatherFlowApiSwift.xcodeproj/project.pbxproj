@@ -30,6 +30,7 @@
 		647C0C251C2FF106002C5A42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC41C2DC03E002C5A42 /* User.swift */; };
 		647C0C261C2FF106002C5A42 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC61C2DC45F002C5A42 /* ModelData.swift */; };
 		647C0C271C2FF106002C5A42 /* ModelDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */; };
+		64C647411C91F2EB00998A41 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C647401C91F2EB00998A41 /* Graph.swift */; };
 		75CF328705092071BF6A6702 /* Pods_WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DF3ACBE199035B49D92744 /* Pods_WeatherFlowApiSwift.framework */; };
 		A5BE13504467F54A9563A5D5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA02548EAC9E4E1EC364EF /* Pods.framework */; };
 		E62A05A612831F8A0C0BF5B3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4DA02548EAC9E4E1EC364EF /* Pods.framework */; };
@@ -67,6 +68,7 @@
 		647C0C081C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherFlowApiSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwiftTests.swift; sourceTree = "<group>"; };
 		647C0C0F1C2FF0F0002C5A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64C647401C91F2EB00998A41 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		64F1E30756C5FAE71CA0D57C /* Pods_WeatherFlowApiSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4DA02548EAC9E4E1EC364EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CD1A83DB3F6D759AD4919F /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwiftTests/Pods-WeatherFlowApiSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				647C0BC01C2DBCE2002C5A42 /* Profile.swift */,
 				647C0BBC1C2D6D27002C5A42 /* Status.swift */,
 				647C0BC21C2DBEEF002C5A42 /* Session.swift */,
+				64C647401C91F2EB00998A41 /* Graph.swift */,
 				647C0BC41C2DC03E002C5A42 /* User.swift */,
 				647C0BC61C2DC45F002C5A42 /* ModelData.swift */,
 				647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */,
@@ -365,6 +368,7 @@
 				647C0C181C2FF105002C5A42 /* SpotSet.swift in Sources */,
 				646BF1241C59E60A004EFABE /* SpotStats.swift in Sources */,
 				647C0C1E1C2FF105002C5A42 /* ModelDataSet.swift in Sources */,
+				64C647411C91F2EB00998A41 /* Graph.swift in Sources */,
 				647C0C1D1C2FF105002C5A42 /* ModelData.swift in Sources */,
 				647C0C171C2FF105002C5A42 /* Spot.swift in Sources */,
 				647C0C1C1C2FF105002C5A42 /* User.swift in Sources */,

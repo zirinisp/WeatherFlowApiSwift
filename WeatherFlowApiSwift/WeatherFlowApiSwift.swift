@@ -125,6 +125,7 @@ public class WeatherFlowApiSwift: NSObject {
     static var getSpotSetByZoomLevelURL = "/wxengine/rest/spot/getSpotSetByZoomLevel"
     static var getSpotSetByListURL = "/wxengine/rest/spot/getSpotSetByList"
     static var getSpotStatsURL = "/wxengine/rest/stat/getSpotStats"
+    static var getGraphURL = "/wxengine/rest/graph/getGraph"
     
     static var kArrowFillColor = "kArrowFillColor"
     static var kArrowStrokeColor = "kArrowStrokeColor"
@@ -373,6 +374,26 @@ public class WeatherFlowApiSwift: NSObject {
         let dictionary = try self.dictionaryFromURL(urlString)
         let modelDataSet = SpotStats(spot_id: spotID, dictionary: dictionary)
         return modelDataSet
+    }
+    
+    public class func getGraphForSpotID(spotID: Int, unitWind: WFUnitWind?) throws -> Graph {
+        var parameters = [[NSObject: AnyObject]]()
+        parameters.append(self.spotIDDictionary(spotID))
+        //        parameters += (self.unitsArray)
+        parameters.append(self.formatDictionary)
+        parameters += (self.searchArray)
+        parameters.append(self.dictionaryWithParameter("show_virtual_obs", value: "true"))
+        if let unitWind = unitWind {
+            parameters.append(self.dictionaryWithParameter("units_wind", value: unitWind.parameter))
+
+        } else {
+            parameters.append(self.unitWindDictionary)
+        }
+        let urlString: String = self.urlForService(getGraphURL, andParameters: parameters)
+        let dictionary = try self.dictionaryFromURL(urlString)
+        let graph = Graph(spot_id: spotID, dictionary: dictionary)
+        return graph
+        
     }
 
     // MARK: - UrlParameters Helpers
