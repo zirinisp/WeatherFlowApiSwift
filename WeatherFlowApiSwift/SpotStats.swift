@@ -33,6 +33,12 @@ public class SpotStats {
         self.year_stats = year_stats
     }
 
+    public var valid: Bool {
+        guard let year_stats = self.year_stats else {
+            return false
+        }
+        return year_stats.count != 0
+    }
 }
 
 public enum YearStatMonth: Int {
