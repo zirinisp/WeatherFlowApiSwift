@@ -196,7 +196,7 @@ public class Spot: NSObject, MKAnnotation {
     public var subtitle: String? {
         return self.wind_desc
     }
-    /*
+    
     private var annotationView__: MKAnnotationView?
     public var annotationView: MKAnnotationView {
         if let view = self.annotationView__ {
@@ -243,7 +243,7 @@ public class Spot: NSObject, MKAnnotation {
             annotationView__ = view
             return view
         }
-    }*/
+    }
     
     public override func isEqual(object: AnyObject?) -> Bool {
         if !(object is Spot) {
@@ -273,4 +273,7 @@ public class Spot: NSObject, MKAnnotation {
     public func getModelDataError() throws -> ModelDataSet? {
         return try WeatherFlowApiSwift.getModelDataBySpot(self)
     }
+
 }
+
+
