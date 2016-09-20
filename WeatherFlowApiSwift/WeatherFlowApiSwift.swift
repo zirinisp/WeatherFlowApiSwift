@@ -11,100 +11,100 @@ import PazHelperSwift
 import CoreLocation
 import UIKit
 
-enum WeatherFlowApiError: ErrorType {
-    case NoResult
-    case NotInitialized
-    case URLError
-    case ServerError(error: NSError)
-    case JSonError(error: NSError?)
-    case Unknown
+enum WeatherFlowApiError: Error {
+    case noResult
+    case notInitialized
+    case urlError
+    case serverError(error: Error)
+    case jSonError(error: Error?)
+    case unknown
 }
 
 public enum WFUnitDistance : Int {
-    case Km
-    case Mi
+    case km
+    case mi
     public static var allValues: [WFUnitDistance] {
-        return [.Km, .Mi]
+        return [.km, .mi]
     }
     public var name: String {
         switch self {
-        case .Km:
+        case .km:
             return "Klm"
-        case .Mi:
+        case .mi:
             return "Miles"
         }
     }
     public var parameter: String {
         switch self {
-        case .Km:
+        case .km:
             return "km"
-        case .Mi:
+        case .mi:
             return "mi"
         }
     }
 }
 
 public enum WFUnitWind : Int {
-    case Mph
-    case Kts
-    case Kph
-    case Mps
+    case mph
+    case kts
+    case kph
+    case mps
     public static var allValues: [WFUnitWind] {
-        return [.Mph, .Kts, .Kph, .Mps]
+        return [.mph, .kts, .kph, .mps]
     }
     public var name: String {
         switch self {
-        case .Kph:
+        case .kph:
             return "Kph"
-        case .Kts:
+        case .kts:
             return "Kts"
-        case .Mph:
+        case .mph:
             return "Mph"
-        case .Mps:
+        case .mps:
             return "Mps"
         }
     }
     
     public var parameter: String {
         switch self {
-        case .Kph:
+        case .kph:
             return "kph"
-        case .Kts:
+        case .kts:
             return "kts"
-        case .Mph:
+        case .mph:
             return "mph"
-        case .Mps:
+        case .mps:
             return "mps"
         }
     }
 }
 
 public enum WFUnitTemp : Int {
-    case C
-    case F
+    case c
+    case f
     public static var allValues: [WFUnitTemp] {
-        return [.C, .F]
+        return [.c, .f]
     }
     public var name: String {
         switch self {
-        case .F:
+        case .f:
             return "F"
-        case .C:
+        case .c:
             return "C"
         }
     }
     
     public var parameter: String {
         switch self {
-        case .F:
+        case .f:
             return "f"
-        case .C:
+        case .c:
             return "c"
         }
     }
 }
 
-public class WeatherFlowApiSwift: NSObject {
+open class WeatherFlowApiSwift: NSObject {
     // MARK: Keys and Static Definitions
     static var api = "http://api.weatherflow.com"
     static var format = "json"
@@ -133,92 +133,92 @@ public class WeatherFlowApiSwift: NSObject {
     static var kArrowImage = "kArrowImage"
     static var kArrowSize = "kArrowSize"
     
-    public static var UpdateNotificationWeatherFlowApiToken = "kWeatherFlowApiTokenUpdateNotification"
-    public static var UpdateNotificationWeatherFlowRequestSent = "WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent" // Used to monitor server requests
+    open static var UpdateNotificationWeatherFlowApiToken = "kWeatherFlowApiTokenUpdateNotification"
+    open static var UpdateNotificationWeatherFlowRequestSent = "WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent" // Used to monitor server requests
     
     // MARK: - Units and Settings
-    static public var unitDistance: WFUnitDistance {
+    static open var unitDistance: WFUnitDistance {
         get {
-            if let value = NSUserDefaults.standardUserDefaults().objectForKey(UnitDistanceKey) as? Int {
+            if let value = UserDefaults.standard.object(forKey: UnitDistanceKey) as? Int {
                 if let unit = WFUnitDistance(rawValue: value) {
                     return unit
                 }
             }
-            return .Km
+            return .km
         }
         set {
-            NSUserDefaults.standardUserDefaults().setInteger(newValue.rawValue, forKey: self.UnitDistanceKey)
+            UserDefaults.standard.set(newValue.rawValue, forKey: self.UnitDistanceKey)
         }
     }
     
-    static public var unitTemp: WFUnitTemp {
+    static open var unitTemp: WFUnitTemp {
         get {
-            if let value = NSUserDefaults.standardUserDefaults().objectForKey(self.UnitTempKey) as? Int {
+            if let value = UserDefaults.standard.object(forKey: self.UnitTempKey) as? Int {
                 if let unit = WFUnitTemp(rawValue: value) {
                     return unit
                 }
             }
-            return .C
+            return .c
         }
         set {
-            NSUserDefaults.standardUserDefaults().setInteger(newValue.rawValue, forKey: self.UnitTempKey)
+            UserDefaults.standard.set(newValue.rawValue, forKey: self.UnitTempKey)
         }
     }
     
-    static public var unitWind: WFUnitWind {
+    static open var unitWind: WFUnitWind {
         get {
-            if let value = NSUserDefaults.standardUserDefaults().objectForKey(self.UnitWindKey) as? Int {
+            if let value = UserDefaults.standard.object(forKey: self.UnitWindKey) as? Int {
                 if let unit = WFUnitWind(rawValue: value) {
                     return unit
                 }
             }
-            return .Kts
+            return .kts
         }
         set {
-            NSUserDefaults.standardUserDefaults().setInteger(newValue.rawValue, forKey: self.UnitWindKey)
+            UserDefaults.standard.set(newValue.rawValue, forKey: self.UnitWindKey)
         }
     }
     
-    public static var includeWindSpeedOnArrows: Bool {
+    open static var includeWindSpeedOnArrows: Bool {
         get {
-            if let value = NSUserDefaults.standardUserDefaults().objectForKey(self.IncludeWindSpeedOnArrowsKey) as? Bool {
+            if let value = UserDefaults.standard.object(forKey: self.IncludeWindSpeedOnArrowsKey) as? Bool {
                 return value
             }
             return true
         }
         set {
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: self.IncludeWindSpeedOnArrowsKey)
+            UserDefaults.standard.set(newValue, forKey: self.IncludeWindSpeedOnArrowsKey)
         }
     }
     
-    public static var includeVirtualWeatherStations: Bool {
+    open static var includeVirtualWeatherStations: Bool {
         get {
-            if let value = NSUserDefaults.standardUserDefaults().objectForKey(self.IncludeVirtualWeatherStationsKey) as? Bool {
+            if let value = UserDefaults.standard.object(forKey: self.IncludeVirtualWeatherStationsKey) as? Bool {
                 return value
             }
             return false
         }
         set {
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: self.IncludeVirtualWeatherStationsKey)
+            UserDefaults.standard.set(newValue, forKey: self.IncludeVirtualWeatherStationsKey)
         }
     }
     
     // MARK: - Session Data
     
     /// WeatherFlow api key. Used to authenticate with the server
-    static public var apiKey: String?
+    static open var apiKey: String?
     
-    private static var session__: Session?
-    private static var tokenRequestActive = false
+    fileprivate static var session__: Session?
+    fileprivate static var tokenRequestActive = false
     /// Session Information
-    public static var session: Session? {
+    open static var session: Session? {
         if let session = self.session__ {
             return session
         }
         if self.tokenRequestActive == false {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {() -> Void in
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async(execute: {() -> Void in
                 do {
-                    try self.getToken()
+                    let _ = try self.getToken()
                 } catch {
                     print("Could not get token")
                 }
@@ -228,19 +228,19 @@ public class WeatherFlowApiSwift: NSObject {
     }
     
     /// Indicates whether authentication with the server is active.
-    static public var isReady: Bool {
+    static open var isReady: Bool {
         return self.session != nil
     }
     
     /// Connect to the server and request a new token. Nil for active request
-    public class func getToken() throws -> Session? {
+    open class func getToken() throws -> Session? {
         // Print Sample Request
         if tokenRequestActive {
             return nil
         }
         if IntOrZero(self.apiKey?.length) == 0 {
             NSLog("Weather Token failed no api key")
-            throw WeatherFlowApiError.NotInitialized
+            throw WeatherFlowApiError.notInitialized
         }
         tokenRequestActive = true
         NSLog("Requesting Weather Token")
@@ -253,7 +253,7 @@ public class WeatherFlowApiSwift: NSObject {
             let dictionary = try self.dictionaryFromURL(urlString)
             let session = Session(dictionary: dictionary)
             self.session__ = session
-            NSNotificationCenter.defaultCenter().postNotificationName(self.UpdateNotificationWeatherFlowApiToken, object: session__)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: self.UpdateNotificationWeatherFlowApiToken), object: session__)
             NSLog("Weather Token Ready")
             return session
         }
@@ -261,8 +261,8 @@ public class WeatherFlowApiSwift: NSObject {
     
     // MARK: - Api Calls
     
-    public class func getSpotSetBySearch(search: String, distance: Int) throws -> SpotSet {
-        var parameters = [[NSObject: AnyObject]]()
+    open class func getSpotSetBySearch(_ search: String, distance: Int) throws -> SpotSet {
+        var parameters = [[AnyHashable: Any]]()
         parameters.append(self.searchDictionaryWithValue(search))
         parameters += self.unitsArray
         parameters += self.searchArray
@@ -273,12 +273,12 @@ public class WeatherFlowApiSwift: NSObject {
         return SpotSet(dictionary: dictionary)
     }
     
-    public class func getSpotSetByLocation(location: CLLocationCoordinate2D, distance: Int) throws -> SpotSet {
+    open class func getSpotSetByLocation(_ location: CLLocationCoordinate2D, distance: Int) throws -> SpotSet {
         return try WeatherFlowApiSwift.getSpotSetByLocationCoordinate(location, distance: distance)
     }
     
-    public class func getSpotSetByLocationCoordinate(location: CLLocationCoordinate2D, distance: Int) throws -> SpotSet {
-        var parameters = [[NSObject: AnyObject]]()
+    open class func getSpotSetByLocationCoordinate(_ location: CLLocationCoordinate2D, distance: Int) throws -> SpotSet {
+        var parameters = [[AnyHashable: Any]]()
         parameters += self.locationArray(location)
         parameters += self.unitsArray
         parameters += self.searchArray
@@ -289,8 +289,8 @@ public class WeatherFlowApiSwift: NSObject {
         return SpotSet(dictionary: dictionary)
     }
     
-    public class func getSpotSetByZoomLevel(zoomLevel: Int, lat_min latMin: Float, lon_min lonMin: Float, lat_max latMax: Float, lon_max lonMax: Float) throws -> SpotSet {
-        var parameters = [[NSObject: AnyObject]]()
+    open class func getSpotSetByZoomLevel(_ zoomLevel: Int, lat_min latMin: Float, lon_min lonMin: Float, lat_max latMax: Float, lon_max lonMax: Float) throws -> SpotSet {
+        var parameters = [[AnyHashable: Any]]()
         parameters.append(self.dictionaryWithParameter("lat_min", value: String(format: "%0.5f", latMin)))
         parameters.append(self.dictionaryWithParameter("lon_min", value: String(format: "%0.5f", lonMin)))
         parameters.append(self.dictionaryWithParameter("lat_max", value: String(format: "%0.5f", latMax)))
@@ -304,8 +304,8 @@ public class WeatherFlowApiSwift: NSObject {
         return SpotSet(dictionary: dictionary)
     }
     
-    public class func getSpotSetByList(list: NSIndexSet) throws -> SpotSet {
-        var parameters = [[NSObject: AnyObject]]()
+    open class func getSpotSetByList(_ list: IndexSet) throws -> SpotSet {
+        var parameters = [[AnyHashable: Any]]()
         parameters += (self.unitsArray)
         parameters.append(self.spotSetByListDictionaryWithValue(list))
         parameters.append(self.formatDictionary)
@@ -315,7 +315,7 @@ public class WeatherFlowApiSwift: NSObject {
         return SpotSet(dictionary: dictionary)
     }
     
-    public class func getClosestSpotByLocation(location: CLLocationCoordinate2D, distance: Int) throws -> Spot? {
+    open class func getClosestSpotByLocation(_ location: CLLocationCoordinate2D, distance: Int) throws -> Spot? {
         let set: SpotSet = try self.getSpotSetByLocation(location, distance: distance)
         if set.status?.statusCode != 0 {
             return nil
@@ -328,8 +328,8 @@ public class WeatherFlowApiSwift: NSObject {
         return nil
     }
     
-    public class func getModelDataBySpot(spot: Spot) throws -> ModelDataSet? {
-        var parameters = [[NSObject: AnyObject]]()
+    open class func getModelDataBySpot(_ spot: Spot) throws -> ModelDataSet? {
+        var parameters = [[AnyHashable: Any]]()
         parameters.append(self.spotIDDictionary(spot.spot_id))
         parameters += (self.unitsArray)
         parameters.append(self.formatDictionary)
@@ -339,8 +339,8 @@ public class WeatherFlowApiSwift: NSObject {
         return modelDataSet
     }
     
-    public class func getModelDataBySpotID(spotID: Int) throws -> ModelDataSet? {
-        var parameters = [[NSObject: AnyObject]]()
+    open class func getModelDataBySpotID(_ spotID: Int) throws -> ModelDataSet? {
+        var parameters = [[AnyHashable: Any]]()
         parameters.append(self.spotIDDictionary(spotID))
         parameters += (self.unitsArray)
         parameters.append(self.formatDictionary)
@@ -350,8 +350,8 @@ public class WeatherFlowApiSwift: NSObject {
         return modelDataSet
     }
     
-    public class func getModelDataByCoordinates(coordinate: CLLocationCoordinate2D) throws -> ModelDataSet? {
-        var parameters = [[NSObject: AnyObject]]()
+    open class func getModelDataByCoordinates(_ coordinate: CLLocationCoordinate2D) throws -> ModelDataSet? {
+        var parameters = [[AnyHashable: Any]]()
         parameters += (self.locationArray(coordinate))
         parameters += (self.unitsArray)
         parameters.append(self.formatDictionary)
@@ -361,12 +361,12 @@ public class WeatherFlowApiSwift: NSObject {
         return modelDataSet
     }
 
-    public class func getSpotStatsBySpotID(spotID: Int, years: Int?) throws -> SpotStats? {
-        var parameters = [[NSObject: AnyObject]]()
+    open class func getSpotStatsBySpotID(_ spotID: Int, years: Int?) throws -> SpotStats? {
+        var parameters = [[AnyHashable: Any]]()
         parameters.append(self.spotIDDictionary(spotID))
 //        parameters += (self.unitsArray)
         if let letYears = years {
-            let yearsParam: [[NSObject: AnyObject]] = [self.dictionaryWithParameter("years_back", value: "\(letYears)")]
+            let yearsParam: [[AnyHashable: Any]] = [self.dictionaryWithParameter("years_back", value: "\(letYears)")]
             parameters += yearsParam
         }
         parameters += self.thresholdList
@@ -377,8 +377,8 @@ public class WeatherFlowApiSwift: NSObject {
         return modelDataSet
     }
     
-    public class func getGraphForSpotID(spotID: Int, unitWind: WFUnitWind?) throws -> Graph {
-        var parameters = [[NSObject: AnyObject]]()
+    open class func getGraphForSpotID(_ spotID: Int, unitWind: WFUnitWind?) throws -> Graph {
+        var parameters = [[AnyHashable: Any]]()
         parameters.append(self.spotIDDictionary(spotID))
         //        parameters += (self.unitsArray)
         parameters.append(self.formatDictionary)
@@ -398,7 +398,7 @@ public class WeatherFlowApiSwift: NSObject {
     }
 
     // MARK: - UrlParameters Helpers
-    public class func urlForService(service: String, andParameters parameters: [[NSObject: AnyObject]]) -> String {
+    open class func urlForService(_ service: String, andParameters parameters: [[AnyHashable: Any]]) -> String {
         var string = String()
         var token = ""
         if let letToken = self.session?.token {
@@ -408,21 +408,21 @@ public class WeatherFlowApiSwift: NSObject {
             let urlPrefix: String = "\(api)\(service)?wf_apikey=\(apiKey)&wf_token=\(token)"
             string += urlPrefix
         }
-        for dictionary: [NSObject : AnyObject] in parameters {
-            if let name = dictionary[NameKey], value = dictionary[ValueKey] {
-                let parametersString = String(format: "&%@=%@", arguments: [String(name), String(value)])
+        for dictionary: [AnyHashable: Any] in parameters {
+            if let name = dictionary[NameKey], let value = dictionary[ValueKey] {
+                let parametersString = String(format: "&%@=%@", arguments: [String(describing: name), String(describing: value)])
                 string += parametersString
             }
         }
         return string
     }
     
-    class var unitsArray: [[NSObject: AnyObject]] {
-        let array: [[NSObject: AnyObject]] = [self.unitWindDictionary, self.unitDistanceDictionary, self.unitTempDictionary]
+    class var unitsArray: [[AnyHashable: Any]] {
+        let array: [[AnyHashable: Any]] = [self.unitWindDictionary, self.unitDistanceDictionary, self.unitTempDictionary]
         return array
     }
     
-    class var searchArray: [[NSObject: AnyObject]] {
+    class var searchArray: [[AnyHashable: Any]] {
         if self.includeVirtualWeatherStations {
             return [self.dictionaryWithParameter("spot_types", value: "1,100,101")]
         }
@@ -431,31 +431,31 @@ public class WeatherFlowApiSwift: NSObject {
         }
     }
     
-    class var thresholdList: [[NSObject: AnyObject]] {
+    class var thresholdList: [[AnyHashable: Any]] {
         return [self.dictionaryWithParameter("threshold_list", value: "5,10,15,20,25")]
     }
     
 
-    class func locationArray(location: CLLocationCoordinate2D) -> [[NSObject: AnyObject]] {
+    class func locationArray(_ location: CLLocationCoordinate2D) -> [[AnyHashable: Any]] {
         let lat: String = String(format: "%0.5f", location.latitude)
         let lon: String = String(format: "%0.5f", location.longitude)
         return [self.dictionaryWithParameter("lat", value: lat), self.dictionaryWithParameter("lon", value: lon)]
     }
     
-    class func spotSetByListDictionaryWithValue(value: NSIndexSet) -> [NSObject : AnyObject] {
+    class func spotSetByListDictionaryWithValue(_ value: IndexSet) -> [AnyHashable: Any] {
         var string = String()
-        value.enumerateIndexesUsingBlock { (idx, stop) -> Void in
+        value.enumerate { (idx, stop) -> Void in
             let spotId = String(format: "%lu", arguments: [UInt(idx)])
             string += spotId
             string += ","
         }
         if string.characters.count > 0 {
-            string.removeAtIndex(string.endIndex.predecessor())
+            string.remove(at: string.characters.index(before: string.endIndex))
         }
         return self.dictionaryWithParameter("spot_list", value: string)
     }
     
-    class func dictionaryWithParameter(name: String, value: String) -> [String : String] {
+    class func dictionaryWithParameter(_ name: String, value: String) -> [String : String] {
         return [self.NameKey: name, self.ValueKey: value]
     }
     
@@ -475,55 +475,55 @@ public class WeatherFlowApiSwift: NSObject {
         return self.dictionaryWithParameter("format", value: self.format)
     }
     
-    class func searchDictionaryWithValue(value: String) -> [String: String] {
+    class func searchDictionaryWithValue(_ value: String) -> [String: String] {
         return self.dictionaryWithParameter("search", value: value)
     }
     
-    class func spotIDDictionary(spot_id: Int) -> [String: String] {
+    class func spotIDDictionary(_ spot_id: Int) -> [String: String] {
         return self.dictionaryWithParameter("spot_id", value: "\(Int(spot_id))")
     }
     
-    class func distanceDictionaryWithValue(value: Int) -> [String: String] {
+    class func distanceDictionaryWithValue(_ value: Int) -> [String: String] {
         return self.dictionaryWithParameter("search_dist", value: "\(Int(value))")
     }
     
     // JSON Helper
-    class func dictionaryFromURL(urlString: String) throws -> [String: AnyObject] {
+    class func dictionaryFromURL(_ urlString: String) throws -> [String: AnyObject] {
         let explode = urlString.explode("/")
         if explode.count > 5 {
             let requestString = explode[5]
             let explodeRequest = requestString.explode("?")
             if explodeRequest.count > 0 {
                 let request = explodeRequest[0]
-                NSNotificationCenter.defaultCenter().postNotificationName(WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent, object: self, userInfo: ["request" : request])
+                NotificationCenter.default.postNotificationName(WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent, object: self, userInfo: ["request" : request])
             }
         }
-        if let url: NSURL = NSURL(string: urlString) {
-            let (data, _, error) = NSURLSession.sharedSession().synchronousDataTaskWithURL(url)
+        if let url: URL = URL(string: urlString) {
+            let (data, _, error) = URLSession.shared.synchronousDataTaskWithURL(url)
             
             if let result = data {
                 let dictionary = try self.responseDictionaryFromJSONData(result)
                 return dictionary
             } else {
                 if let letError = error {
-                    throw WeatherFlowApiError.ServerError(error: letError)
+                    throw WeatherFlowApiError.serverError(error: letError)
                 }
-                throw WeatherFlowApiError.Unknown
+                throw WeatherFlowApiError.unknown
             }
         } else {
-            throw WeatherFlowApiError.URLError
+            throw WeatherFlowApiError.urlError
         }
     }
     
-    class func responseDictionaryFromJSONData(data: NSData) throws -> [String: AnyObject] {
+    class func responseDictionaryFromJSONData(_ data: Data) throws -> [String: AnyObject] {
         do {
-            if let responseDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0)) as? [String: AnyObject] {
+            if let responseDictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? [String: AnyObject] {
                 return responseDictionary
             }
         } catch let error as NSError {
-            throw WeatherFlowApiError.JSonError(error: error)
+            throw WeatherFlowApiError.jSonError(error: error)
         }
-        throw WeatherFlowApiError.JSonError(error: nil)
+        throw WeatherFlowApiError.jSonError(error: nil)
     }
 
     
@@ -531,14 +531,14 @@ public class WeatherFlowApiSwift: NSObject {
     // TODO: Improve swift use
     static var arrowCache = [WeatherFlowArrowImage]()
     
-    class func windArrowWithSize(size: Float) -> UIImage {
-        let arrow: UIImage = self.windArrowWithSize(size, fillColor: UIColor.grayColor(), strokeColor: UIColor.grayColor())
+    class func windArrowWithSize(_ size: Float) -> UIImage {
+        let arrow: UIImage = self.windArrowWithSize(size, fillColor: UIColor.gray, strokeColor: UIColor.gray)
         return arrow
     }
     
-    class func windArrowWithSize(size: Float, fillColor: UIColor, strokeColor: UIColor) -> UIImage {
+    class func windArrowWithSize(_ size: Float, fillColor: UIColor, strokeColor: UIColor) -> UIImage {
         //Check for ready image in cache
-        var cache = self.arrowCache.filter { (var image) -> Bool in
+        var cache = self.arrowCache.filter { (image) -> Bool in
             return image.fillColor == fillColor && image.strokeColor == strokeColor && image.size == Int(size)
         }
             
@@ -552,29 +552,29 @@ public class WeatherFlowApiSwift: NSObject {
         var height: CGFloat = size.toCGFloat
         // Prepare Points
         var arrowWidth: CGFloat = 0.5 * width
-        var buttonLeftPoint: CGPoint = CGPointMake((width - arrowWidth) / 2.0, height * 0.9)
-        var buttonRightPoint: CGPoint = CGPointMake(buttonLeftPoint.x + arrowWidth, height * 0.9)
-        var topArrowPoint: CGPoint = CGPointMake(width / 2.0, 0.0)
-        var buttomMiddlePoint: CGPoint = CGPointMake(width / 2.0, 0.7 * height)
+        var buttonLeftPoint: CGPoint = CGPoint(x: (width - arrowWidth) / 2.0, y: height * 0.9)
+        var buttonRightPoint: CGPoint = CGPoint(x: buttonLeftPoint.x + arrowWidth, y: height * 0.9)
+        var topArrowPoint: CGPoint = CGPoint(x: width / 2.0, y: 0.0)
+        var buttomMiddlePoint: CGPoint = CGPoint(x: width / 2.0, y: 0.7 * height)
         // Start Context
-        UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), false, 0.0)
-        var context: CGContextRef = UIGraphicsGetCurrentContext()!
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: width, height: height), false, 0.0)
+        var context: CGContext = UIGraphicsGetCurrentContext()!
         // Prepare context parameters
-        CGContextSetLineWidth(context, 1)
-        CGContextSetStrokeColorWithColor(context, strokeColor.CGColor)
-        CGContextSetFillColorWithColor(context, fillColor.CGColor)
-        var pathRef: CGMutablePathRef = CGPathCreateMutable()
+        context.setLineWidth(1)
+        context.setStrokeColor(strokeColor.cgColor)
+        context.setFillColor(fillColor.cgColor)
+        var pathRef: CGMutablePath = CGMutablePath()
         CGPathMoveToPoint(pathRef, nil, topArrowPoint.x, topArrowPoint.y)
         CGPathAddLineToPoint(pathRef, nil, buttonLeftPoint.x, buttonLeftPoint.y)
         CGPathAddLineToPoint(pathRef, nil, buttomMiddlePoint.x, buttomMiddlePoint.y)
         CGPathAddLineToPoint(pathRef, nil, buttonRightPoint.x, buttonRightPoint.y)
         CGPathAddLineToPoint(pathRef, nil, topArrowPoint.x, topArrowPoint.y)
-        CGPathCloseSubpath(pathRef)
-        CGContextAddPath(context, pathRef)
-        CGContextFillPath(context)
-        CGContextAddPath(context, pathRef)
-        CGContextStrokePath(context)
-        var i: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        pathRef.closeSubpath()
+        context.addPath(pathRef)
+        context.fillPath()
+        context.addPath(pathRef)
+        context.strokePath()
+        var i: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         // Resize image.
         let newImage = WeatherFlowArrowImage(fillColor: fillColor, strokeColor: strokeColor, size: Int(size), image: i.copy() as! UIImage)
@@ -582,90 +582,90 @@ public class WeatherFlowApiSwift: NSObject {
         return i
     }
     
-    class func resizeImage(image: UIImage, to size: CGSize) -> UIImage {
-        if CGSizeEqualToSize(image.size, size) {
+    class func resizeImage(_ image: UIImage, to size: CGSize) -> UIImage {
+        if image.size.equalTo(size) {
             return image
         }
         NSLog("Resize")
-        UIGraphicsBeginImageContextWithOptions(CGSizeMake(size.width, size.height), false, 0.0)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: size.width, height: size.height), false, 0.0)
         // Set the quality level to use when rescaling
         //CGContextRef context = UIGraphicsGetCurrentContext();
         //CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
-        image.drawInRect(CGRectMake(0, 0, size.width, size.height))
-        var newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return newImage
     }
     
-    class func windArrowWithSize(size: Float, degrees: Float, fillColor: UIColor, strokeColor: UIColor, text: String) -> UIImage {
-        var image: UIImage = self.windArrowWithSize(size, fillColor: fillColor, strokeColor: strokeColor)
-        var i: UIImage = self.rotatedImage(image, degrees: degrees)
+    class func windArrowWithSize(_ size: Float, degrees: Float, fillColor: UIColor, strokeColor: UIColor, text: String) -> UIImage {
+        let image: UIImage = self.windArrowWithSize(size, fillColor: fillColor, strokeColor: strokeColor)
+        let i: UIImage = self.rotatedImage(image, degrees: degrees)
         // Resize
         //i = [self resizeImage:i to:CGSizeMake(size, size)];
         // Add Text
         return self.addText(text, toImage: i)
     }
     
-    class func windArrowWithText(text: String, degrees: Float) -> UIImage {
-        var image: UIImage = self.windArrowWithSize(30.0)
-        var i: UIImage = self.rotatedImage(image, degrees: degrees)
+    class func windArrowWithText(_ text: String, degrees: Float) -> UIImage {
+        let image: UIImage = self.windArrowWithSize(30.0)
+        let i: UIImage = self.rotatedImage(image, degrees: degrees)
         // Add Text
         return self.addText(text, toImage: i)
     }
     
-    class func waveArrowWithText(text: String, degrees: Float) -> UIImage {
-        let image: UIImage = self.windArrowWithSize(30, fillColor: UIColor.blueColor(), strokeColor: UIColor.blueColor())
+    class func waveArrowWithText(_ text: String, degrees: Float) -> UIImage {
+        let image: UIImage = self.windArrowWithSize(30, fillColor: UIColor.blue, strokeColor: UIColor.blue)
         // Create image
         let i: UIImage = self.rotatedImage(image, degrees: degrees)
         return self.addText(text, toImage: i)
     }
     
-    class func addText(text: String?, toImage image: UIImage) -> UIImage {
-        guard let text = text where text.length != 0 else {
+    class func addText(_ text: String?, toImage image: UIImage) -> UIImage {
+        guard let text = text , text.length != 0 else {
             return image
         }
-        var font: UIFont = UIFont.boldSystemFontOfSize(14.0)
-        var constrainSize: CGSize = CGSizeMake(30, image.size.height)
+        var font: UIFont = UIFont.boldSystemFont(ofSize: 14.0)
+        var constrainSize: CGSize = CGSize(width: 30, height: image.size.height)
         let string = text as NSString
-        var stringSize: CGSize = string.sizeWithAttributes([NSFontAttributeName: font])
-        stringSize = CGSizeMake(min(constrainSize.width, stringSize.width), min(constrainSize.height, stringSize.height))
-        var size: CGSize = CGSizeMake(image.size.width + stringSize.width, max(image.size.height, stringSize.height))
+        var stringSize: CGSize = string.size(attributes: [NSFontAttributeName: font])
+        stringSize = CGSize(width: min(constrainSize.width, stringSize.width), height: min(constrainSize.height, stringSize.height))
+        var size: CGSize = CGSize(width: image.size.width + stringSize.width, height: max(image.size.height, stringSize.height))
         UIGraphicsBeginImageContext(size)
         // Draw image
-        CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, image.size.width, image.size.height), image.CGImage)
+        UIGraphicsGetCurrentContext()?.draw(image.cgImage!, in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
         // Draw Text
-        CGContextSetRGBFillColor(UIGraphicsGetCurrentContext(), 0.0, 0.0, 0.0, 1.0)
-        var renderingRect: CGRect = CGRectMake(image.size.width, 0, stringSize.width, stringSize.height)
+        UIGraphicsGetCurrentContext()?.setFillColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        var renderingRect: CGRect = CGRect(x: image.size.width, y: 0, width: stringSize.width, height: stringSize.height)
         
         /// Make a copy of the default paragraph style
-        var paragraphStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        var paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         /// Set line break mode
-        paragraphStyle.lineBreakMode = NSLineBreakMode.ByCharWrapping
+        paragraphStyle.lineBreakMode = NSLineBreakMode.byCharWrapping
         /// Set text alignment
-        paragraphStyle.alignment = NSTextAlignment.Left
+        paragraphStyle.alignment = NSTextAlignment.left
         
-        let attributes = [NSFontAttributeName: font, NSParagraphStyleAttributeName: paragraphStyle]
+        let attributes = [NSFontAttributeName: font, NSParagraphStyleAttributeName: paragraphStyle] as [String : Any]
 
-        string.drawInRect(renderingRect, withAttributes: attributes)
+        string.draw(in: renderingRect, withAttributes: attributes)
         
-        var i: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        var i: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return i
     }
     
-    class func rotatedImage(image: UIImage, degrees: Float) -> UIImage {
+    class func rotatedImage(_ image: UIImage, degrees: Float) -> UIImage {
         // We add 180 to callibrate the arrow and then conver to radians.
         var rads: CGFloat = degrees.toCGFloat * (M_PI / 180.0)
         var newSide: CGFloat = max(image.size.width, image.size.height)
         // Start Context
-        var size: CGSize = CGSizeMake(newSide, newSide)
+        var size: CGSize = CGSize(width: newSide, height: newSide)
         UIGraphicsBeginImageContext(size)
-        var ctx: CGContextRef = UIGraphicsGetCurrentContext()!
-        CGContextTranslateCTM(ctx, newSide / 2, newSide / 2)
-        CGContextRotateCTM(ctx, rads)
-        CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(-image.size.width / 2, -image.size.height / 2, size.width, size.height), image.CGImage)
+        var ctx: CGContext = UIGraphicsGetCurrentContext()!
+        ctx.translateBy(x: newSide / 2, y: newSide / 2)
+        ctx.rotate(by: rads)
+        UIGraphicsGetCurrentContext()?.draw(image.cgImage!, in: CGRect(x: -image.size.width / 2, y: -image.size.height / 2, width: size.width, height: size.height))
         // Create image
-        var i: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        var i: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return i
     }

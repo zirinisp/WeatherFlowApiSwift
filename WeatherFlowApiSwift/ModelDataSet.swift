@@ -7,19 +7,19 @@
 //
 
 
-public class ModelDataSet: NSObject, NSCoding {
+open class ModelDataSet: NSObject, NSCoding {
 
-    public private (set) var model_name: String?
-    public private (set) var units_wind: String?
-    public private (set) var units_temp: String?
-    public private (set) var units_distance: String?
-    public private (set) var model_data: [ModelData]
-    public private (set) var status: Status?
-    public private (set) var max_wind: Double?
-    public private (set) var max_wind_dir_txt: String?
-    public private (set) var max_wind_time_local: String?
-    public private (set) var model_color: String?
-    public private (set) var spot: Spot?
+    open fileprivate (set) var model_name: String?
+    open fileprivate (set) var units_wind: String?
+    open fileprivate (set) var units_temp: String?
+    open fileprivate (set) var units_distance: String?
+    open fileprivate (set) var model_data: [ModelData]
+    open fileprivate (set) var status: Status?
+    open fileprivate (set) var max_wind: Double?
+    open fileprivate (set) var max_wind_dir_txt: String?
+    open fileprivate (set) var max_wind_time_local: String?
+    open fileprivate (set) var model_color: String?
+    open fileprivate (set) var spot: Spot?
     
     convenience public init?(dictionary: [String : AnyObject]) {
         self.init(dictionary: dictionary, andSpot: nil)
@@ -44,13 +44,13 @@ public class ModelDataSet: NSObject, NSCoding {
                     updateLocation = true
                 }
                 if updateLocation {
-                    if let lon = spot?.lon, lat = spot?.lat {
-                        modelDataDic["lat"] = Int(lat)
-                        modelDataDic["lon"] = Int(lon)
+                    if let lon = spot?.lon, let lat = spot?.lat {
+                        modelDataDic["lat"] = Int(lat) as AnyObject?
+                        modelDataDic["lon"] = Int(lon) as AnyObject?
                     }
                     
                 }
-                let modelData = ModelData(dictionary: modelDataDic)
+                let modelData = ModelData(dictionary: modelDataDic as [NSObject : AnyObject])
                 model_data.append(modelData)
             }
             self.init(model_data: model_data)
@@ -71,42 +71,42 @@ public class ModelDataSet: NSObject, NSCoding {
         model_color = (dictionary["model_color"] as? String)
     }
     
-    public override var description: String {
+    open override var description: String {
         let description: String = "\(self.model_name) \(self.status) \(self.spot)"
-        return "<\(self.dynamicType): \(self), \(description)>"
+        return "<\(type(of: self)): \(self), \(description)>"
     }
     //===========================================================
     //  Keyed Archiving
     //
     //===========================================================
     
-    public func encodeWithCoder(encoder: NSCoder) {
-        encoder.encodeObject(self.units_wind, forKey: "units_wind")
-        encoder.encodeObject(self.units_temp, forKey: "units_temp")
-        encoder.encodeObject(self.units_distance, forKey: "units_distance")
-        encoder.encodeObject(self.model_data, forKey: "model_data")
-        encoder.encodeObject(self.status, forKey: "status")
-        encoder.encodeObject(self.max_wind, forKey: "max_wind")
-        encoder.encodeObject(self.max_wind_dir_txt, forKey: "max_wind_dir_txt")
-        encoder.encodeObject(self.max_wind_time_local, forKey: "max_wind_time_local")
-        encoder.encodeObject(self.model_color, forKey: "model_color")
-        encoder.encodeObject(self.spot, forKey: "spot")
+    open func encode(with encoder: NSCoder) {
+        encoder.encode(self.units_wind, forKey: "units_wind")
+        encoder.encode(self.units_temp, forKey: "units_temp")
+        encoder.encode(self.units_distance, forKey: "units_distance")
+        encoder.encode(self.model_data, forKey: "model_data")
+        encoder.encode(self.status, forKey: "status")
+        encoder.encode(self.max_wind, forKey: "max_wind")
+        encoder.encode(self.max_wind_dir_txt, forKey: "max_wind_dir_txt")
+        encoder.encode(self.max_wind_time_local, forKey: "max_wind_time_local")
+        encoder.encode(self.model_color, forKey: "model_color")
+        encoder.encode(self.spot, forKey: "spot")
     }
     
     convenience required public init?(coder decoder: NSCoder) {
-        if let model_data = decoder.decodeObjectForKey("model_data") as? [ModelData] {
+        if let model_data = decoder.decodeObject(forKey: "model_data") as? [ModelData] {
             self.init(model_data: model_data)
         } else {
             return nil
         }
-        units_wind = decoder.decodeObjectForKey("units_wind") as? String
-        units_temp = decoder.decodeObjectForKey("units_temp") as? String
-        units_distance = decoder.decodeObjectForKey("units_distance") as? String
-        status = decoder.decodeObjectForKey("status") as? Status
-        max_wind = decoder.decodeObjectForKey("max_wind") as? Double
-        max_wind_dir_txt = decoder.decodeObjectForKey("max_wind_dir_txt") as? String
-        max_wind_time_local = decoder.decodeObjectForKey("max_wind_time_local") as? String
-        model_color = decoder.decodeObjectForKey("model_color") as? String
-        spot = decoder.decodeObjectForKey("spot") as? Spot
+        units_wind = decoder.decodeObject(forKey: "units_wind") as? String
+        units_temp = decoder.decodeObject(forKey: "units_temp") as? String
+        units_distance = decoder.decodeObject(forKey: "units_distance") as? String
+        status = decoder.decodeObject(forKey: "status") as? Status
+        max_wind = decoder.decodeObject(forKey: "max_wind") as? Double
+        max_wind_dir_txt = decoder.decodeObject(forKey: "max_wind_dir_txt") as? String
+        max_wind_time_local = decoder.decodeObject(forKey: "max_wind_time_local") as? String
+        model_color = decoder.decodeObject(forKey: "model_color") as? String
+        spot = decoder.decodeObject(forKey: "spot") as? Spot
     }
 }

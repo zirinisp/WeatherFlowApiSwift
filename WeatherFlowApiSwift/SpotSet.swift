@@ -8,28 +8,28 @@
 
 import Foundation
 
-public class SpotSet {
+open class SpotSet {
     
-    public var spots = [Spot]()
-    public var status: Status?
-    public var search_lat: Double?
-    public var search_lon: Double?
-    public var search_dist: Int?
-    public var spot_count: Int?
-    public var num_per_page: Int?
-    public var page: Int?
-    public var units_temp: String?
-    public var units_wind: String?
-    public var profile_name: String?
-    public var profile_id: Int?
-    public var units_distance: String?
-    public var profile_alerts_enabled: Bool?
-    public var accuracy: Int?
-    public var current_time_utc: String?
-    public var current_time_local: String?
-    public var center_lat: Double?
-    public var center_lon: Double?
-    public var profile: Profile?
+    open var spots = [Spot]()
+    open var status: Status?
+    open var search_lat: Double?
+    open var search_lon: Double?
+    open var search_dist: Int?
+    open var spot_count: Int?
+    open var num_per_page: Int?
+    open var page: Int?
+    open var units_temp: String?
+    open var units_wind: String?
+    open var profile_name: String?
+    open var profile_id: Int?
+    open var units_distance: String?
+    open var profile_alerts_enabled: Bool?
+    open var accuracy: Int?
+    open var current_time_utc: String?
+    open var current_time_local: String?
+    open var center_lat: Double?
+    open var center_lon: Double?
+    open var profile: Profile?
     
     convenience public init(dictionary: [String : AnyObject]) {
         self.init()
@@ -65,19 +65,19 @@ public class SpotSet {
     
     func description() -> String {
         let description: String = "%0.4f %0.4f\n\(self.search_lat)"
-        return "<\(self.dynamicType): \(self), \(description)>"
+        return "<\(type(of: self)): \(self), \(description)>"
     }
     
-    func setSpotsWithNames(data_names: [String]?, values data_values: [[AnyObject]]?) {
+    func setSpotsWithNames(_ data_names: [String]?, values data_values: [[AnyObject]]?) {
         var array: [Spot] = [Spot]()
-        if let names = data_names, values = data_values {
+        if let names = data_names, let values = data_values {
             for values: [AnyObject] in values {
                 var dictionary: [String : AnyObject] = [String : AnyObject]()
                 var index: Int = 0
                 for key: String in names {
                     let value: AnyObject = values[index]
                     dictionary[key] = value
-                    index++
+                    index += 1
                 }
                 if let spot: Spot = Spot(dictionary: dictionary) {
                     array.append(spot)                    

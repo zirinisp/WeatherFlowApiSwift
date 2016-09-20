@@ -7,13 +7,13 @@
 //
 
 
-public class SpotStats {
+open class SpotStats {
 
-    public private (set) var spot_id: Int!
-    public private (set) var name: String?
-    public private (set) var status: Status?
-    public private (set) var start_month: String?
-    public private (set) var year_stats: [YearStat]?
+    open fileprivate (set) var spot_id: Int!
+    open fileprivate (set) var name: String?
+    open fileprivate (set) var status: Status?
+    open fileprivate (set) var start_month: String?
+    open fileprivate (set) var year_stats: [YearStat]?
     
     public init?(spot_id: Int, dictionary: [String : AnyObject]) {
         self.spot_id = spot_id
@@ -33,7 +33,7 @@ public class SpotStats {
         self.year_stats = year_stats
     }
 
-    public var valid: Bool {
+    open var valid: Bool {
         guard let year_stats = self.year_stats else {
             return false
         }
@@ -42,41 +42,41 @@ public class SpotStats {
 }
 
 public enum YearStatMonth: Int {
-    case Jan
-    case Feb
-    case Mar
-    case Apr
-    case May
-    case Jun
-    case Jul
-    case Aug
-    case Sep
-    case Oct
-    case Nov
-    case Dec
+    case jan
+    case feb
+    case mar
+    case apr
+    case may
+    case jun
+    case jul
+    case aug
+    case sep
+    case oct
+    case nov
+    case dec
     
     public static let AllValues: [YearStatMonth] = {
-        return [.Jan, .Feb, .Mar, .Apr, .May, .Jun, .Jul, .Aug, .Sep, .Oct, .Nov, .Dec]
+        return [.jan, .feb, .mar, .apr, .may, .jun, .jul, .aug, .sep, .oct, .nov, .dec]
     }()
 }
 
 public enum YearStatDirection: Int {
-    case N
-    case NNE
-    case NE
-    case ENE
-    case E
-    case ESE
-    case SE
-    case SSE
-    case S
-    case SSW
-    case SW
-    case WSW
-    case W
-    case WNW
-    case NW
-    case NNW
+    case n
+    case nne
+    case ne
+    case ene
+    case e
+    case ese
+    case se
+    case sse
+    case s
+    case ssw
+    case sw
+    case wsw
+    case w
+    case wnw
+    case nw
+    case nnw
     
     /// Initialize with direction in degrees
     public init?(direction: Int) {
@@ -100,36 +100,36 @@ public enum YearStatDirection: Int {
     }()
 }
 
-public class YearStat {
-    public private (set) var year: String!
+open class YearStat {
+    open fileprivate (set) var year: String!
     
-    public private (set) var avg_t0: [YearStatMonth: Int]?
-    public private (set) var avg_t5: [YearStatMonth: Int]?
-    public private (set) var avg_t10: [YearStatMonth: Int]?
-    public private (set) var avg_t15: [YearStatMonth: Int]?
-    public private (set) var avg_t20: [YearStatMonth: Int]?
-    public private (set) var avg_t25: [YearStatMonth: Int]?
+    open fileprivate (set) var avg_t0: [YearStatMonth: Int]?
+    open fileprivate (set) var avg_t5: [YearStatMonth: Int]?
+    open fileprivate (set) var avg_t10: [YearStatMonth: Int]?
+    open fileprivate (set) var avg_t15: [YearStatMonth: Int]?
+    open fileprivate (set) var avg_t20: [YearStatMonth: Int]?
+    open fileprivate (set) var avg_t25: [YearStatMonth: Int]?
 
-    public private (set) var gust_t0: [YearStatMonth: Int]?
-    public private (set) var gust_t5: [YearStatMonth: Int]?
-    public private (set) var gust_t10: [YearStatMonth: Int]?
-    public private (set) var gust_t15: [YearStatMonth: Int]?
-    public private (set) var gust_t20: [YearStatMonth: Int]?
-    public private (set) var gust_t25: [YearStatMonth: Int]?
+    open fileprivate (set) var gust_t0: [YearStatMonth: Int]?
+    open fileprivate (set) var gust_t5: [YearStatMonth: Int]?
+    open fileprivate (set) var gust_t10: [YearStatMonth: Int]?
+    open fileprivate (set) var gust_t15: [YearStatMonth: Int]?
+    open fileprivate (set) var gust_t20: [YearStatMonth: Int]?
+    open fileprivate (set) var gust_t25: [YearStatMonth: Int]?
 
-    public private (set) var dir_avg_t0: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_avg_t5: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_avg_t10: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_avg_t15: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_avg_t20: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_avg_t25: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_avg_t0: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_avg_t5: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_avg_t10: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_avg_t15: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_avg_t20: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_avg_t25: [YearStatMonth: [YearStatDirection: Int]]?
 
-    public private (set) var dir_gust_t0: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_gust_t5: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_gust_t10: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_gust_t15: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_gust_t20: [YearStatMonth: [YearStatDirection: Int]]?
-    public private (set) var dir_gust_t25: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_gust_t0: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_gust_t5: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_gust_t10: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_gust_t15: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_gust_t20: [YearStatMonth: [YearStatDirection: Int]]?
+    open fileprivate (set) var dir_gust_t25: [YearStatMonth: [YearStatDirection: Int]]?
     
 
     public init?(dictionary: [String : AnyObject]) {
@@ -216,15 +216,15 @@ public class YearStat {
         }
     }
     
-    class func convertStringToMonthDictionary(stringArray: String) -> [YearStatMonth: Int]? {
+    class func convertStringToMonthDictionary(_ stringArray: String) -> [YearStatMonth: Int]? {
         var monthDic = [YearStatMonth: Int]()
         var string: String = stringArray
-        string = string.stringByReplacingOccurrencesOfString("[", withString: "")
-        string = string.stringByReplacingOccurrencesOfString("]", withString: "")
-        string = string.stringByReplacingOccurrencesOfString(" ", withString: "")
+        string = string.replacingOccurrences(of: "[", with: "")
+        string = string.replacingOccurrences(of: "]", with: "")
+        string = string.replacingOccurrences(of: " ", with: "")
 
-        let array = string.componentsSeparatedByString(",")
-        for (index, numOfDays) in array.enumerate() {
+        let array = string.components(separatedBy: ",")
+        for (index, numOfDays) in array.enumerated() {
             if let month = YearStatMonth(rawValue: index) {
                 if let num = numOfDays.toUInt() {
                     monthDic[month] = Int(num)
@@ -234,21 +234,21 @@ public class YearStat {
         return monthDic
     }
 
-    class func convertStringToMonthDirectionDictionary(inputString: String) -> [YearStatMonth: [YearStatDirection: Int]]? {
-        let yearStringArray = inputString.componentsSeparatedByString("],")
+    class func convertStringToMonthDirectionDictionary(_ inputString: String) -> [YearStatMonth: [YearStatDirection: Int]]? {
+        let yearStringArray = inputString.components(separatedBy: "],")
 
         var monthDic = [YearStatMonth: [YearStatDirection: Int]]()
-        for (monthIndex, monthStringArray) in yearStringArray.enumerate() {
+        for (monthIndex, monthStringArray) in yearStringArray.enumerated() {
             if let month = YearStatMonth(rawValue: monthIndex) {
                 var string: String = monthStringArray
-                string = string.stringByReplacingOccurrencesOfString("[", withString: "")
-                string = string.stringByReplacingOccurrencesOfString("]", withString: "")
-                string = string.stringByReplacingOccurrencesOfString(" ", withString: "")
+                string = string.replacingOccurrences(of: "[", with: "")
+                string = string.replacingOccurrences(of: "]", with: "")
+                string = string.replacingOccurrences(of: " ", with: "")
                 
-                let directionArray = string.componentsSeparatedByString(",")
+                let directionArray = string.components(separatedBy: ",")
                 var directionDic = [YearStatDirection: Int]()
-                for (directionIndex, num) in directionArray.enumerate() {
-                    if let direction = YearStatDirection(rawValue: directionIndex), stat = num.toUInt() {
+                for (directionIndex, num) in directionArray.enumerated() {
+                    if let direction = YearStatDirection(rawValue: directionIndex), let stat = num.toUInt() {
                         directionDic[direction] = Int(stat)
                     }
                 }

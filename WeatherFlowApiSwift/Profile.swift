@@ -7,30 +7,30 @@
 //
 
 
-public class Profile {
-    public private (set) var profile_id: Int?
-    public private (set) var name: String?
-    public private (set) var master: Bool?
-    public private (set) var alerts_enabled: Bool?
-    public private (set) var created_by: String?
-    public private (set) var date_created: String?
-    public private (set) var lat_center: Double?
-    public private (set) var lon_center: Double?
-    public private (set) var lat_max: Double?
-    public private (set) var lat_min: Double?
-    public private (set) var lon_max: Double?
-    public private (set) var lon_min: Double?
-    public private (set) var views: Int?
-    public private (set) var activity: String?
-    public private (set) var my_profile: Bool?
-    public private (set) var follower_count: Int?
-    public private (set) var spot_count: Int?
-    public private (set) var current_cond_count: Int?
-    public private (set) var model_table_count: Int?
-    public private (set) var stats_count: Int?
-    public private (set) var archive_count: Int?
-    public private (set) var map_count: Int?
-    public private (set) var description: String?
+open class Profile {
+    open fileprivate (set) var profile_id: Int?
+    open fileprivate (set) var name: String?
+    open fileprivate (set) var master: Bool?
+    open fileprivate (set) var alerts_enabled: Bool?
+    open fileprivate (set) var created_by: String?
+    open fileprivate (set) var date_created: String?
+    open fileprivate (set) var lat_center: Double?
+    open fileprivate (set) var lon_center: Double?
+    open fileprivate (set) var lat_max: Double?
+    open fileprivate (set) var lat_min: Double?
+    open fileprivate (set) var lon_max: Double?
+    open fileprivate (set) var lon_min: Double?
+    open fileprivate (set) var views: Int?
+    open fileprivate (set) var activity: String?
+    open fileprivate (set) var my_profile: Bool?
+    open fileprivate (set) var follower_count: Int?
+    open fileprivate (set) var spot_count: Int?
+    open fileprivate (set) var current_cond_count: Int?
+    open fileprivate (set) var model_table_count: Int?
+    open fileprivate (set) var stats_count: Int?
+    open fileprivate (set) var archive_count: Int?
+    open fileprivate (set) var map_count: Int?
+    open fileprivate (set) var description: String?
     
     convenience public init(dictionary: [String : AnyObject]) {
         self.init()

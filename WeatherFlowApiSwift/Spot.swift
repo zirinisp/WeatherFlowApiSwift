@@ -10,41 +10,41 @@ import Foundation
 import MapKit
 import PazHelperSwift
 
-public class Spot: NSObject, MKAnnotation {
+open class Spot: NSObject, MKAnnotation {
     
-    public private (set) var spot_id: Int
-    public private (set) var name: String?
-    public private (set) var type: Int?
-    public private (set) var distance: Double?
-    public private (set) var lat: Double?
-    public private (set) var lon: Double?
-    public private (set) var provider: Int?
-    public private (set) var region_id: Int?
-    public private (set) var is_favorite: Bool?
-    public private (set) var wind_alert_exists: Bool?
-    public private (set) var wind_alert_active: Bool?
-    public private (set) var upgrade_available: Bool?
-    public private (set) var timestamp: String?
-    public private (set) var avg: Double?
-    public private (set) var lull: Double?
-    public private (set) var gust: Double?
-    public private (set) var dir: Int?
-    public private (set) var dir_text: String?
-    public private (set) var atemp: Double?
-    public private (set) var wtemp: Double?
-    public private (set) var status: Status?
-    public private (set) var spot_message: String?
-    public private (set) var source_message: String?
-    public private (set) var rank: Double?
-    public private (set) var fav_sort_order: Int?
-    public private (set) var wave_height: Double?
-    public private (set) var wave_period: Double?
-    public private (set) var current_time_local: String?
-    public private (set) var pres: Double?
-    public private (set) var timezone: String?
-    public private (set) var favorite_lists: String?
-    public private (set) var fav_spot_id: Int?
-    public private (set) var wind_desc: String?
+    open fileprivate (set) var spot_id: Int
+    open fileprivate (set) var name: String?
+    open fileprivate (set) var type: Int?
+    open fileprivate (set) var distance: Double?
+    open fileprivate (set) var lat: Double?
+    open fileprivate (set) var lon: Double?
+    open fileprivate (set) var provider: Int?
+    open fileprivate (set) var region_id: Int?
+    open fileprivate (set) var is_favorite: Bool?
+    open fileprivate (set) var wind_alert_exists: Bool?
+    open fileprivate (set) var wind_alert_active: Bool?
+    open fileprivate (set) var upgrade_available: Bool?
+    open fileprivate (set) var timestamp: String?
+    open fileprivate (set) var avg: Double?
+    open fileprivate (set) var lull: Double?
+    open fileprivate (set) var gust: Double?
+    open fileprivate (set) var dir: Int?
+    open fileprivate (set) var dir_text: String?
+    open fileprivate (set) var atemp: Double?
+    open fileprivate (set) var wtemp: Double?
+    open fileprivate (set) var status: Status?
+    open fileprivate (set) var spot_message: String?
+    open fileprivate (set) var source_message: String?
+    open fileprivate (set) var rank: Double?
+    open fileprivate (set) var fav_sort_order: Int?
+    open fileprivate (set) var wave_height: Double?
+    open fileprivate (set) var wave_period: Double?
+    open fileprivate (set) var current_time_local: String?
+    open fileprivate (set) var pres: Double?
+    open fileprivate (set) var timezone: String?
+    open fileprivate (set) var favorite_lists: String?
+    open fileprivate (set) var fav_spot_id: Int?
+    open fileprivate (set) var wind_desc: String?
 
     public init(spot_id : Int) {
         self.spot_id = spot_id
@@ -98,89 +98,89 @@ public class Spot: NSObject, MKAnnotation {
     //
     //===========================================================
     
-    func encodeWithCoder(encoder: NSCoder) {
-        encoder.encodeObject(self.spot_id, forKey: "spot_id")
-        encoder.encodeObject(self.name, forKey: "name")
-        encoder.encodeObject(self.type, forKey: "type")
-        encoder.encodeObject(self.distance, forKey: "distance")
-        encoder.encodeObject(self.lat, forKey: "lat")
-        encoder.encodeObject(self.lon, forKey: "lon")
-        encoder.encodeObject(self.provider, forKey: "provider")
-        encoder.encodeObject(self.region_id, forKey: "region_id")
-        encoder.encodeObject(self.is_favorite, forKey: "is_favorite")
-        encoder.encodeObject(self.wind_alert_exists, forKey: "wind_alert_exists")
-        encoder.encodeObject(self.wind_alert_active, forKey: "wind_alert_active")
-        encoder.encodeObject(self.upgrade_available, forKey: "upgrade_available")
-        encoder.encodeObject(self.timestamp, forKey: "timestamp")
-        encoder.encodeObject(self.avg, forKey: "avg")
-        encoder.encodeObject(self.lull, forKey: "lull")
-        encoder.encodeObject(self.gust, forKey: "gust")
-        encoder.encodeObject(self.dir, forKey: "dir")
-        encoder.encodeObject(self.dir_text, forKey: "dir_text")
-        encoder.encodeObject(self.atemp, forKey: "atemp")
-        encoder.encodeObject(self.wtemp, forKey: "wtemp")
-        encoder.encodeObject(self.status, forKey: "status")
-        encoder.encodeObject(self.spot_message, forKey: "spot_message")
-        encoder.encodeObject(self.source_message, forKey: "source_message")
-        encoder.encodeObject(self.rank, forKey: "rank")
-        encoder.encodeObject(self.fav_sort_order, forKey: "fav_sort_order")
-        encoder.encodeObject(self.wave_height, forKey: "wave_height")
-        encoder.encodeObject(self.wave_period, forKey: "wave_period")
-        encoder.encodeObject(self.current_time_local, forKey: "current_time_local")
-        encoder.encodeObject(self.pres, forKey: "pres")
-        encoder.encodeObject(self.timezone, forKey: "timezone")
-        encoder.encodeObject(self.favorite_lists, forKey: "favorite_lists")
-        encoder.encodeObject(self.fav_spot_id, forKey: "fav_spot_id")
-        encoder.encodeObject(self.wind_desc, forKey: "wind_desc")
+    func encodeWithCoder(_ encoder: NSCoder) {
+        encoder.encode(self.spot_id, forKey: "spot_id")
+        encoder.encode(self.name, forKey: "name")
+        encoder.encode(self.type, forKey: "type")
+        encoder.encode(self.distance, forKey: "distance")
+        encoder.encode(self.lat, forKey: "lat")
+        encoder.encode(self.lon, forKey: "lon")
+        encoder.encode(self.provider, forKey: "provider")
+        encoder.encode(self.region_id, forKey: "region_id")
+        encoder.encode(self.is_favorite, forKey: "is_favorite")
+        encoder.encode(self.wind_alert_exists, forKey: "wind_alert_exists")
+        encoder.encode(self.wind_alert_active, forKey: "wind_alert_active")
+        encoder.encode(self.upgrade_available, forKey: "upgrade_available")
+        encoder.encode(self.timestamp, forKey: "timestamp")
+        encoder.encode(self.avg, forKey: "avg")
+        encoder.encode(self.lull, forKey: "lull")
+        encoder.encode(self.gust, forKey: "gust")
+        encoder.encode(self.dir, forKey: "dir")
+        encoder.encode(self.dir_text, forKey: "dir_text")
+        encoder.encode(self.atemp, forKey: "atemp")
+        encoder.encode(self.wtemp, forKey: "wtemp")
+        encoder.encode(self.status, forKey: "status")
+        encoder.encode(self.spot_message, forKey: "spot_message")
+        encoder.encode(self.source_message, forKey: "source_message")
+        encoder.encode(self.rank, forKey: "rank")
+        encoder.encode(self.fav_sort_order, forKey: "fav_sort_order")
+        encoder.encode(self.wave_height, forKey: "wave_height")
+        encoder.encode(self.wave_period, forKey: "wave_period")
+        encoder.encode(self.current_time_local, forKey: "current_time_local")
+        encoder.encode(self.pres, forKey: "pres")
+        encoder.encode(self.timezone, forKey: "timezone")
+        encoder.encode(self.favorite_lists, forKey: "favorite_lists")
+        encoder.encode(self.fav_spot_id, forKey: "fav_spot_id")
+        encoder.encode(self.wind_desc, forKey: "wind_desc")
     }
     
     convenience required public init?(coder decoder: NSCoder) {
-        if let spot_id = decoder.decodeObjectForKey("spot_id") as? Int {
+        if let spot_id = decoder.decodeObject(forKey: "spot_id") as? Int {
             self.init(spot_id: spot_id)
         } else {
             return nil
         }
-        name = decoder.decodeObjectForKey("name") as? String
-        type = decoder.decodeObjectForKey("type") as? Int
-        distance = decoder.decodeObjectForKey("distance") as? Double
-        lat = decoder.decodeObjectForKey("lat") as? Double
-        lon = decoder.decodeObjectForKey("lon") as? Double
-        provider = decoder.decodeObjectForKey("provider") as? Int
-        region_id = decoder.decodeObjectForKey("region_id") as? Int
-        is_favorite = decoder.decodeObjectForKey("is_favorite") as? Bool
-        wind_alert_exists = decoder.decodeObjectForKey("wind_alert_exists") as? Bool
-        wind_alert_active = decoder.decodeObjectForKey("wind_alert_active") as? Bool
-        upgrade_available = decoder.decodeObjectForKey("upgrade_available") as? Bool
-        timestamp = decoder.decodeObjectForKey("timestamp") as? String
-        avg = decoder.decodeObjectForKey("avg") as? Double
-        lull = decoder.decodeObjectForKey("lull") as? Double
-        gust = decoder.decodeObjectForKey("gust") as? Double
-        dir = decoder.decodeObjectForKey("dir") as? Int
-        dir_text = decoder.decodeObjectForKey("dir_text") as? String
-        atemp = decoder.decodeObjectForKey("atemp") as? Double
-        wtemp = decoder.decodeObjectForKey("wtemp") as? Double
-        status = decoder.decodeObjectForKey("status") as? Status
-        spot_message = decoder.decodeObjectForKey("spot_message") as? String
-        source_message = decoder.decodeObjectForKey("source_message") as? String
-        rank = decoder.decodeObjectForKey("rank") as? Double
-        fav_sort_order = decoder.decodeObjectForKey("fav_sort_order") as? Int
-        wave_height = decoder.decodeObjectForKey("wave_height") as? Double
-        wave_period = decoder.decodeObjectForKey("wave_period") as? Double
-        current_time_local = decoder.decodeObjectForKey("current_time_local") as? String
-        pres = decoder.decodeObjectForKey("pres") as? Double
-        timezone = decoder.decodeObjectForKey("timezone") as? String
-        favorite_lists = decoder.decodeObjectForKey("favorite_lists") as? String
-        fav_spot_id = decoder.decodeObjectForKey("fav_spot_id") as? Int
-        wind_desc = decoder.decodeObjectForKey("wind_desc") as? String
+        name = decoder.decodeObject(forKey: "name") as? String
+        type = decoder.decodeObject(forKey: "type") as? Int
+        distance = decoder.decodeObject(forKey: "distance") as? Double
+        lat = decoder.decodeObject(forKey: "lat") as? Double
+        lon = decoder.decodeObject(forKey: "lon") as? Double
+        provider = decoder.decodeObject(forKey: "provider") as? Int
+        region_id = decoder.decodeObject(forKey: "region_id") as? Int
+        is_favorite = decoder.decodeObject(forKey: "is_favorite") as? Bool
+        wind_alert_exists = decoder.decodeObject(forKey: "wind_alert_exists") as? Bool
+        wind_alert_active = decoder.decodeObject(forKey: "wind_alert_active") as? Bool
+        upgrade_available = decoder.decodeObject(forKey: "upgrade_available") as? Bool
+        timestamp = decoder.decodeObject(forKey: "timestamp") as? String
+        avg = decoder.decodeObject(forKey: "avg") as? Double
+        lull = decoder.decodeObject(forKey: "lull") as? Double
+        gust = decoder.decodeObject(forKey: "gust") as? Double
+        dir = decoder.decodeObject(forKey: "dir") as? Int
+        dir_text = decoder.decodeObject(forKey: "dir_text") as? String
+        atemp = decoder.decodeObject(forKey: "atemp") as? Double
+        wtemp = decoder.decodeObject(forKey: "wtemp") as? Double
+        status = decoder.decodeObject(forKey: "status") as? Status
+        spot_message = decoder.decodeObject(forKey: "spot_message") as? String
+        source_message = decoder.decodeObject(forKey: "source_message") as? String
+        rank = decoder.decodeObject(forKey: "rank") as? Double
+        fav_sort_order = decoder.decodeObject(forKey: "fav_sort_order") as? Int
+        wave_height = decoder.decodeObject(forKey: "wave_height") as? Double
+        wave_period = decoder.decodeObject(forKey: "wave_period") as? Double
+        current_time_local = decoder.decodeObject(forKey: "current_time_local") as? String
+        pres = decoder.decodeObject(forKey: "pres") as? Double
+        timezone = decoder.decodeObject(forKey: "timezone") as? String
+        favorite_lists = decoder.decodeObject(forKey: "favorite_lists") as? String
+        fav_spot_id = decoder.decodeObject(forKey: "fav_spot_id") as? Int
+        wind_desc = decoder.decodeObject(forKey: "wind_desc") as? String
     }
     
-    public override var description: String {
+    open override var description: String {
         let description: String = "\(IntOrZero(self.spot_id)) \(self.name) %0.4f %0.4f"
-        return "<\(self.dynamicType): \(self), \(description)>"
+        return "<\(type(of: self)): \(self), \(description)>"
     }
     
-    public var coordinate: CLLocationCoordinate2D {
-        if let lat = self.lat, lon = self.lon {
+    open var coordinate: CLLocationCoordinate2D {
+        if let lat = self.lat, let lon = self.lon {
             let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, lon)
             if CLLocationCoordinate2DIsValid(coordinate) {
                 return coordinate
@@ -189,16 +189,16 @@ public class Spot: NSObject, MKAnnotation {
         return kCLLocationCoordinate2DInvalid
     }
     
-    public var title: String? {
+    open var title: String? {
         return self.name
     }
     
-    public var subtitle: String? {
+    open var subtitle: String? {
         return self.wind_desc
     }
     
-    private var annotationView__: MKAnnotationView?
-    public var annotationView: MKAnnotationView {
+    fileprivate var annotationView__: MKAnnotationView?
+    open var annotationView: MKAnnotationView {
         if let view = self.annotationView__ {
             return view
         } else {
@@ -210,7 +210,7 @@ public class Spot: NSObject, MKAnnotation {
                     windImage = UIImage(named: "mapnowind.png")
                 } else {
                     var live: Bool = (self.type == 1)
-                    var color: UIColor = live ? UIColor.grayColor() : UIColor.lightGrayColor()
+                    var color: UIColor = live ? UIColor.gray : UIColor.lightGray
                     windImage = WeatherFlowApiSwift.windArrowWithSize(100.0, degrees: Float(DoubleOrZero(self.dir)), fillColor: color, strokeColor: color, text: "")
                     windText = String(format: "%0.0f", avg)
                 }
@@ -219,15 +219,15 @@ public class Spot: NSObject, MKAnnotation {
             }
             
             var windImageView: UIImageView = UIImageView(image: windImage)
-            windImageView.frame = CGRectMake(0, 0, 30, 30)
+            windImageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             view.addSubview(windImageView)
             var rect: CGRect = view.frame
             rect.size = windImageView.frame.size
             if let text = windText {
                 var label: UILabel = UILabel()
                 label.text = text
-                label.textColor = UIColor.grayColor()
-                label.backgroundColor = UIColor.clearColor()
+                label.textColor = UIColor.gray
+                label.backgroundColor = UIColor.clear
                 label.sizeToFit()
                 var labelFrame: CGRect = label.frame
                 labelFrame.origin.x = 30
@@ -238,14 +238,14 @@ public class Spot: NSObject, MKAnnotation {
             view.frame = rect
             //        view.image = windImage;
             view.canShowCallout = true
-            var infoButton: UIButton = UIButton(type: .DetailDisclosure)
+            var infoButton: UIButton = UIButton(type: .detailDisclosure)
             view.rightCalloutAccessoryView = infoButton
             annotationView__ = view
             return view
         }
     }
     
-    public override func isEqual(object: AnyObject?) -> Bool {
+    open override func isEqual(_ object: Any?) -> Bool {
         if !(object is Spot) {
             return false
         }
@@ -253,16 +253,16 @@ public class Spot: NSObject, MKAnnotation {
         return spot.spot_id == self.spot_id
     }
     
-    public func distanceFrom(location: CLLocation) -> CLLocationDistance? {
+    open func distanceFrom(_ location: CLLocation) -> CLLocationDistance? {
         if CLLocationCoordinate2DIsValid(self.coordinate) {
             let loc: CLLocation = CLLocation(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
-            let dist: CLLocationDistance = loc.distanceFromLocation(location)
+            let dist: CLLocationDistance = loc.distance(from: location)
             return dist
         }
         return nil
     }
     
-    public func getModelData() -> ModelDataSet? {
+    open func getModelData() -> ModelDataSet? {
         do {
             return try WeatherFlowApiSwift.getModelDataBySpot(self)
         } catch {
@@ -270,7 +270,7 @@ public class Spot: NSObject, MKAnnotation {
         }
     }
     
-    public func getModelDataError() throws -> ModelDataSet? {
+    open func getModelDataError() throws -> ModelDataSet? {
         return try WeatherFlowApiSwift.getModelDataBySpot(self)
     }
 

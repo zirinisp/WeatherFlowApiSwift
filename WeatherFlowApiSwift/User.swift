@@ -6,7 +6,7 @@
 //  Copyright © 2015 Pantelis Zirinis. All rights reserved.
 //
 
-public class User {
+open class User {
     static var Key = "wf_user"
     
     var wf_username: String?
@@ -28,9 +28,9 @@ public class User {
     var messages: [AnyObject]?
     var non_trial_member_level: Int?
     var non_trial_member_level_name: String?
-    var trialEndDate: NSDate?
+    var trialEndDate: Date?
     
-    convenience public init(dictionary: [NSObject : AnyObject]) {
+    convenience public init(dictionary: [AnyHashable: Any]) {
         self.init()
         wf_username = (dictionary["wf_username"] as? String)
         email = (dictionary["email"] as? String)
@@ -51,6 +51,6 @@ public class User {
         messages = (dictionary["messages"] as? [AnyObject])
         non_trial_member_level = (dictionary["non_trial_member_level"] as? Int)
         non_trial_member_level_name = (dictionary["non_trial_member_level_name"] as? String)
-        trialEndDate = (dictionary["trialEndDate"] as? NSDate)
+        trialEndDate = (dictionary["trialEndDate"] as? Date)
     }
 }

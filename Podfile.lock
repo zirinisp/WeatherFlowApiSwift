@@ -1,0 +1,16 @@
+PODS:
+  - PazHelperSwift (0.1.1)
+
+DEPENDENCIES:
+  - PazHelperSwift (from `~/Dropbox/xcode/Frameworks-SDKs/PazFramework/PazHelperSwift`)
+
+EXTERNAL SOURCES:
+  PazHelperSwift:
+    :path: "~/Dropbox/xcode/Frameworks-SDKs/PazFramework/PazHelperSwift"
+
+SPEC CHECKSUMS:
+  PazHelperSwift: ec543491ee895dba5b6126d85309c6529983685f
+
+PODFILE CHECKSUM: 84f0c3c0af598a979b158bf75a40f20ce713b767
+
+COCOAPODS: 1.1.0.rc.2

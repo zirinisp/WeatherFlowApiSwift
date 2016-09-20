@@ -7,12 +7,12 @@
 //
 
 
-public class Session {
+open class Session {
     static var TokenKey = "wf_token"
 
-    public private (set) var status: Status?
-    public private (set) var token: String?
-    public private (set) var user: User?
+    open fileprivate (set) var status: Status?
+    open fileprivate (set) var token: String?
+    open fileprivate (set) var user: User?
     
     convenience public init(dictionary: [String : AnyObject]) {
         self.init()
@@ -21,9 +21,9 @@ public class Session {
         self.user = (dictionary[User.Key] as? User)
     }
     
-    public var description: String {
+    open var description: String {
         let description: String = "\(self.status) \(self.token) \(self.user)"
-        return "<\(self.dynamicType): \(self), \(description)>"
+        return "<\(type(of: self)): \(self), \(description)>"
     }
 
 }

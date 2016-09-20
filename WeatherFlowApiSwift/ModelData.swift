@@ -6,45 +6,45 @@
 //  Copyright © 2015 Pantelis Zirinis. All rights reserved.
 //
 
-public class ModelData: NSObject, NSCoding {
-    public var cloud_cover: Double?
-    public var lat: Double?
-    public var lon: Double?
-    public var max_wind_speed: Double?
-    public var max_wind_speed_distance: Double?
-    public var model_id: Int?
-    public var model_run_id: Int?
-    public var model_run_name: String?
-    public var model_run_time_utc: String?
-    public var model_time_local: String?
-    public var model_time_utc: String?
-    public var precip_type: String?
-    public var pres: Double?
-    public var prob_precip: Double?
-    public var temp: Double?
-    public var total_precip: Double?
-    public var vis: Double?
-    public var wave_direction: Int?
-    public var wave_height: Double?
-    public var wave_period: Double?
-    public var wind_dir: Int?
-    public var wind_dir_txt: String?
-    public var wind_speed: Double?
+open class ModelData: NSObject, NSCoding {
+    open var cloud_cover: Double?
+    open var lat: Double?
+    open var lon: Double?
+    open var max_wind_speed: Double?
+    open var max_wind_speed_distance: Double?
+    open var model_id: Int?
+    open var model_run_id: Int?
+    open var model_run_name: String?
+    open var model_run_time_utc: String?
+    open var model_time_local: String?
+    open var model_time_utc: String?
+    open var precip_type: String?
+    open var pres: Double?
+    open var prob_precip: Double?
+    open var temp: Double?
+    open var total_precip: Double?
+    open var vis: Double?
+    open var wave_direction: Int?
+    open var wave_height: Double?
+    open var wave_period: Double?
+    open var wind_dir: Int?
+    open var wind_dir_txt: String?
+    open var wind_speed: Double?
     
-    public var modelTime: NSDate? {
+    open var modelTime: Date? {
         if let dateString = self.model_time_utc {
-            let dateFormatter: NSDateFormatter = NSDateFormatter()
-            NSDateFormatter.setDefaultFormatterBehavior(NSDateFormatterBehavior.BehaviorDefault)
-            dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+            let dateFormatter: DateFormatter = DateFormatter()
+            DateFormatter.defaultFormatterBehavior = DateFormatter.Behavior.default
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             //[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZ"
-            let date: NSDate? = dateFormatter.dateFromString(dateString)
+            let date: Date? = dateFormatter.date(from: dateString)
             return date
         }
         return nil
     }
     
-    convenience public init(dictionary: [NSObject : AnyObject]) {
+    convenience public init(dictionary: [AnyHashable: Any]) {
         self.init()
         cloud_cover = (dictionary["cloud_cover"] as? Double)
         lat = (dictionary["lat"] as? Double)
@@ -71,66 +71,66 @@ public class ModelData: NSObject, NSCoding {
         wind_speed = (dictionary["wind_speed"] as? Double)
     }
     
-    public override var description: String {
+    open override var description: String {
         let description: String = "%0.1f %0.1f \(self.lat) %0.1f \(self.lon)"
-        return "<\(self.dynamicType): \(self), \(description)>"
+        return "<\(type(of: self)): \(self), \(description)>"
     }
     //===========================================================
     //  Keyed Archiving
     //
     //===========================================================
     
-    public func encodeWithCoder(encoder: NSCoder) {
-        encoder.encodeObject(self.cloud_cover, forKey: "cloud_cover")
-        encoder.encodeObject(self.lat, forKey: "lat")
-        encoder.encodeObject(self.lon, forKey: "lon")
-        encoder.encodeObject(self.max_wind_speed, forKey: "max_wind_speed")
-        encoder.encodeObject(self.max_wind_speed_distance, forKey: "max_wind_speed_distance")
-        encoder.encodeObject(self.model_id, forKey: "model_id")
-        encoder.encodeObject(self.model_run_id, forKey: "model_run_id")
-        encoder.encodeObject(self.model_run_name, forKey: "model_run_name")
-        encoder.encodeObject(self.model_run_time_utc, forKey: "model_run_time_utc")
-        encoder.encodeObject(self.model_time_local, forKey: "model_time_local")
-        encoder.encodeObject(self.model_time_utc, forKey: "model_time_utc")
-        encoder.encodeObject(self.modelTime, forKey: "modelTime")
-        encoder.encodeObject(self.precip_type, forKey: "precip_type")
-        encoder.encodeObject(self.pres, forKey: "pres")
-        encoder.encodeObject(self.prob_precip, forKey: "prob_precip")
-        encoder.encodeObject(self.temp, forKey: "temp")
-        encoder.encodeObject(self.total_precip, forKey: "total_precip")
-        encoder.encodeObject(self.vis, forKey: "vis")
-        encoder.encodeObject(self.wave_direction, forKey: "wave_direction")
-        encoder.encodeObject(self.wave_height, forKey: "wave_height")
-        encoder.encodeObject(self.wave_period, forKey: "wave_period")
-        encoder.encodeObject(self.wind_dir, forKey: "wind_dir")
-        encoder.encodeObject(self.wind_dir_txt, forKey: "wind_dir_txt")
-        encoder.encodeObject(self.wind_speed, forKey: "wind_speed")
+    open func encode(with encoder: NSCoder) {
+        encoder.encode(self.cloud_cover, forKey: "cloud_cover")
+        encoder.encode(self.lat, forKey: "lat")
+        encoder.encode(self.lon, forKey: "lon")
+        encoder.encode(self.max_wind_speed, forKey: "max_wind_speed")
+        encoder.encode(self.max_wind_speed_distance, forKey: "max_wind_speed_distance")
+        encoder.encode(self.model_id, forKey: "model_id")
+        encoder.encode(self.model_run_id, forKey: "model_run_id")
+        encoder.encode(self.model_run_name, forKey: "model_run_name")
+        encoder.encode(self.model_run_time_utc, forKey: "model_run_time_utc")
+        encoder.encode(self.model_time_local, forKey: "model_time_local")
+        encoder.encode(self.model_time_utc, forKey: "model_time_utc")
+        encoder.encode(self.modelTime, forKey: "modelTime")
+        encoder.encode(self.precip_type, forKey: "precip_type")
+        encoder.encode(self.pres, forKey: "pres")
+        encoder.encode(self.prob_precip, forKey: "prob_precip")
+        encoder.encode(self.temp, forKey: "temp")
+        encoder.encode(self.total_precip, forKey: "total_precip")
+        encoder.encode(self.vis, forKey: "vis")
+        encoder.encode(self.wave_direction, forKey: "wave_direction")
+        encoder.encode(self.wave_height, forKey: "wave_height")
+        encoder.encode(self.wave_period, forKey: "wave_period")
+        encoder.encode(self.wind_dir, forKey: "wind_dir")
+        encoder.encode(self.wind_dir_txt, forKey: "wind_dir_txt")
+        encoder.encode(self.wind_speed, forKey: "wind_speed")
     }
     
     convenience required public init(coder decoder: NSCoder) {
         self.init()
-        cloud_cover = decoder.decodeObjectForKey("cloud_cover") as? Double
-        lat = decoder.decodeObjectForKey("lat") as? Double
-        lon = decoder.decodeObjectForKey("lon") as? Double
-        max_wind_speed = decoder.decodeObjectForKey("max_wind_speed") as? Double
-        max_wind_speed_distance = decoder.decodeObjectForKey("max_wind_speed_distance") as? Double
-        model_id = decoder.decodeObjectForKey("model_id") as? Int
-        model_run_id = decoder.decodeObjectForKey("model_run_id") as? Int
-        model_run_name = decoder.decodeObjectForKey("model_run_name") as? String
-        model_run_time_utc = decoder.decodeObjectForKey("model_run_time_utc") as? String
-        model_time_local = decoder.decodeObjectForKey("model_time_local") as? String
-        model_time_utc = decoder.decodeObjectForKey("model_time_utc") as? String
-        precip_type = decoder.decodeObjectForKey("precip_type") as? String
-        pres = decoder.decodeObjectForKey("pres") as? Double
-        prob_precip = decoder.decodeObjectForKey("prob_precip") as? Double
-        temp = decoder.decodeObjectForKey("temp") as? Double
-        total_precip = decoder.decodeObjectForKey("total_precip") as? Double
-        vis = decoder.decodeObjectForKey("vis") as? Double
-        wave_direction = decoder.decodeObjectForKey("wave_direction") as? Int
-        wave_height = decoder.decodeObjectForKey("wave_height") as? Double
-        wave_period = decoder.decodeObjectForKey("wave_period") as? Double
-        wind_dir = decoder.decodeObjectForKey("wind_dir") as? Int
-        wind_dir_txt = decoder.decodeObjectForKey("wind_dir_txt") as? String
-        wind_speed = decoder.decodeObjectForKey("wind_speed") as? Double
+        cloud_cover = decoder.decodeObject(forKey: "cloud_cover") as? Double
+        lat = decoder.decodeObject(forKey: "lat") as? Double
+        lon = decoder.decodeObject(forKey: "lon") as? Double
+        max_wind_speed = decoder.decodeObject(forKey: "max_wind_speed") as? Double
+        max_wind_speed_distance = decoder.decodeObject(forKey: "max_wind_speed_distance") as? Double
+        model_id = decoder.decodeObject(forKey: "model_id") as? Int
+        model_run_id = decoder.decodeObject(forKey: "model_run_id") as? Int
+        model_run_name = decoder.decodeObject(forKey: "model_run_name") as? String
+        model_run_time_utc = decoder.decodeObject(forKey: "model_run_time_utc") as? String
+        model_time_local = decoder.decodeObject(forKey: "model_time_local") as? String
+        model_time_utc = decoder.decodeObject(forKey: "model_time_utc") as? String
+        precip_type = decoder.decodeObject(forKey: "precip_type") as? String
+        pres = decoder.decodeObject(forKey: "pres") as? Double
+        prob_precip = decoder.decodeObject(forKey: "prob_precip") as? Double
+        temp = decoder.decodeObject(forKey: "temp") as? Double
+        total_precip = decoder.decodeObject(forKey: "total_precip") as? Double
+        vis = decoder.decodeObject(forKey: "vis") as? Double
+        wave_direction = decoder.decodeObject(forKey: "wave_direction") as? Int
+        wave_height = decoder.decodeObject(forKey: "wave_height") as? Double
+        wave_period = decoder.decodeObject(forKey: "wave_period") as? Double
+        wind_dir = decoder.decodeObject(forKey: "wind_dir") as? Int
+        wind_dir_txt = decoder.decodeObject(forKey: "wind_dir_txt") as? String
+        wind_speed = decoder.decodeObject(forKey: "wind_speed") as? Double
     }
 }
