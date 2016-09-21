@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "647C0BA11C2D5E62002C5A42"
+               BlueprintIdentifier = "647C0BFE1C2FF0F0002C5A42"
                BuildableName = "WeatherFlowApiSwift.framework"
                BlueprintName = "WeatherFlowApiSwift"
                ReferencedContainer = "container:WeatherFlowApiSwift.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "647C0BA11C2D5E62002C5A42"
+            BlueprintIdentifier = "647C0BFE1C2FF0F0002C5A42"
             BuildableName = "WeatherFlowApiSwift.framework"
             BlueprintName = "WeatherFlowApiSwift"
             ReferencedContainer = "container:WeatherFlowApiSwift.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "647C0BA11C2D5E62002C5A42"
+            BlueprintIdentifier = "647C0BFE1C2FF0F0002C5A42"
             BuildableName = "WeatherFlowApiSwift.framework"
             BlueprintName = "WeatherFlowApiSwift"
             ReferencedContainer = "container:WeatherFlowApiSwift.xcodeproj">

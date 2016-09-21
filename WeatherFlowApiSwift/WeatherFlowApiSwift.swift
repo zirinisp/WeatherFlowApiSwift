@@ -133,8 +133,19 @@ open class WeatherFlowApiSwift: NSObject {
     static var kArrowImage = "kArrowImage"
     static var kArrowSize = "kArrowSize"
     
-    open static var UpdateNotificationWeatherFlowApiToken = "kWeatherFlowApiTokenUpdateNotification"
-    open static var UpdateNotificationWeatherFlowRequestSent = "WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent" // Used to monitor server requests
+    public enum UpdateNotification {
+        case WeatherFlowApiToken
+        case WeatherFlowRequestSent
+        
+        var name: Notification.Name {
+            switch self {
+            case .WeatherFlowApiToken:
+                return Notification.Name("kWeatherFlowApiTokenUpdateNotification")
+            case .WeatherFlowRequestSent:
+                return Notification.Name("WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent") // Used to monitor server requests
+            }
+        }
+    }
     
     // MARK: - Units and Settings
     static open var unitDistance: WFUnitDistance {
@@ -253,7 +264,7 @@ open class WeatherFlowApiSwift: NSObject {
             let dictionary = try self.dictionaryFromURL(urlString)
             let session = Session(dictionary: dictionary)
             self.session__ = session
-            NotificationCenter.default.post(name: Notification.Name(rawValue: self.UpdateNotificationWeatherFlowApiToken), object: session__)
+            NotificationCenter.default.post(name: WeatherFlowApiSwift.UpdateNotification.WeatherFlowApiToken.name, object: session__)
             NSLog("Weather Token Ready")
             return session
         }
@@ -444,7 +455,7 @@ open class WeatherFlowApiSwift: NSObject {
     
     class func spotSetByListDictionaryWithValue(_ value: IndexSet) -> [AnyHashable: Any] {
         var string = String()
-        value.enumerate { (idx, stop) -> Void in
+        for (idx, _) in value.enumerated() {
             let spotId = String(format: "%lu", arguments: [UInt(idx)])
             string += spotId
             string += ","
@@ -495,7 +506,7 @@ open class WeatherFlowApiSwift: NSObject {
             let explodeRequest = requestString.explode("?")
             if explodeRequest.count > 0 {
                 let request = explodeRequest[0]
-                NotificationCenter.default.postNotificationName(WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent, object: self, userInfo: ["request" : request])
+                NotificationCenter.default.post(name: WeatherFlowApiSwift.UpdateNotification.WeatherFlowRequestSent.name, object: self, userInfo: ["request" : request])
             }
         }
         if let url: URL = URL(string: urlString) {
@@ -548,33 +559,33 @@ open class WeatherFlowApiSwift: NSObject {
         }
         NSLog("No cahce for size %f", size)
         // Get a bigger image for quality reasons
-        var width: CGFloat = size.toCGFloat
-        var height: CGFloat = size.toCGFloat
+        let width: CGFloat = size.toCGFloat
+        let height: CGFloat = size.toCGFloat
         // Prepare Points
-        var arrowWidth: CGFloat = 0.5 * width
-        var buttonLeftPoint: CGPoint = CGPoint(x: (width - arrowWidth) / 2.0, y: height * 0.9)
-        var buttonRightPoint: CGPoint = CGPoint(x: buttonLeftPoint.x + arrowWidth, y: height * 0.9)
-        var topArrowPoint: CGPoint = CGPoint(x: width / 2.0, y: 0.0)
-        var buttomMiddlePoint: CGPoint = CGPoint(x: width / 2.0, y: 0.7 * height)
+        let arrowWidth: CGFloat = 0.5 * width
+        let buttonLeftPoint: CGPoint = CGPoint(x: (width - arrowWidth) / 2.0, y: height * 0.9)
+        let buttonRightPoint: CGPoint = CGPoint(x: buttonLeftPoint.x + arrowWidth, y: height * 0.9)
+        let topArrowPoint: CGPoint = CGPoint(x: width / 2.0, y: 0.0)
+        let buttomMiddlePoint: CGPoint = CGPoint(x: width / 2.0, y: 0.7 * height)
         // Start Context
         UIGraphicsBeginImageContextWithOptions(CGSize(width: width, height: height), false, 0.0)
-        var context: CGContext = UIGraphicsGetCurrentContext()!
+        let context: CGContext = UIGraphicsGetCurrentContext()!
         // Prepare context parameters
         context.setLineWidth(1)
         context.setStrokeColor(strokeColor.cgColor)
         context.setFillColor(fillColor.cgColor)
-        var pathRef: CGMutablePath = CGMutablePath()
-        CGPathMoveToPoint(pathRef, nil, topArrowPoint.x, topArrowPoint.y)
-        CGPathAddLineToPoint(pathRef, nil, buttonLeftPoint.x, buttonLeftPoint.y)
-        CGPathAddLineToPoint(pathRef, nil, buttomMiddlePoint.x, buttomMiddlePoint.y)
-        CGPathAddLineToPoint(pathRef, nil, buttonRightPoint.x, buttonRightPoint.y)
-        CGPathAddLineToPoint(pathRef, nil, topArrowPoint.x, topArrowPoint.y)
+        let pathRef: CGMutablePath = CGMutablePath()
+        pathRef.move(to: CGPoint(x: topArrowPoint.x, y: topArrowPoint.y))
+        pathRef.addLine(to: CGPoint(x: buttonLeftPoint.x, y: buttonLeftPoint.y))
+        pathRef.addLine(to: CGPoint(x: buttomMiddlePoint.x, y: buttomMiddlePoint.y))
+        pathRef.addLine(to: CGPoint(x: buttonRightPoint.x, y: buttonRightPoint.y))
+        pathRef.addLine(to: CGPoint(x: topArrowPoint.x, y: topArrowPoint.y))
         pathRef.closeSubpath()
         context.addPath(pathRef)
         context.fillPath()
         context.addPath(pathRef)
         context.strokePath()
-        var i: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let i: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         // Resize image.
         let newImage = WeatherFlowArrowImage(fillColor: fillColor, strokeColor: strokeColor, size: Int(size), image: i.copy() as! UIImage)
@@ -624,21 +635,21 @@ open class WeatherFlowApiSwift: NSObject {
         guard let text = text , text.length != 0 else {
             return image
         }
-        var font: UIFont = UIFont.boldSystemFont(ofSize: 14.0)
-        var constrainSize: CGSize = CGSize(width: 30, height: image.size.height)
+        let font: UIFont = UIFont.boldSystemFont(ofSize: 14.0)
+        let constrainSize: CGSize = CGSize(width: 30, height: image.size.height)
         let string = text as NSString
         var stringSize: CGSize = string.size(attributes: [NSFontAttributeName: font])
         stringSize = CGSize(width: min(constrainSize.width, stringSize.width), height: min(constrainSize.height, stringSize.height))
-        var size: CGSize = CGSize(width: image.size.width + stringSize.width, height: max(image.size.height, stringSize.height))
+        let size: CGSize = CGSize(width: image.size.width + stringSize.width, height: max(image.size.height, stringSize.height))
         UIGraphicsBeginImageContext(size)
         // Draw image
         UIGraphicsGetCurrentContext()?.draw(image.cgImage!, in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
         // Draw Text
         UIGraphicsGetCurrentContext()?.setFillColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        var renderingRect: CGRect = CGRect(x: image.size.width, y: 0, width: stringSize.width, height: stringSize.height)
+        let renderingRect: CGRect = CGRect(x: image.size.width, y: 0, width: stringSize.width, height: stringSize.height)
         
         /// Make a copy of the default paragraph style
-        var paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
+        let paragraphStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         /// Set line break mode
         paragraphStyle.lineBreakMode = NSLineBreakMode.byCharWrapping
         /// Set text alignment
@@ -648,24 +659,24 @@ open class WeatherFlowApiSwift: NSObject {
 
         string.draw(in: renderingRect, withAttributes: attributes)
         
-        var i: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let i: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return i
     }
     
     class func rotatedImage(_ image: UIImage, degrees: Float) -> UIImage {
         // We add 180 to callibrate the arrow and then conver to radians.
-        var rads: CGFloat = degrees.toCGFloat * (M_PI / 180.0)
-        var newSide: CGFloat = max(image.size.width, image.size.height)
+        let rads: CGFloat = degrees.toCGFloat * (M_PI / 180.0)
+        let newSide: CGFloat = max(image.size.width, image.size.height)
         // Start Context
-        var size: CGSize = CGSize(width: newSide, height: newSide)
+        let size: CGSize = CGSize(width: newSide, height: newSide)
         UIGraphicsBeginImageContext(size)
-        var ctx: CGContext = UIGraphicsGetCurrentContext()!
+        let ctx: CGContext = UIGraphicsGetCurrentContext()!
         ctx.translateBy(x: newSide / 2, y: newSide / 2)
         ctx.rotate(by: rads)
         UIGraphicsGetCurrentContext()?.draw(image.cgImage!, in: CGRect(x: -image.size.width / 2, y: -image.size.height / 2, width: size.width, height: size.height))
         // Create image
-        var i: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let i: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return i
     }
