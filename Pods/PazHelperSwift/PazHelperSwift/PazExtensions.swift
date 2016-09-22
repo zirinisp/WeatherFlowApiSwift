@@ -207,7 +207,7 @@ public extension Character {
     }
     
 }
-
+/*
 public extension NSArray {
     
     /**
@@ -271,7 +271,7 @@ public extension NSArray {
         return result
     }
     
-}
+}*/
 
 public extension CALayer {
     public func bringSublayerToFront(layer: CALayer) {

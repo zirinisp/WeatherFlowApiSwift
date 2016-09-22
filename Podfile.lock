@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PazHelperSwift:
-    :commit: 8eab0c94a63c7c9882b6512270dd36ba7c163183
+    :commit: 0ea7417d6d5d0b54565bc269c1b409e9f122b559
     :git: https://pazlabs@bitbucket.org/pazlabs/pazhelperswift.git
 
 SPEC CHECKSUMS:

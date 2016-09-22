@@ -1010,6 +1010,7 @@ internal extension Array {
     
     - returns: Flattened array
     */
+    /* Swift 3 Removed
     func flatten <OutType> () -> [OutType] {
         var result = [OutType]()
         let mirror = Mirror(reflecting: self)
@@ -1022,7 +1023,7 @@ internal extension Array {
         }
         
         return result
-    }
+    }*/
     
     /**
     *  Converts, if possible, and flattens an object from its Objective-C
@@ -1030,6 +1031,7 @@ internal extension Array {
     *  @param object Object to convert
     *  @returns Flattenend array of converted values
     */
+    /* Swift 3 removed
     internal static func bridgeObjCObject <T, S> (_ object: S) -> [T] {
         var result = [T]()
         let reflection = Mirror(reflecting: object)
@@ -1043,7 +1045,7 @@ internal extension Array {
             
             //  If it is an NSArray, flattening will produce the expected result
             if let array = object as? NSArray {
-                result += (array as NSArray).flatten()
+                result += array.flatten()
             } else if let bridged = mirrorChildrenCollection as? T {
                 result.append(bridged)
             }
@@ -1059,7 +1061,7 @@ internal extension Array {
         }
         
         return result
-    }
+    }*/
 
     
     /**
@@ -1067,6 +1069,7 @@ internal extension Array {
     
     - returns: Flattened array
     */
+    /* removed on swift 3
     func flattenAny () -> [AnyObject] {
         var result = [AnyObject]()
         
@@ -1079,7 +1082,7 @@ internal extension Array {
         }
         
         return result
-    }
+    }*/
     
     /**
     Sorts the array according to the given comparison function.
