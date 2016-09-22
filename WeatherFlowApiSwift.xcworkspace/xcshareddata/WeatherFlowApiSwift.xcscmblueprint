@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "11D1253C434365FE39D47CE6646BF92945A8064C+++96BEC73",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "11D1253C434365FE39D47CE6646BF92945A8064C+++96BEC73" : 9223372036854775807,
+    "11D1253C434365FE39D47CE6646BF92945A8064C+++E742B6A" : 9223372036854775807,
+    "176D30EA1C3E5376FEE1AA5670F147FFD4E55274+++C3ABAD9" : 9223372036854775807,
+    "11D1253C434365FE39D47CE6646BF92945A8064C+++7BD75EA" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "13260FEB-B60C-40DB-8C18-DC078475E4B7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "11D1253C434365FE39D47CE6646BF92945A8064C+++96BEC73" : "WeatherFlowApiSwift\/",
+    "11D1253C434365FE39D47CE6646BF92945A8064C+++E742B6A" : "..\/..\/..\/Dropbox\/xcode\/Frameworks-SDKs\/PazFramework\/WeatherFlow\/WeatherFlowApiSwift\/WeatherFlowApiSwift",
+    "176D30EA1C3E5376FEE1AA5670F147FFD4E55274+++C3ABAD9" : "..\/..\/..\/Dropbox\/xcode\/Frameworks-SDKs\/PazFramework\/PazHelperSwift",
+    "11D1253C434365FE39D47CE6646BF92945A8064C+++7BD75EA" : "..\/..\/..\/Dropbox\/xcode\/Frameworks-SDKs\/PazFramework\/WeatherFlow\/WeatherFlowApiSwift\/WeatherFlowApiSwift"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WeatherFlowApiSwift",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WeatherFlowApiSwift.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zirinisp\/WeatherFlowApiSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "11D1253C434365FE39D47CE6646BF92945A8064C+++7BD75EA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zirinisp\/WeatherFlowApiSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "11D1253C434365FE39D47CE6646BF92945A8064C+++96BEC73"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zirinisp\/WeatherFlowApiSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "11D1253C434365FE39D47CE6646BF92945A8064C+++E742B6A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/pazlabs\/pazhelperswift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "176D30EA1C3E5376FEE1AA5670F147FFD4E55274+++C3ABAD9"
+    }
+  ]
+}

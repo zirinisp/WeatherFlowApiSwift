@@ -202,15 +202,15 @@ open class Spot: NSObject, MKAnnotation {
         if let view = self.annotationView__ {
             return view
         } else {
-            var view: MKAnnotationView = MKAnnotationView(annotation: self, reuseIdentifier: "SpotAnnotation")
+            let view: MKAnnotationView = MKAnnotationView(annotation: self, reuseIdentifier: "SpotAnnotation")
             var windImage: UIImage?
             var windText: String? = nil
             if let avg = self.avg {
                 if avg == 0.0 {
                     windImage = UIImage(named: "mapnowind.png")
                 } else {
-                    var live: Bool = (self.type == 1)
-                    var color: UIColor = live ? UIColor.gray : UIColor.lightGray
+                    let live: Bool = (self.type == 1)
+                    let color: UIColor = live ? UIColor.gray : UIColor.lightGray
                     windImage = WeatherFlowApiSwift.windArrowWithSize(100.0, degrees: Float(DoubleOrZero(self.dir)), fillColor: color, strokeColor: color, text: "")
                     windText = String(format: "%0.0f", avg)
                 }
@@ -218,13 +218,13 @@ open class Spot: NSObject, MKAnnotation {
                 windImage = UIImage(named: "mapnowindinfo.png")
             }
             
-            var windImageView: UIImageView = UIImageView(image: windImage)
+            let windImageView: UIImageView = UIImageView(image: windImage)
             windImageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
             view.addSubview(windImageView)
             var rect: CGRect = view.frame
             rect.size = windImageView.frame.size
             if let text = windText {
-                var label: UILabel = UILabel()
+                let label: UILabel = UILabel()
                 label.text = text
                 label.textColor = UIColor.gray
                 label.backgroundColor = UIColor.clear
@@ -238,7 +238,7 @@ open class Spot: NSObject, MKAnnotation {
             view.frame = rect
             //        view.image = windImage;
             view.canShowCallout = true
-            var infoButton: UIButton = UIButton(type: .detailDisclosure)
+            let infoButton: UIButton = UIButton(type: .detailDisclosure)
             view.rightCalloutAccessoryView = infoButton
             annotationView__ = view
             return view

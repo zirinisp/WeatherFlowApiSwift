@@ -5,13 +5,13 @@ use_frameworks!
 
 target 'WeatherFlowApiSwift' do
 
-pod 'PazHelperSwift', :path => '~/Dropbox/xcode/Frameworks-SDKs/PazFramework/PazHelperSwift'
+    pod 'PazHelperSwift', :git => 'https://pazlabs@bitbucket.org/pazlabs/pazhelperswift.git', :branch => 'swift3'
 
 end
 
 target 'WeatherFlowApiSwiftTests' do
     
-    pod 'PazHelperSwift', :path => '~/Dropbox/xcode/Frameworks-SDKs/PazFramework/PazHelperSwift'
+    pod 'PazHelperSwift', :git => 'https://pazlabs@bitbucket.org/pazlabs/pazhelperswift.git', :branch => 'swift3'
     
 end
 
