@@ -137,7 +137,7 @@ open class WeatherFlowApiSwift: NSObject {
         case WeatherFlowApiToken
         case WeatherFlowRequestSent
         
-        var name: Notification.Name {
+        public var name: Notification.Name {
             switch self {
             case .WeatherFlowApiToken:
                 return Notification.Name("kWeatherFlowApiTokenUpdateNotification")

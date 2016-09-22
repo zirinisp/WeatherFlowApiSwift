@@ -20,7 +20,7 @@ public func == (lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Boo
 }
 
 
-public func Distance(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Double {
+public func Distance(_ from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Double {
     let lat1 = from.latitude;
     let lon1 = from.longitude;
     let lat2 = to.latitude;
@@ -36,7 +36,7 @@ public func Distance(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -
 
 public extension CLLocationCoordinate2D {
     // In meteres
-    func distance(to:CLLocationCoordinate2D) -> PazUnit<PazUnitDistance> {
+    func distance(_ to:CLLocationCoordinate2D) -> PazUnit<PazUnitDistance> {
         let from = CLLocation(latitude: self.latitude, longitude: self.longitude)
         let to = CLLocation(latitude: to.latitude, longitude: to.longitude)
         let meters = from.distance(from: to)
@@ -111,8 +111,8 @@ public class PazHourRange {
     
     public func hourDateArrayFor(_ date: Date) -> [Date]? {
         // Create start hour from reference date
-        var components = PazLocationManager.sharedInstance.calendar.components([.year, .month, .day, .hour], from: date as Date)
-        components.calendar = PazLocationManager.sharedInstance.calendar as Calendar
+        var components = PazLocationManager.sharedInstance.calendar.dateComponents([.year, .month, .day, .hour], from: date)
+        components.calendar = PazLocationManager.sharedInstance.calendar
         components.hour = self.startHour
         var array = Array<Date>()
         if let startDate = components.date {
@@ -155,11 +155,25 @@ public class PazLocationManager: NSObject, CLLocationManagerDelegate {
     
     public static var disabled = false
     
-    public class func UpdateNotificationLocation() -> String { return "kPazLocationManagerLocationUpdateNotification" }
-    public class func UpdateNotificationCache() -> String { return "kLocationManagerCacheUpdateNotification" }
+    public enum UpdateNotification {
+        case Location
+        case Cache
+        case SunsetSunrise
+        
+        public var name: Notification.Name {
+            switch self {
+            case .Location:
+                return Notification.Name("kPazLocationManagerLocationUpdateNotification")
+            case .Cache:
+                return Notification.Name("kLocationManagerCacheUpdateNotification")
+            case .SunsetSunrise:
+                return Notification.Name("PazLocationManagerUpdateNotificationSunsetSunrise")
+            }
+        }
+    }
     
     /* Private variables */
-    private var locationStatus : NSString = "Calibrating"// to pass in handler
+    private var locationStatus : String = "Calibrating"// to pass in handler
     @available(iOS 8.0, *)
     lazy private var locationManager: CLLocationManager = {
         let initialLocationManager = CLLocationManager()
@@ -358,13 +372,12 @@ public class PazLocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let arrayOfLocation = locations as NSArray
-        if let currentLocation = arrayOfLocation.lastObject as? CLLocation {
-            self.location = currentLocation
-            self.lastKnownLocation = currentLocation
-            hasLastKnownLocation = true
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: PazLocationManager.UpdateNotificationLocation()), object: self)
-        }
+        let arrayOfLocation = locations as Array
+        let currentLocation = arrayOfLocation.last
+        self.location = currentLocation
+        self.lastKnownLocation = currentLocation
+        hasLastKnownLocation = true
+        NotificationCenter.default.post(name: PazLocationManager.UpdateNotification.Location.name, object: self)
     }
     
     
@@ -395,9 +408,6 @@ public class PazLocationManager: NSObject, CLLocationManagerDelegate {
     /*
     The following functions help find the sunset and sunrise for any given location
     */
-    public class func UpdateNotificationSunsetSunrise() -> String {
-        return "PazLocationManagerUpdateNotificationSunsetSunrise"
-    }
     /*
     func defaultSunDateFor(sunrise: Bool, date: Date) -> Date? {
     var reply: Date? = nil
@@ -508,18 +518,18 @@ public class PazLocationManager: NSObject, CLLocationManagerDelegate {
             if let location = self.lastKnownLocation {
                 _cachedLocation = location
                 self.updateDayHoursIfNeeded()
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: PazLocationManager.UpdateNotificationCache()), object:self)
+                NotificationCenter.default.post(name: PazLocationManager.UpdateNotification.Cache.name, object:self)
                 return location
             }
             return CLLocation(latitude: 0.0, longitude: 0.0)
         }
         return self._cachedLocation!
     }
-    private var _calendar : NSCalendar?
-    public var calendar : NSCalendar {
+    private var _calendar : Calendar?
+    public var calendar : Calendar {
         if _calendar == nil {
-            _calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
-            _calendar?.timeZone = NSTimeZone.local
+            _calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+            _calendar?.timeZone = TimeZone.current
         }
         return _calendar!
     }
@@ -576,7 +586,7 @@ public class PazLocationManager: NSObject, CLLocationManagerDelegate {
         }
         PazLocationManager.setLastDayHours(newDayHours)
         self._dayHours = newDayHours
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: PazLocationManager.UpdateNotificationSunsetSunrise()), object: self)
+        NotificationCenter.default.post(name: PazLocationManager.UpdateNotification.SunsetSunrise.name, object: self)
     }
     
     func updateCacheIfNeeded() {
