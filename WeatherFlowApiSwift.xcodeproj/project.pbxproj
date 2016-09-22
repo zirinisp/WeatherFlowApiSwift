@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4E66665D1C0BDB886F87B896 /* Pods_WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA8760572B97B9435C0C30B /* Pods_WeatherFlowApiSwift.framework */; };
 		646BF1241C59E60A004EFABE /* SpotStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BF1231C59E60A004EFABE /* SpotStats.swift */; };
-		647C0C021C2FF0F0002C5A42 /* WeatherFlowApiSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 647C0C011C2FF0F0002C5A42 /* WeatherFlowApiSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		647C0C091C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */; };
 		647C0C0E1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */; };
 		647C0C161C2FF105002C5A42 /* WeatherFlowApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */; };
@@ -60,7 +59,6 @@
 		647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataSet.swift; sourceTree = "<group>"; };
 		647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwift.swift; sourceTree = "<group>"; };
 		647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		647C0C011C2FF0F0002C5A42 /* WeatherFlowApiSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherFlowApiSwift.h; sourceTree = "<group>"; };
 		647C0C031C2FF0F0002C5A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		647C0C081C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherFlowApiSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwiftTests.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		647C0B901C2D47A5002C5A42 /* WeatherFlowApiSwift */ = {
 			isa = PBXGroup;
 			children = (
-				647C0C011C2FF0F0002C5A42 /* WeatherFlowApiSwift.h */,
 				647C0C031C2FF0F0002C5A42 /* Info.plist */,
 				647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */,
 				647C0B9B1C2D480F002C5A42 /* Spot.swift */,
@@ -173,7 +170,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				647C0C021C2FF0F0002C5A42 /* WeatherFlowApiSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

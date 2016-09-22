@@ -6,6 +6,8 @@
 //  Copyright © 2015 Pantelis Zirinis. All rights reserved.
 //
 
+import Foundation
+
 open class User {
     static var Key = "wf_user"
     
