@@ -7,42 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16CF08D7F0A0AE13C69DD813249E5351 /* PazLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CD6095C3A4DE03A8B8B5BCB4EE64A /* PazLocationManager.swift */; };
-		17D2C3F6425E0826AAAD030D358E9D5A /* PazString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC48A3E4C4D6663823923E91C1EEB9ED /* PazString.swift */; };
-		1C9CB4E77E8B0E918D8AA5BF2CE1531C /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54663DE7E25492BBB55BE9FA7A1B08C7 /* Sequence.swift */; };
-		1ED600BFD450F5578B7CB79F74433766 /* PazMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F775C46267C363CAFA6841D772F266B /* PazMapView.swift */; };
+		07C9BF762089D3BE60A3B668297E1AAE /* PazDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF84B4E02CC2225B1E4840E6F7B035 /* PazDictionary.swift */; };
+		102E6343E572E6E8B2FCFC83AA45FBEC /* PazUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7A3DCAC66FF1B5673C25B7BFD294F /* PazUILabel.swift */; };
 		2623DB14E4B05AB3A3E8407152DCADAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */; };
 		276389FDF4BC3799F1DBDA5866821D9C /* Pods-WeatherFlowApiSwiftTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA359E14431FFBF595D107243C481444 /* Pods-WeatherFlowApiSwiftTests-dummy.m */; };
-		2FA43C8645B63709031E23A83CED23A3 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3E6BAC6455484A1E23C9045336F8C1 /* Range.swift */; };
-		3B7723980E331A8976A476738F6177E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */; };
-		4256140E464C8126A68E06AA35F13C3F /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740C62F4C45DF27D7198FE124969A536 /* Float.swift */; };
+		2CE3EDEFF4071A81C0378A306807A083 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F68D8BEAC9E37A92D4E8576318F60 /* Sequence.swift */; };
+		311E4DE37943F2060DA73DFD3CB8E127 /* PazLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCFD7888A1F9DB669C1E517F776F9 /* PazLocationManager.swift */; };
+		37CD5FA7D5529A0BE026E6A1BE2F8FCB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8668FF01464021615F601291C2886056 /* CoreLocation.framework */; };
+		3F5F9FCB6A99E90F1D5B4FAA18DB1427 /* PazArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0658AB18B0CEAF2B2F6F3A207AAA4 /* PazArithmetic.swift */; };
+		43B7B2CB75630BF2AAAF6E6B66551ED1 /* PazUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB72653D8378297FCF298F7A3F06550 /* PazUIView.swift */; };
 		465E9055CC9E9A38AA20D71E3D79D36C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */; };
-		555778B865D1502917075B3BDBFB0044 /* PazArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF1137BF75A2DDA15593EAC2042CE5 /* PazArithmetic.swift */; };
-		59123C0DD2F74FCE560737E22D293B2B /* PazExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FF29E7C1773090455B8159AC5F8392 /* PazExtensions.swift */; };
-		648AFFC2BE8D85B4BA88E15EA61E0AAE /* PazProtector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6B79F17FDC49B74A06947C8241DA6B /* PazProtector.swift */; };
-		653E0133556C9CF59E34C589CD958B01 /* RMSun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8036D150EF41B5542AA300E9F9CE6700 /* RMSun.swift */; };
-		660295BC35982D80B1DB5C0BCEE65250 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F93210F2186917CD1BC5D209265649 /* Int.swift */; };
-		6E574F0E120542635E2529E6BB2D5016 /* PazHelperSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0376A5BDACDC1209314531E54C324364 /* PazHelperSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		80B596D2BD044E04530306344D6B476F /* PazHelperSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E86577DD75361A5BCF727FF9363EB02 /* PazHelperSwift-dummy.m */; };
-		83B8CEDC6B4D1B30230742BAD8C20AD2 /* PazUnitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F09B187011906646A72898C8E006B /* PazUnitManager.swift */; };
-		8D722F4F3DDB8B9F74A75AC3D3F9A4F3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8668FF01464021615F601291C2886056 /* CoreLocation.framework */; };
-		8E26E1169F130ACCBEC4DE6E8326D33B /* PazNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733ED6A37A7F3024CB834D77598ED12D /* PazNotificationManager.swift */; };
-		A04BFBB405911FE2AA4B6EBDC7E08032 /* PazUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9EB54CF90AA1D613142D73BC24C902 /* PazUIViewController.swift */; };
-		A5907F4508654741589F485348A2689C /* PazIAPHelperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D702EDC6DB090BC44526C9824E7DFC /* PazIAPHelperSwift.swift */; };
+		4979923330F22160D320B0F135EBE941 /* PazProtector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED209F148723533B62C822766826AF87 /* PazProtector.swift */; };
+		4E830EC0BEF36EF118ED3913AFED9AA0 /* PazHelperSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3E5CB1622CF83F1601F6596EDE9B70 /* PazHelperSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FB54B3CAB04EC81817C389208359964 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773508F2D3A712CBA8ED03446B576BA /* Float.swift */; };
+		5098307E85D704F6D7703A20CD4D8E87 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DFC270E9AF40DD8F152FE59AF66D32 /* Range.swift */; };
+		5162A538CDC0C95E7A6DAEDEBBFB4B9C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE78FE942318CD77DDF8909BDA7CB02 /* Int.swift */; };
+		5B1A30CCFA873320D391FDB11C0EA6B7 /* PazIAPHelperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CE5AA5C2AC70AF1ACC69892E222A94 /* PazIAPHelperSwift.swift */; };
+		5BF430F246092C5DFCA1C5622FAE4DA1 /* PazMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A0C1C27D2AF3349912F64EC77E97B /* PazMapView.swift */; };
+		71450C8EE1EB8608EE465573581A9B4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644F3BF1371930347BDC852796D3A3FF /* CoreGraphics.framework */; };
+		753ED9057416C361686470D48E6FE402 /* RMSun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D3E314F272F30453EBE681CE06CC6 /* RMSun.swift */; };
+		85CE0908BD9D70A8666A4539856C9F67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */; };
+		8D5D413E842B28F09AB3A4E52A1BA8DD /* PazArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2E049ACF4AC502A43CCEED7EC043E /* PazArray.swift */; };
+		91F2E2D58653AFD0B70CFA20C2C612ED /* PazUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12456DA0DF7843B53D961B92FDE956CA /* PazUIViewController.swift */; };
+		9AAE5DD8FC5F5FAD23365F00474BD559 /* PazUnitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E524D5D3D0FAB4F7FD88BB8E7A1E25 /* PazUnitManager.swift */; };
+		9BF8FBC8EF7ADBC5BA98A8B0BA5C581C /* PazExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6823F51202C4C76ED7563E9639A3F /* PazExtensions.swift */; };
+		A76F042E37A1AC493C3311618E0F63C6 /* ExSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDC7D576F899B4B38A7B4B52A529891 /* ExSwift.swift */; };
 		AD5F63CC3AA8D91AE91150E6CABEA16D /* Pods-WeatherFlowApiSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 865AD619A13882B5D0E5BA3985028531 /* Pods-WeatherFlowApiSwift-dummy.m */; };
-		B09150C146DA9B2A99ACECF5B094FDED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644F3BF1371930347BDC852796D3A3FF /* CoreGraphics.framework */; };
-		BC6394FF5B115A7DC8D0C7CA82F3D895 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886C112B7882434AF9DF56E37541E15F /* MapKit.framework */; };
-		C19471169CFFF153706CEFA22D5E71A7 /* PazFontHelperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CDC9A87DADAC4255B6450A2E00ACB8 /* PazFontHelperSwift.swift */; };
-		C9E81187F968D9FEE3E529B82A86EB66 /* PazUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410462638009B0E26FCF5225E36484FB /* PazUILabel.swift */; };
+		BC9A2B0D87DE11464D1840B570961F4F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886C112B7882434AF9DF56E37541E15F /* MapKit.framework */; };
 		CECD1578341DF45DB670F7E906A32351 /* Pods-WeatherFlowApiSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE91D3A50BDEA33BD700B5AB12B8608 /* Pods-WeatherFlowApiSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D2553FB41728EC5C8E690E8D0336292E /* PazDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975FFA4BD220266CC91221999F8F3D45 /* PazDictionary.swift */; };
-		D73499C2816782C6CE65BEF3DC9F4615 /* ExSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60069072E6F61C4228B437B4C194113D /* ExSwift.swift */; };
-		D73FACC981D3241F94A331892B10DA32 /* PazUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655A8ED3699798B0E452906E65D2224E /* PazUIView.swift */; };
-		E67D0D0B9BF9BB9A0A3251F69930D732 /* PazNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFA90E7B8A9E3C629BA8BB14B10BEE7 /* PazNSDate.swift */; };
+		D82A0209EC2C727EE733756405BC581C /* PazString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E8157552396217CD51503372BB3DB /* PazString.swift */; };
+		D8B9C1D27063614F89D041C1A9DA69E7 /* PazHelperSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE05C6FC37F604B2E7EA80CC2EA9E319 /* PazHelperSwift-dummy.m */; };
+		DB6553B3F57E6779CC34E84C4F4432A2 /* PazNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B86F25507A3448CBB40ECC79BD47871 /* PazNSDate.swift */; };
 		E749C61B6D7D57DD3EE70A3CA10A48D8 /* Pods-WeatherFlowApiSwiftTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C2D837A32B539B4CEAC78CAF82A1EF /* Pods-WeatherFlowApiSwiftTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5A73C081C60772BEF82F34E2B36A3A2 /* PazHelperSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = CD7337B2732FAD98A75C8E02610F07BD /* PazHelperSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBE55134E1AB24334CC04DBC1D6C5A05 /* PazArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62B9C4A1C55574093919F3E7E1BE2E4 /* PazArray.swift */; };
-		FDEC43C791D651DEB7AA0B175322B2E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383BA84D4915BEFC1CB062EDB286E4B3 /* UIKit.framework */; };
+		EAA3F7D6224E413F2F231DCAB5FF0CBF /* PazFontHelperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC40DB299D48F01210A92BFB1804A2 /* PazFontHelperSwift.swift */; };
+		FD2DEBC6C858E42291782CCB22F7FD3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383BA84D4915BEFC1CB062EDB286E4B3 /* UIKit.framework */; };
+		FD42AD79C5A59C7E44ACD633469EB9E3 /* PazNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631927190CBA082AC6789E1CD7A6304 /* PazNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,76 +49,75 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 186E7EE04B0321585EA1EE4DB889A48A;
+			remoteGlobalIDString = B0AFA1C57F16A3CE04F89119F6D3508E;
 			remoteInfo = PazHelperSwift;
 		};
 		CCDE56FF185E574844C6A03ACEC533BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 186E7EE04B0321585EA1EE4DB889A48A;
+			remoteGlobalIDString = B0AFA1C57F16A3CE04F89119F6D3508E;
 			remoteInfo = PazHelperSwift;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0376A5BDACDC1209314531E54C324364 /* PazHelperSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PazHelperSwift-umbrella.h"; sourceTree = "<group>"; };
-		117C9AEC5D95667F86EEC09C260CBCAB /* PazHelperSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PazHelperSwift-prefix.pch"; sourceTree = "<group>"; };
+		02DFC270E9AF40DD8F152FE59AF66D32 /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = PazHelperSwift/Range.swift; sourceTree = "<group>"; };
+		12456DA0DF7843B53D961B92FDE956CA /* PazUIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazUIViewController.swift; path = PazHelperSwift/PazUIViewController.swift; sourceTree = "<group>"; };
 		1528DAFCC2B7425589C7050ADB997712 /* Pods-WeatherFlowApiSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeatherFlowApiSwift.modulemap"; sourceTree = "<group>"; };
 		18C2D837A32B539B4CEAC78CAF82A1EF /* Pods-WeatherFlowApiSwiftTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherFlowApiSwiftTests-umbrella.h"; sourceTree = "<group>"; };
-		1EFA90E7B8A9E3C629BA8BB14B10BEE7 /* PazNSDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazNSDate.swift; sourceTree = "<group>"; };
 		28FAFD3B428C4A9E692DEAF70613C267 /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D16A8036052BBADC577DE41FA270D54 /* Pods-WeatherFlowApiSwift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherFlowApiSwift-acknowledgements.plist"; sourceTree = "<group>"; };
 		383BA84D4915BEFC1CB062EDB286E4B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		410462638009B0E26FCF5225E36484FB /* PazUILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazUILabel.swift; sourceTree = "<group>"; };
-		478F09B187011906646A72898C8E006B /* PazUnitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazUnitManager.swift; sourceTree = "<group>"; };
+		400F68D8BEAC9E37A92D4E8576318F60 /* Sequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sequence.swift; path = PazHelperSwift/Sequence.swift; sourceTree = "<group>"; };
+		414A0C1C27D2AF3349912F64EC77E97B /* PazMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazMapView.swift; path = PazHelperSwift/PazMapView.swift; sourceTree = "<group>"; };
+		446DCFD7888A1F9DB669C1E517F776F9 /* PazLocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazLocationManager.swift; path = PazHelperSwift/PazLocationManager.swift; sourceTree = "<group>"; };
+		44AF84B4E02CC2225B1E4840E6F7B035 /* PazDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazDictionary.swift; path = PazHelperSwift/PazDictionary.swift; sourceTree = "<group>"; };
+		493D3E314F272F30453EBE681CE06CC6 /* RMSun.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RMSun.swift; path = PazHelperSwift/RMSun.swift; sourceTree = "<group>"; };
 		499338369FF52B2B8FBD7784DAFFB54A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54663DE7E25492BBB55BE9FA7A1B08C7 /* Sequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		4DA6823F51202C4C76ED7563E9639A3F /* PazExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazExtensions.swift; path = PazHelperSwift/PazExtensions.swift; sourceTree = "<group>"; };
+		57BC40DB299D48F01210A92BFB1804A2 /* PazFontHelperSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazFontHelperSwift.swift; path = PazHelperSwift/PazFontHelperSwift.swift; sourceTree = "<group>"; };
 		58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		58FF29E7C1773090455B8159AC5F8392 /* PazExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazExtensions.swift; sourceTree = "<group>"; };
 		5C33769E1D79C96A45E2C7B0406E0547 /* Pods-WeatherFlowApiSwiftTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherFlowApiSwiftTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		5F6B79F17FDC49B74A06947C8241DA6B /* PazProtector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazProtector.swift; sourceTree = "<group>"; };
-		60069072E6F61C4228B437B4C194113D /* ExSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExSwift.swift; sourceTree = "<group>"; };
 		644F3BF1371930347BDC852796D3A3FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		655A8ED3699798B0E452906E65D2224E /* PazUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazUIView.swift; sourceTree = "<group>"; };
-		6C3E6BAC6455484A1E23C9045336F8C1 /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Range.swift; sourceTree = "<group>"; };
-		733ED6A37A7F3024CB834D77598ED12D /* PazNotificationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazNotificationManager.swift; sourceTree = "<group>"; };
-		740C62F4C45DF27D7198FE124969A536 /* Float.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		6B86F25507A3448CBB40ECC79BD47871 /* PazNSDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazNSDate.swift; path = PazHelperSwift/PazNSDate.swift; sourceTree = "<group>"; };
+		73E524D5D3D0FAB4F7FD88BB8E7A1E25 /* PazUnitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazUnitManager.swift; path = PazHelperSwift/PazUnitManager.swift; sourceTree = "<group>"; };
 		7AF663BEBC50AAE953DB37BA985FAB28 /* Pods-WeatherFlowApiSwiftTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeatherFlowApiSwiftTests-resources.sh"; sourceTree = "<group>"; };
 		7C45B3AB75A333613CFDE97C71ADF469 /* Pods_WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F775C46267C363CAFA6841D772F266B /* PazMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazMapView.swift; sourceTree = "<group>"; };
-		8036D150EF41B5542AA300E9F9CE6700 /* RMSun.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RMSun.swift; sourceTree = "<group>"; };
-		83DF1137BF75A2DDA15593EAC2042CE5 /* PazArithmetic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazArithmetic.swift; sourceTree = "<group>"; };
+		7EDC7D576F899B4B38A7B4B52A529891 /* ExSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExSwift.swift; path = PazHelperSwift/ExSwift.swift; sourceTree = "<group>"; };
+		852E8157552396217CD51503372BB3DB /* PazString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazString.swift; path = PazHelperSwift/PazString.swift; sourceTree = "<group>"; };
 		862D25FBEDF42BEC8F58D4B2CF4C2088 /* Pods-WeatherFlowApiSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		865AD619A13882B5D0E5BA3985028531 /* Pods-WeatherFlowApiSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherFlowApiSwift-dummy.m"; sourceTree = "<group>"; };
 		8668FF01464021615F601291C2886056 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		886C112B7882434AF9DF56E37541E15F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		8AD971FF3D237AD0473AC53B8FED436F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E86577DD75361A5BCF727FF9363EB02 /* PazHelperSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PazHelperSwift-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94238586B3F7B43BF3DF073DC8990008 /* PazHelperSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PazHelperSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		975FFA4BD220266CC91221999F8F3D45 /* PazDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazDictionary.swift; sourceTree = "<group>"; };
 		98ACAEE8090D78BF91BF2AF8ABDAB868 /* Pods-WeatherFlowApiSwiftTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeatherFlowApiSwiftTests.modulemap"; sourceTree = "<group>"; };
-		9D9EB54CF90AA1D613142D73BC24C902 /* PazUIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazUIViewController.swift; sourceTree = "<group>"; };
+		9EB72653D8378297FCF298F7A3F06550 /* PazUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazUIView.swift; path = PazHelperSwift/PazUIView.swift; sourceTree = "<group>"; };
 		9F50BD5237E00D6F7830CEFECA25FED1 /* Pods-WeatherFlowApiSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwift.release.xcconfig"; sourceTree = "<group>"; };
 		A06B2F03B4D62D8254DEA70440BAA481 /* Pods-WeatherFlowApiSwift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeatherFlowApiSwift-resources.sh"; sourceTree = "<group>"; };
-		A4F93210F2186917CD1BC5D209265649 /* Int.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		AB3E5CB1622CF83F1601F6596EDE9B70 /* PazHelperSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PazHelperSwift-umbrella.h"; sourceTree = "<group>"; };
+		ABC2E049ACF4AC502A43CCEED7EC043E /* PazArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazArray.swift; path = PazHelperSwift/PazArray.swift; sourceTree = "<group>"; };
 		AC584BC9CF540C1C135AC363F5B057E0 /* Pods-WeatherFlowApiSwiftTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeatherFlowApiSwiftTests-frameworks.sh"; sourceTree = "<group>"; };
-		C62B9C4A1C55574093919F3E7E1BE2E4 /* PazArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazArray.swift; sourceTree = "<group>"; };
+		AFE78FE942318CD77DDF8909BDA7CB02 /* Int.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Int.swift; path = PazHelperSwift/Int.swift; sourceTree = "<group>"; };
+		B5D5C715296909F547517D59333F9642 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B631927190CBA082AC6789E1CD7A6304 /* PazNotificationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazNotificationManager.swift; path = PazHelperSwift/PazNotificationManager.swift; sourceTree = "<group>"; };
+		BF6ED2795DB95AFA2A6929A7EAD75B32 /* PazHelperSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PazHelperSwift.modulemap; sourceTree = "<group>"; };
+		C773508F2D3A712CBA8ED03446B576BA /* Float.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Float.swift; path = PazHelperSwift/Float.swift; sourceTree = "<group>"; };
 		CCE8E4E7A6EEF42183AA8732373D3CCE /* Pods-WeatherFlowApiSwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherFlowApiSwift-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CD7337B2732FAD98A75C8E02610F07BD /* PazHelperSwift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = PazHelperSwift.h; sourceTree = "<group>"; };
 		CDE91D3A50BDEA33BD700B5AB12B8608 /* Pods-WeatherFlowApiSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherFlowApiSwift-umbrella.h"; sourceTree = "<group>"; };
 		DA359E14431FFBF595D107243C481444 /* Pods-WeatherFlowApiSwiftTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherFlowApiSwiftTests-dummy.m"; sourceTree = "<group>"; };
+		E0C7A3DCAC66FF1B5673C25B7BFD294F /* PazUILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazUILabel.swift; path = PazHelperSwift/PazUILabel.swift; sourceTree = "<group>"; };
 		E16BF77C95C354D3B6E57303F0F7B1A5 /* Pods-WeatherFlowApiSwiftTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherFlowApiSwiftTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E1872B1BCA3FD80B06D55137F1728D0A /* PazHelperSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PazHelperSwift.modulemap; sourceTree = "<group>"; };
-		E1D702EDC6DB090BC44526C9824E7DFC /* PazIAPHelperSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazIAPHelperSwift.swift; sourceTree = "<group>"; };
-		E21CD6095C3A4DE03A8B8B5BCB4EE64A /* PazLocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazLocationManager.swift; sourceTree = "<group>"; };
-		E2CDC9A87DADAC4255B6450A2E00ACB8 /* PazFontHelperSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazFontHelperSwift.swift; sourceTree = "<group>"; };
 		E46ADC34670C995969C2F6242EABD7CA /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
-		EE3444779C8ABE07F75F89814BEF8B53 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF78D5918F87EAF297382E73D911DFC3 /* PazHelperSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PazHelperSwift.xcconfig; sourceTree = "<group>"; };
+		EAA0658AB18B0CEAF2B2F6F3A207AAA4 /* PazArithmetic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazArithmetic.swift; path = PazHelperSwift/PazArithmetic.swift; sourceTree = "<group>"; };
+		EC135459FD4B79DEB64BC62253BB02C5 /* PazHelperSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PazHelperSwift-prefix.pch"; sourceTree = "<group>"; };
+		ED209F148723533B62C822766826AF87 /* PazProtector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazProtector.swift; path = PazHelperSwift/PazProtector.swift; sourceTree = "<group>"; };
 		F33E9D256AEBDB59D57C47F727A26E1D /* Pods_WeatherFlowApiSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC48A3E4C4D6663823923E91C1EEB9ED /* PazString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PazString.swift; sourceTree = "<group>"; };
+		F9CE5AA5C2AC70AF1ACC69892E222A94 /* PazIAPHelperSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazIAPHelperSwift.swift; path = PazHelperSwift/PazIAPHelperSwift.swift; sourceTree = "<group>"; };
+		FB9356C046416D87820953D77E1E54DD /* PazHelperSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PazHelperSwift.xcconfig; sourceTree = "<group>"; };
+		FE05C6FC37F604B2E7EA80CC2EA9E319 /* PazHelperSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PazHelperSwift-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,23 +129,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AA2C3C54D5AF5DAACE71060E3964F68 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B09150C146DA9B2A99ACECF5B094FDED /* CoreGraphics.framework in Frameworks */,
-				8D722F4F3DDB8B9F74A75AC3D3F9A4F3 /* CoreLocation.framework in Frameworks */,
-				3B7723980E331A8976A476738F6177E6 /* Foundation.framework in Frameworks */,
-				BC6394FF5B115A7DC8D0C7CA82F3D895 /* MapKit.framework in Frameworks */,
-				FDEC43C791D651DEB7AA0B175322B2E2 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B00FD22AF58CED30D511ADC812889A77 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2623DB14E4B05AB3A3E8407152DCADAA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA9DE587D093AB5F34A2AC27D648D935 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71450C8EE1EB8608EE465573581A9B4D /* CoreGraphics.framework in Frameworks */,
+				37CD5FA7D5529A0BE026E6A1BE2F8FCB /* CoreLocation.framework in Frameworks */,
+				85CE0908BD9D70A8666A4539856C9F67 /* Foundation.framework in Frameworks */,
+				BC9A2B0D87DE11464D1840B570961F4F /* MapKit.framework in Frameworks */,
+				FD2DEBC6C858E42291782CCB22F7FD3E /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +158,28 @@
 				ABF968904445802D4B419BF95EEB9EB4 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C908311884EC6DAFD6EDB61D142050B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5D5C715296909F547517D59333F9642 /* Info.plist */,
+				BF6ED2795DB95AFA2A6929A7EAD75B32 /* PazHelperSwift.modulemap */,
+				FB9356C046416D87820953D77E1E54DD /* PazHelperSwift.xcconfig */,
+				FE05C6FC37F604B2E7EA80CC2EA9E319 /* PazHelperSwift-dummy.m */,
+				EC135459FD4B79DEB64BC62253BB02C5 /* PazHelperSwift-prefix.pch */,
+				AB3E5CB1622CF83F1601F6596EDE9B70 /* PazHelperSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PazHelperSwift";
+			sourceTree = "<group>";
+		};
+		2FD723B5FDED013085E457E5B63E119E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC6648C0A00379E8506F53A62A84A934 /* PazHelperSwift */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		564532575CF79026E9A95703EA8B9786 /* Targets Support Files */ = {
@@ -193,8 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				FA58B9D7604DEDE02EC044AD86694B6A /* Development Pods */,
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				2FD723B5FDED013085E457E5B63E119E /* Pods */,
 				989DAFF75CE6145CDBF169ABFB77AB70 /* Products */,
 				564532575CF79026E9A95703EA8B9786 /* Targets Support Files */,
 			);
@@ -222,6 +242,36 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		AC6648C0A00379E8506F53A62A84A934 /* PazHelperSwift */ = {
+			isa = PBXGroup;
+			children = (
+				7EDC7D576F899B4B38A7B4B52A529891 /* ExSwift.swift */,
+				C773508F2D3A712CBA8ED03446B576BA /* Float.swift */,
+				AFE78FE942318CD77DDF8909BDA7CB02 /* Int.swift */,
+				EAA0658AB18B0CEAF2B2F6F3A207AAA4 /* PazArithmetic.swift */,
+				ABC2E049ACF4AC502A43CCEED7EC043E /* PazArray.swift */,
+				44AF84B4E02CC2225B1E4840E6F7B035 /* PazDictionary.swift */,
+				4DA6823F51202C4C76ED7563E9639A3F /* PazExtensions.swift */,
+				57BC40DB299D48F01210A92BFB1804A2 /* PazFontHelperSwift.swift */,
+				F9CE5AA5C2AC70AF1ACC69892E222A94 /* PazIAPHelperSwift.swift */,
+				446DCFD7888A1F9DB669C1E517F776F9 /* PazLocationManager.swift */,
+				414A0C1C27D2AF3349912F64EC77E97B /* PazMapView.swift */,
+				B631927190CBA082AC6789E1CD7A6304 /* PazNotificationManager.swift */,
+				6B86F25507A3448CBB40ECC79BD47871 /* PazNSDate.swift */,
+				ED209F148723533B62C822766826AF87 /* PazProtector.swift */,
+				852E8157552396217CD51503372BB3DB /* PazString.swift */,
+				E0C7A3DCAC66FF1B5673C25B7BFD294F /* PazUILabel.swift */,
+				9EB72653D8378297FCF298F7A3F06550 /* PazUIView.swift */,
+				12456DA0DF7843B53D961B92FDE956CA /* PazUIViewController.swift */,
+				73E524D5D3D0FAB4F7FD88BB8E7A1E25 /* PazUnitManager.swift */,
+				02DFC270E9AF40DD8F152FE59AF66D32 /* Range.swift */,
+				493D3E314F272F30453EBE681CE06CC6 /* RMSun.swift */,
+				400F68D8BEAC9E37A92D4E8576318F60 /* Sequence.swift */,
+				2C908311884EC6DAFD6EDB61D142050B /* Support Files */,
+			);
+			path = PazHelperSwift;
+			sourceTree = "<group>";
+		};
 		B0CEF67051703A61B0241F189C2858E9 /* Pods-WeatherFlowApiSwift */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,85 +289,22 @@
 			path = "Target Support Files/Pods-WeatherFlowApiSwift";
 			sourceTree = "<group>";
 		};
-		D7BDFA18FBBE26C9DE1BF51A16776E34 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EE3444779C8ABE07F75F89814BEF8B53 /* Info.plist */,
-				E1872B1BCA3FD80B06D55137F1728D0A /* PazHelperSwift.modulemap */,
-				EF78D5918F87EAF297382E73D911DFC3 /* PazHelperSwift.xcconfig */,
-				8E86577DD75361A5BCF727FF9363EB02 /* PazHelperSwift-dummy.m */,
-				117C9AEC5D95667F86EEC09C260CBCAB /* PazHelperSwift-prefix.pch */,
-				0376A5BDACDC1209314531E54C324364 /* PazHelperSwift-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../../../../../Documents/xcode/thirdparty/WeatherFlowApiSwift/Pods/Target Support Files/PazHelperSwift";
-			sourceTree = "<group>";
-		};
-		DEEF7331AE2522AF5BA09F9403768CAD /* PazHelperSwift */ = {
-			isa = PBXGroup;
-			children = (
-				60069072E6F61C4228B437B4C194113D /* ExSwift.swift */,
-				740C62F4C45DF27D7198FE124969A536 /* Float.swift */,
-				A4F93210F2186917CD1BC5D209265649 /* Int.swift */,
-				83DF1137BF75A2DDA15593EAC2042CE5 /* PazArithmetic.swift */,
-				C62B9C4A1C55574093919F3E7E1BE2E4 /* PazArray.swift */,
-				975FFA4BD220266CC91221999F8F3D45 /* PazDictionary.swift */,
-				58FF29E7C1773090455B8159AC5F8392 /* PazExtensions.swift */,
-				E2CDC9A87DADAC4255B6450A2E00ACB8 /* PazFontHelperSwift.swift */,
-				CD7337B2732FAD98A75C8E02610F07BD /* PazHelperSwift.h */,
-				E1D702EDC6DB090BC44526C9824E7DFC /* PazIAPHelperSwift.swift */,
-				E21CD6095C3A4DE03A8B8B5BCB4EE64A /* PazLocationManager.swift */,
-				7F775C46267C363CAFA6841D772F266B /* PazMapView.swift */,
-				733ED6A37A7F3024CB834D77598ED12D /* PazNotificationManager.swift */,
-				1EFA90E7B8A9E3C629BA8BB14B10BEE7 /* PazNSDate.swift */,
-				5F6B79F17FDC49B74A06947C8241DA6B /* PazProtector.swift */,
-				FC48A3E4C4D6663823923E91C1EEB9ED /* PazString.swift */,
-				410462638009B0E26FCF5225E36484FB /* PazUILabel.swift */,
-				655A8ED3699798B0E452906E65D2224E /* PazUIView.swift */,
-				9D9EB54CF90AA1D613142D73BC24C902 /* PazUIViewController.swift */,
-				478F09B187011906646A72898C8E006B /* PazUnitManager.swift */,
-				6C3E6BAC6455484A1E23C9045336F8C1 /* Range.swift */,
-				8036D150EF41B5542AA300E9F9CE6700 /* RMSun.swift */,
-				54663DE7E25492BBB55BE9FA7A1B08C7 /* Sequence.swift */,
-			);
-			path = PazHelperSwift;
-			sourceTree = "<group>";
-		};
-		E1061C66EAC676A22DCD0BD3B64BB3B0 /* PazHelperSwift */ = {
-			isa = PBXGroup;
-			children = (
-				DEEF7331AE2522AF5BA09F9403768CAD /* PazHelperSwift */,
-				D7BDFA18FBBE26C9DE1BF51A16776E34 /* Support Files */,
-			);
-			name = PazHelperSwift;
-			path = "/Users/zirinisp/Dropbox/xcode/Frameworks-SDKs/PazFramework/PazHelperSwift";
-			sourceTree = "<absolute>";
-		};
-		FA58B9D7604DEDE02EC044AD86694B6A /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E1061C66EAC676A22DCD0BD3B64BB3B0 /* PazHelperSwift */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		028E047692E32D8EB2D87D12B7FDE7DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E830EC0BEF36EF118ED3913AFED9AA0 /* PazHelperSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53B4336D41B0339531AC96A5948A984F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CECD1578341DF45DB670F7E906A32351 /* Pods-WeatherFlowApiSwift-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D8D3D55C8F3AD0C1D072D976F80F0136 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E574F0E120542635E2529E6BB2D5016 /* PazHelperSwift-umbrella.h in Headers */,
-				F5A73C081C60772BEF82F34E2B36A3A2 /* PazHelperSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,13 +337,13 @@
 			productReference = F33E9D256AEBDB59D57C47F727A26E1D /* Pods_WeatherFlowApiSwiftTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		186E7EE04B0321585EA1EE4DB889A48A /* PazHelperSwift */ = {
+		B0AFA1C57F16A3CE04F89119F6D3508E /* PazHelperSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C14CC781E75376BD396BEAE693A02A32 /* Build configuration list for PBXNativeTarget "PazHelperSwift" */;
+			buildConfigurationList = 302158D9F14EF82E5E48AAF077CCA65F /* Build configuration list for PBXNativeTarget "PazHelperSwift" */;
 			buildPhases = (
-				44EDA01DFA4E9E2EB7BECB7A963AFE83 /* Sources */,
-				5AA2C3C54D5AF5DAACE71060E3964F68 /* Frameworks */,
-				D8D3D55C8F3AD0C1D072D976F80F0136 /* Headers */,
+				A74A218A677A575D97747133E49A9246 /* Sources */,
+				EA9DE587D093AB5F34A2AC27D648D935 /* Frameworks */,
+				028E047692E32D8EB2D87D12B7FDE7DE /* Headers */,
 			);
 			buildRules = (
 			);
@@ -406,7 +393,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				186E7EE04B0321585EA1EE4DB889A48A /* PazHelperSwift */,
+				B0AFA1C57F16A3CE04F89119F6D3508E /* PazHelperSwift */,
 				D13022A751075C2A7DFC0546EBADB1B7 /* Pods-WeatherFlowApiSwift */,
 				00175E519992CFA4FE1A3B9BC823259B /* Pods-WeatherFlowApiSwiftTests */,
 			);
@@ -414,36 +401,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		44EDA01DFA4E9E2EB7BECB7A963AFE83 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D73499C2816782C6CE65BEF3DC9F4615 /* ExSwift.swift in Sources */,
-				4256140E464C8126A68E06AA35F13C3F /* Float.swift in Sources */,
-				660295BC35982D80B1DB5C0BCEE65250 /* Int.swift in Sources */,
-				555778B865D1502917075B3BDBFB0044 /* PazArithmetic.swift in Sources */,
-				FBE55134E1AB24334CC04DBC1D6C5A05 /* PazArray.swift in Sources */,
-				D2553FB41728EC5C8E690E8D0336292E /* PazDictionary.swift in Sources */,
-				59123C0DD2F74FCE560737E22D293B2B /* PazExtensions.swift in Sources */,
-				C19471169CFFF153706CEFA22D5E71A7 /* PazFontHelperSwift.swift in Sources */,
-				80B596D2BD044E04530306344D6B476F /* PazHelperSwift-dummy.m in Sources */,
-				A5907F4508654741589F485348A2689C /* PazIAPHelperSwift.swift in Sources */,
-				16CF08D7F0A0AE13C69DD813249E5351 /* PazLocationManager.swift in Sources */,
-				1ED600BFD450F5578B7CB79F74433766 /* PazMapView.swift in Sources */,
-				8E26E1169F130ACCBEC4DE6E8326D33B /* PazNotificationManager.swift in Sources */,
-				E67D0D0B9BF9BB9A0A3251F69930D732 /* PazNSDate.swift in Sources */,
-				648AFFC2BE8D85B4BA88E15EA61E0AAE /* PazProtector.swift in Sources */,
-				17D2C3F6425E0826AAAD030D358E9D5A /* PazString.swift in Sources */,
-				C9E81187F968D9FEE3E529B82A86EB66 /* PazUILabel.swift in Sources */,
-				D73FACC981D3241F94A331892B10DA32 /* PazUIView.swift in Sources */,
-				A04BFBB405911FE2AA4B6EBDC7E08032 /* PazUIViewController.swift in Sources */,
-				83B8CEDC6B4D1B30230742BAD8C20AD2 /* PazUnitManager.swift in Sources */,
-				2FA43C8645B63709031E23A83CED23A3 /* Range.swift in Sources */,
-				653E0133556C9CF59E34C589CD958B01 /* RMSun.swift in Sources */,
-				1C9CB4E77E8B0E918D8AA5BF2CE1531C /* Sequence.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		80C61D2BDD79834C3B707954E9F76399 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,19 +417,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A74A218A677A575D97747133E49A9246 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A76F042E37A1AC493C3311618E0F63C6 /* ExSwift.swift in Sources */,
+				4FB54B3CAB04EC81817C389208359964 /* Float.swift in Sources */,
+				5162A538CDC0C95E7A6DAEDEBBFB4B9C /* Int.swift in Sources */,
+				3F5F9FCB6A99E90F1D5B4FAA18DB1427 /* PazArithmetic.swift in Sources */,
+				8D5D413E842B28F09AB3A4E52A1BA8DD /* PazArray.swift in Sources */,
+				07C9BF762089D3BE60A3B668297E1AAE /* PazDictionary.swift in Sources */,
+				9BF8FBC8EF7ADBC5BA98A8B0BA5C581C /* PazExtensions.swift in Sources */,
+				EAA3F7D6224E413F2F231DCAB5FF0CBF /* PazFontHelperSwift.swift in Sources */,
+				D8B9C1D27063614F89D041C1A9DA69E7 /* PazHelperSwift-dummy.m in Sources */,
+				5B1A30CCFA873320D391FDB11C0EA6B7 /* PazIAPHelperSwift.swift in Sources */,
+				311E4DE37943F2060DA73DFD3CB8E127 /* PazLocationManager.swift in Sources */,
+				5BF430F246092C5DFCA1C5622FAE4DA1 /* PazMapView.swift in Sources */,
+				FD42AD79C5A59C7E44ACD633469EB9E3 /* PazNotificationManager.swift in Sources */,
+				DB6553B3F57E6779CC34E84C4F4432A2 /* PazNSDate.swift in Sources */,
+				4979923330F22160D320B0F135EBE941 /* PazProtector.swift in Sources */,
+				D82A0209EC2C727EE733756405BC581C /* PazString.swift in Sources */,
+				102E6343E572E6E8B2FCFC83AA45FBEC /* PazUILabel.swift in Sources */,
+				43B7B2CB75630BF2AAAF6E6B66551ED1 /* PazUIView.swift in Sources */,
+				91F2E2D58653AFD0B70CFA20C2C612ED /* PazUIViewController.swift in Sources */,
+				9AAE5DD8FC5F5FAD23365F00474BD559 /* PazUnitManager.swift in Sources */,
+				5098307E85D704F6D7703A20CD4D8E87 /* Range.swift in Sources */,
+				753ED9057416C361686470D48E6FE402 /* RMSun.swift in Sources */,
+				2CE3EDEFF4071A81C0378A306807A083 /* Sequence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		0DB7F7034863B3C9F40C6446F20E3D33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PazHelperSwift;
-			target = 186E7EE04B0321585EA1EE4DB889A48A /* PazHelperSwift */;
+			target = B0AFA1C57F16A3CE04F89119F6D3508E /* PazHelperSwift */;
 			targetProxy = CCDE56FF185E574844C6A03ACEC533BF /* PBXContainerItemProxy */;
 		};
 		7761D30D2F172E68CD19BA8D1C99C324 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PazHelperSwift;
-			target = 186E7EE04B0321585EA1EE4DB889A48A /* PazHelperSwift */;
+			target = B0AFA1C57F16A3CE04F89119F6D3508E /* PazHelperSwift */;
 			targetProxy = 0011E5E1B6E0401FD3F4D050CCE7DDCB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -585,15 +572,15 @@
 			};
 			name = Release;
 		};
-		3FD7918767DFD3585A825AF99EE1730D /* Debug */ = {
+		581BC0097D644DC4196ED3210D660228 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF78D5918F87EAF297382E73D911DFC3 /* PazHelperSwift.xcconfig */;
+			baseConfigurationReference = FB9356C046416D87820953D77E1E54DD /* PazHelperSwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -606,17 +593,16 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PazHelperSwift/PazHelperSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = PazHelperSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		7ECD2049245106B129984C0DC62D02A5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -652,6 +638,39 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		9B9D4789D019781FCF332563F1A7546E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9356C046416D87820953D77E1E54DD /* PazHelperSwift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PazHelperSwift/PazHelperSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PazHelperSwift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PazHelperSwift/PazHelperSwift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PazHelperSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		AADB9822762AD81BBAE83335B2AB1EB0 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -737,38 +756,6 @@
 			};
 			name = Debug;
 		};
-		EB0A4F382375B7547715B186A4A3D1A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF78D5918F87EAF297382E73D911DFC3 /* PazHelperSwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PazHelperSwift/PazHelperSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PazHelperSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PazHelperSwift/PazHelperSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PazHelperSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -790,11 +777,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C14CC781E75376BD396BEAE693A02A32 /* Build configuration list for PBXNativeTarget "PazHelperSwift" */ = {
+		302158D9F14EF82E5E48AAF077CCA65F /* Build configuration list for PBXNativeTarget "PazHelperSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3FD7918767DFD3585A825AF99EE1730D /* Debug */,
-				EB0A4F382375B7547715B186A4A3D1A8 /* Release */,
+				9B9D4789D019781FCF332563F1A7546E /* Debug */,
+				581BC0097D644DC4196ED3210D660228 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
