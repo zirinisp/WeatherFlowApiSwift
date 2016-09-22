@@ -1043,7 +1043,7 @@ internal extension Array {
             
             //  If it is an NSArray, flattening will produce the expected result
             if let array = object as? NSArray {
-                result += array.flatten()
+                result += (array as NSArray).flatten()
             } else if let bridged = mirrorChildrenCollection as? T {
                 result.append(bridged)
             }
