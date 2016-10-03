@@ -37,7 +37,7 @@ open class Status: NSObject, NSCoding {
     //===========================================================
     
     open func encode(with encoder: NSCoder) {
-        encoder.encode(self.statusCode, forKey: "statusCode")
+        encoder.encode((self.statusCode as Int?), forKey: "statusCode")
         encoder.encode(self.statusMessage, forKey: "statusMessage")
     }
     
