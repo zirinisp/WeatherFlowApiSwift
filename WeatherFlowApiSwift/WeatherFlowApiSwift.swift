@@ -455,8 +455,8 @@ open class WeatherFlowApiSwift: NSObject {
     
     class func spotSetByListDictionaryWithValue(_ value: IndexSet) -> [AnyHashable: Any] {
         var string = String()
-        for (idx, _) in value.enumerated() {
-            let spotId = String(format: "%lu", arguments: [UInt(idx)])
+        for (_, value) in value.enumerated() {
+            let spotId = String(format: "%lu", arguments: [UInt(value)])
             string += spotId
             string += ","
         }
