@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		294A6026EB7228CBB37DABA8 /* Pods_WeatherFlowApiSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87C77515920493DDCEA788 /* Pods_WeatherFlowApiSwiftTests.framework */; };
 		6412D0261DA7857F00E861F5 /* WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6412D01D1DA7857E00E861F5 /* WeatherFlowApiSwift.framework */; };
 		6412D02B1DA7857F00E861F5 /* WeatherFlowApiSwift_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412D02A1DA7857F00E861F5 /* WeatherFlowApiSwift_OSXTests.swift */; };
 		6412D0341DA785D600E861F5 /* WeatherFlowApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */; };
@@ -64,8 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		225959B783B2DFBA85F5FD0A /* Pods-WeatherFlowApiSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwift/Pods-WeatherFlowApiSwift.release.xcconfig"; sourceTree = "<group>"; };
-		5E87C77515920493DDCEA788 /* Pods_WeatherFlowApiSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6412D01D1DA7857E00E861F5 /* WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6412D0201DA7857E00E861F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6412D0251DA7857E00E861F5 /* WeatherFlowApiSwift-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeatherFlowApiSwift-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,7 +71,6 @@
 		6412D03F1DA78B2200E861F5 /* WeatherFlowWindArrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFlowWindArrow.swift; sourceTree = "<group>"; };
 		646BF1231C59E60A004EFABE /* SpotStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotStats.swift; sourceTree = "<group>"; };
 		647C0B9B1C2D480F002C5A42 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
-		647C0BBA1C2D64FB002C5A42 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		647C0BBB1C2D6656002C5A42 /* WeatherFlowApiSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherFlowApiSwift.podspec; sourceTree = "<group>"; };
 		647C0BBC1C2D6D27002C5A42 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotSet.swift; sourceTree = "<group>"; };
@@ -90,12 +86,6 @@
 		647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwiftTests.swift; sourceTree = "<group>"; };
 		647C0C0F1C2FF0F0002C5A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64C647401C91F2EB00998A41 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
-		9EBADF4E1912DF462B5C5967 /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwiftTests/Pods-WeatherFlowApiSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A34990A7A9EFA3010C295332 /* Pods-WeatherFlowApiSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwift/Pods-WeatherFlowApiSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		B4DA02548EAC9E4E1EC364EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4D73511A2B0F8260AC02807 /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFlowApiSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFlowApiSwiftTests/Pods-WeatherFlowApiSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
-		CFA8760572B97B9435C0C30B /* Pods_WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1714E4DBC37D225DD2DBBD0 /* Pods_WeatherFlowApiSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +116,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				647C0C091C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework in Frameworks */,
-				294A6026EB7228CBB37DABA8 /* Pods_WeatherFlowApiSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,14 +143,12 @@
 			isa = PBXGroup;
 			children = (
 				647C0BBB1C2D6656002C5A42 /* WeatherFlowApiSwift.podspec */,
-				647C0BBA1C2D64FB002C5A42 /* Podfile */,
 				647C0B901C2D47A5002C5A42 /* WeatherFlowApiSwift */,
 				647C0C0C1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests */,
 				6412D01E1DA7857E00E861F5 /* WeatherFlowApiSwift-OSX */,
 				6412D0291DA7857F00E861F5 /* WeatherFlowApiSwift-OSXTests */,
 				647C0B8F1C2D47A5002C5A42 /* Products */,
 				F3B7F763FBF79A99892F738B /* Frameworks */,
-				863EF20327C1E8AE972BFE11 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,24 +192,9 @@
 			path = WeatherFlowApiSwiftTests;
 			sourceTree = "<group>";
 		};
-		863EF20327C1E8AE972BFE11 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A34990A7A9EFA3010C295332 /* Pods-WeatherFlowApiSwift.debug.xcconfig */,
-				225959B783B2DFBA85F5FD0A /* Pods-WeatherFlowApiSwift.release.xcconfig */,
-				9EBADF4E1912DF462B5C5967 /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */,
-				C4D73511A2B0F8260AC02807 /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		F3B7F763FBF79A99892F738B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B4DA02548EAC9E4E1EC364EF /* Pods.framework */,
-				CFA8760572B97B9435C0C30B /* Pods_WeatherFlowApiSwift.framework */,
-				5E87C77515920493DDCEA788 /* Pods_WeatherFlowApiSwiftTests.framework */,
-				D1714E4DBC37D225DD2DBBD0 /* Pods_WeatherFlowApiSwift_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -758,7 +730,6 @@
 		};
 		647C0C141C2FF0F0002C5A42 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EBADF4E1912DF462B5C5967 /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = XZ582BS8LF;
 				INFOPLIST_FILE = WeatherFlowApiSwiftTests/Info.plist;
@@ -771,7 +742,6 @@
 		};
 		647C0C151C2FF0F0002C5A42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4D73511A2B0F8260AC02807 /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = XZ582BS8LF;
 				INFOPLIST_FILE = WeatherFlowApiSwiftTests/Info.plist;
