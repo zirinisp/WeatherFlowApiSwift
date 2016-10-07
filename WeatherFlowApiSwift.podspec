@@ -117,7 +117,7 @@ Pod::Spec.new do |s|
 
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
-s.frameworks = "UIKit", "Foundation", "MapKit", "PazHelperSwift"
+s.frameworks = "UIKit", "Foundation", "MapKit"
 
 
   # s.library   = "iconv"
@@ -133,7 +133,6 @@ s.frameworks = "UIKit", "Foundation", "MapKit", "PazHelperSwift"
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "PazHelperSwift"
 
 
 end
