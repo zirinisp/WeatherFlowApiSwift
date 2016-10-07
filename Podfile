@@ -5,10 +5,15 @@ use_frameworks!
 
 # PazHelperSwift is not required as all functions needed are added to the source
 
-target 'WeatherFlowApiSwift-iOS' do
+#target 'WeatherFlowApiSwift-iOS' do
 
 #pod 'PazHelperSwift', :git => 'https://pazlabs@bitbucket.org/pazlabs/pazhelperswift.git', :branch => 'swift3'
 
-end
+#end
 
+#target 'WeatherFlowApiSwiftTests' do
+    
+    #pod 'PazHelperSwift', :git => 'https://pazlabs@bitbucket.org/pazlabs/pazhelperswift.git', :branch => 'swift3'
+    
+#end
 
