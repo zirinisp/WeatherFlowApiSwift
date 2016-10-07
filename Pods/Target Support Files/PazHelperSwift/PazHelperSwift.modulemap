@@ -1,6 +1,0 @@
-framework module PazHelperSwift {
-  umbrella header "PazHelperSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}
