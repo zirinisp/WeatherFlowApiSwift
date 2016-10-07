@@ -226,7 +226,7 @@ open class YearStat {
         let array = string.components(separatedBy: ",")
         for (index, numOfDays) in array.enumerated() {
             if let month = YearStatMonth(rawValue: index) {
-                if let num = numOfDays.toUInt() {
+                if let num = UInt(numOfDays) {
                     monthDic[month] = Int(num)
                 }
             }
@@ -248,7 +248,7 @@ open class YearStat {
                 let directionArray = string.components(separatedBy: ",")
                 var directionDic = [YearStatDirection: Int]()
                 for (directionIndex, num) in directionArray.enumerated() {
-                    if let direction = YearStatDirection(rawValue: directionIndex), let stat = num.toUInt() {
+                    if let direction = YearStatDirection(rawValue: directionIndex), let stat = UInt(num) {
                         directionDic[direction] = Int(stat)
                     }
                 }

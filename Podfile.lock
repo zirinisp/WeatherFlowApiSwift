@@ -1,22 +1,3 @@
-PODS:
-  - PazHelperSwift (0.1.1)
-
-DEPENDENCIES:
-  - PazHelperSwift (from `https://pazlabs@bitbucket.org/pazlabs/pazhelperswift.git`, branch `swift3`)
-
-EXTERNAL SOURCES:
-  PazHelperSwift:
-    :branch: swift3
-    :git: https://pazlabs@bitbucket.org/pazlabs/pazhelperswift.git
-
-CHECKOUT OPTIONS:
-  PazHelperSwift:
-    :commit: acb88ad50103b1b1c1341b96ec5f5cb2798d0805
-    :git: https://pazlabs@bitbucket.org/pazlabs/pazhelperswift.git
-
-SPEC CHECKSUMS:
-  PazHelperSwift: ec543491ee895dba5b6126d85309c6529983685f
-
-PODFILE CHECKSUM: 795995d7d4883c532d6e67e6ce2852dbb26ac930
+PODFILE CHECKSUM: 5b65af2645fcdbd901541aadef536cf47a3b7eb3
 
 COCOAPODS: 1.1.0.rc.2

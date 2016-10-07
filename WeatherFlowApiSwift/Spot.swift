@@ -8,7 +8,7 @@
 
 import Foundation
 import MapKit
-import PazHelperSwift
+//import PazHelperSwift
 
 open class Spot: NSObject, MKAnnotation {
     
@@ -175,7 +175,7 @@ open class Spot: NSObject, MKAnnotation {
     }
     
     open override var description: String {
-        let description: String = "\(IntOrZero(self.spot_id)) \(self.name) %0.4f %0.4f"
+        let description: String = "\(self.spot_id) \(self.name) %0.4f %0.4f"
         return "<\(type(of: self)): \(self), \(description)>"
     }
     
@@ -197,6 +197,7 @@ open class Spot: NSObject, MKAnnotation {
         return self.wind_desc
     }
     
+#if !os(OSX)
     fileprivate var annotationView__: MKAnnotationView?
     open var annotationView: MKAnnotationView {
         if let view = self.annotationView__ {
@@ -211,7 +212,7 @@ open class Spot: NSObject, MKAnnotation {
                 } else {
                     let live: Bool = (self.type == 1)
                     let color: UIColor = live ? UIColor.gray : UIColor.lightGray
-                    windImage = WeatherFlowApiSwift.windArrowWithSize(100.0, degrees: Float(DoubleOrZero(self.dir)), fillColor: color, strokeColor: color, text: "")
+                    windImage = WeatherFlowApiSwift.windArrowWithSize(100.0, degrees: Float(self.dir ?? 0), fillColor: color, strokeColor: color, text: "")
                     windText = String(format: "%0.0f", avg)
                 }
             } else {
@@ -244,7 +245,8 @@ open class Spot: NSObject, MKAnnotation {
             return view
         }
     }
-    
+#endif
+
     open override func isEqual(_ object: Any?) -> Bool {
         if !(object is Spot) {
             return false

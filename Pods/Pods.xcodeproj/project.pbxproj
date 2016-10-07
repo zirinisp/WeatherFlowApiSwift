@@ -7,369 +7,126 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07C9BF762089D3BE60A3B668297E1AAE /* PazDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AF84B4E02CC2225B1E4840E6F7B035 /* PazDictionary.swift */; };
-		102E6343E572E6E8B2FCFC83AA45FBEC /* PazUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7A3DCAC66FF1B5673C25B7BFD294F /* PazUILabel.swift */; };
-		2623DB14E4B05AB3A3E8407152DCADAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */; };
-		276389FDF4BC3799F1DBDA5866821D9C /* Pods-WeatherFlowApiSwiftTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA359E14431FFBF595D107243C481444 /* Pods-WeatherFlowApiSwiftTests-dummy.m */; };
-		2CE3EDEFF4071A81C0378A306807A083 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400F68D8BEAC9E37A92D4E8576318F60 /* Sequence.swift */; };
-		311E4DE37943F2060DA73DFD3CB8E127 /* PazLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446DCFD7888A1F9DB669C1E517F776F9 /* PazLocationManager.swift */; };
-		37CD5FA7D5529A0BE026E6A1BE2F8FCB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8668FF01464021615F601291C2886056 /* CoreLocation.framework */; };
-		3F5F9FCB6A99E90F1D5B4FAA18DB1427 /* PazArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA0658AB18B0CEAF2B2F6F3A207AAA4 /* PazArithmetic.swift */; };
-		43B7B2CB75630BF2AAAF6E6B66551ED1 /* PazUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB72653D8378297FCF298F7A3F06550 /* PazUIView.swift */; };
-		465E9055CC9E9A38AA20D71E3D79D36C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */; };
-		4979923330F22160D320B0F135EBE941 /* PazProtector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED209F148723533B62C822766826AF87 /* PazProtector.swift */; };
-		4E830EC0BEF36EF118ED3913AFED9AA0 /* PazHelperSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3E5CB1622CF83F1601F6596EDE9B70 /* PazHelperSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4FB54B3CAB04EC81817C389208359964 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773508F2D3A712CBA8ED03446B576BA /* Float.swift */; };
-		5098307E85D704F6D7703A20CD4D8E87 /* Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DFC270E9AF40DD8F152FE59AF66D32 /* Range.swift */; };
-		5162A538CDC0C95E7A6DAEDEBBFB4B9C /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE78FE942318CD77DDF8909BDA7CB02 /* Int.swift */; };
-		5B1A30CCFA873320D391FDB11C0EA6B7 /* PazIAPHelperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CE5AA5C2AC70AF1ACC69892E222A94 /* PazIAPHelperSwift.swift */; };
-		5BF430F246092C5DFCA1C5622FAE4DA1 /* PazMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414A0C1C27D2AF3349912F64EC77E97B /* PazMapView.swift */; };
-		71450C8EE1EB8608EE465573581A9B4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644F3BF1371930347BDC852796D3A3FF /* CoreGraphics.framework */; };
-		753ED9057416C361686470D48E6FE402 /* RMSun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493D3E314F272F30453EBE681CE06CC6 /* RMSun.swift */; };
-		85CE0908BD9D70A8666A4539856C9F67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */; };
-		8D5D413E842B28F09AB3A4E52A1BA8DD /* PazArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC2E049ACF4AC502A43CCEED7EC043E /* PazArray.swift */; };
-		91F2E2D58653AFD0B70CFA20C2C612ED /* PazUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12456DA0DF7843B53D961B92FDE956CA /* PazUIViewController.swift */; };
-		9AAE5DD8FC5F5FAD23365F00474BD559 /* PazUnitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E524D5D3D0FAB4F7FD88BB8E7A1E25 /* PazUnitManager.swift */; };
-		9BF8FBC8EF7ADBC5BA98A8B0BA5C581C /* PazExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA6823F51202C4C76ED7563E9639A3F /* PazExtensions.swift */; };
-		A76F042E37A1AC493C3311618E0F63C6 /* ExSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDC7D576F899B4B38A7B4B52A529891 /* ExSwift.swift */; };
-		AD5F63CC3AA8D91AE91150E6CABEA16D /* Pods-WeatherFlowApiSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 865AD619A13882B5D0E5BA3985028531 /* Pods-WeatherFlowApiSwift-dummy.m */; };
-		BC9A2B0D87DE11464D1840B570961F4F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886C112B7882434AF9DF56E37541E15F /* MapKit.framework */; };
-		CECD1578341DF45DB670F7E906A32351 /* Pods-WeatherFlowApiSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE91D3A50BDEA33BD700B5AB12B8608 /* Pods-WeatherFlowApiSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D82A0209EC2C727EE733756405BC581C /* PazString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852E8157552396217CD51503372BB3DB /* PazString.swift */; };
-		D8B9C1D27063614F89D041C1A9DA69E7 /* PazHelperSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE05C6FC37F604B2E7EA80CC2EA9E319 /* PazHelperSwift-dummy.m */; };
-		DB6553B3F57E6779CC34E84C4F4432A2 /* PazNSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B86F25507A3448CBB40ECC79BD47871 /* PazNSDate.swift */; };
-		E749C61B6D7D57DD3EE70A3CA10A48D8 /* Pods-WeatherFlowApiSwiftTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C2D837A32B539B4CEAC78CAF82A1EF /* Pods-WeatherFlowApiSwiftTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAA3F7D6224E413F2F231DCAB5FF0CBF /* PazFontHelperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BC40DB299D48F01210A92BFB1804A2 /* PazFontHelperSwift.swift */; };
-		FD2DEBC6C858E42291782CCB22F7FD3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 383BA84D4915BEFC1CB062EDB286E4B3 /* UIKit.framework */; };
-		FD42AD79C5A59C7E44ACD633469EB9E3 /* PazNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631927190CBA082AC6789E1CD7A6304 /* PazNotificationManager.swift */; };
+		1BEC2692AB5B3DBA0AFA4AA2368B1B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		B4DA57D55DB7D131AD9E42270465791A /* Pods-WeatherFlowApiSwift-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CF2134C6902C1F29AFE578ACD35F9E /* Pods-WeatherFlowApiSwift-iOS-dummy.m */; };
+		CBC1BCB1E354D39DAA8DB8762D0BC75B /* Pods-WeatherFlowApiSwift-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 78505D688C76EF39970840D05654DC16 /* Pods-WeatherFlowApiSwift-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0011E5E1B6E0401FD3F4D050CCE7DDCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B0AFA1C57F16A3CE04F89119F6D3508E;
-			remoteInfo = PazHelperSwift;
-		};
-		CCDE56FF185E574844C6A03ACEC533BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B0AFA1C57F16A3CE04F89119F6D3508E;
-			remoteInfo = PazHelperSwift;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		02DFC270E9AF40DD8F152FE59AF66D32 /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = PazHelperSwift/Range.swift; sourceTree = "<group>"; };
-		12456DA0DF7843B53D961B92FDE956CA /* PazUIViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazUIViewController.swift; path = PazHelperSwift/PazUIViewController.swift; sourceTree = "<group>"; };
-		1528DAFCC2B7425589C7050ADB997712 /* Pods-WeatherFlowApiSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeatherFlowApiSwift.modulemap"; sourceTree = "<group>"; };
-		18C2D837A32B539B4CEAC78CAF82A1EF /* Pods-WeatherFlowApiSwiftTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherFlowApiSwiftTests-umbrella.h"; sourceTree = "<group>"; };
-		28FAFD3B428C4A9E692DEAF70613C267 /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2D16A8036052BBADC577DE41FA270D54 /* Pods-WeatherFlowApiSwift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherFlowApiSwift-acknowledgements.plist"; sourceTree = "<group>"; };
-		383BA84D4915BEFC1CB062EDB286E4B3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		400F68D8BEAC9E37A92D4E8576318F60 /* Sequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sequence.swift; path = PazHelperSwift/Sequence.swift; sourceTree = "<group>"; };
-		414A0C1C27D2AF3349912F64EC77E97B /* PazMapView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazMapView.swift; path = PazHelperSwift/PazMapView.swift; sourceTree = "<group>"; };
-		446DCFD7888A1F9DB669C1E517F776F9 /* PazLocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazLocationManager.swift; path = PazHelperSwift/PazLocationManager.swift; sourceTree = "<group>"; };
-		44AF84B4E02CC2225B1E4840E6F7B035 /* PazDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazDictionary.swift; path = PazHelperSwift/PazDictionary.swift; sourceTree = "<group>"; };
-		493D3E314F272F30453EBE681CE06CC6 /* RMSun.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RMSun.swift; path = PazHelperSwift/RMSun.swift; sourceTree = "<group>"; };
-		499338369FF52B2B8FBD7784DAFFB54A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DA6823F51202C4C76ED7563E9639A3F /* PazExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazExtensions.swift; path = PazHelperSwift/PazExtensions.swift; sourceTree = "<group>"; };
-		57BC40DB299D48F01210A92BFB1804A2 /* PazFontHelperSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazFontHelperSwift.swift; path = PazHelperSwift/PazFontHelperSwift.swift; sourceTree = "<group>"; };
-		58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5C33769E1D79C96A45E2C7B0406E0547 /* Pods-WeatherFlowApiSwiftTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherFlowApiSwiftTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		644F3BF1371930347BDC852796D3A3FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		6B86F25507A3448CBB40ECC79BD47871 /* PazNSDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazNSDate.swift; path = PazHelperSwift/PazNSDate.swift; sourceTree = "<group>"; };
-		73E524D5D3D0FAB4F7FD88BB8E7A1E25 /* PazUnitManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazUnitManager.swift; path = PazHelperSwift/PazUnitManager.swift; sourceTree = "<group>"; };
-		7AF663BEBC50AAE953DB37BA985FAB28 /* Pods-WeatherFlowApiSwiftTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeatherFlowApiSwiftTests-resources.sh"; sourceTree = "<group>"; };
-		7C45B3AB75A333613CFDE97C71ADF469 /* Pods_WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EDC7D576F899B4B38A7B4B52A529891 /* ExSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExSwift.swift; path = PazHelperSwift/ExSwift.swift; sourceTree = "<group>"; };
-		852E8157552396217CD51503372BB3DB /* PazString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazString.swift; path = PazHelperSwift/PazString.swift; sourceTree = "<group>"; };
-		862D25FBEDF42BEC8F58D4B2CF4C2088 /* Pods-WeatherFlowApiSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		865AD619A13882B5D0E5BA3985028531 /* Pods-WeatherFlowApiSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherFlowApiSwift-dummy.m"; sourceTree = "<group>"; };
-		8668FF01464021615F601291C2886056 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		886C112B7882434AF9DF56E37541E15F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		8AD971FF3D237AD0473AC53B8FED436F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0083E4FE8846A53BCBC0FC70B3973EC7 /* Pods_WeatherFlowApiSwift_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwift_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E31257A1AA393422FB5CF18663C818 /* Pods-WeatherFlowApiSwift-iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeatherFlowApiSwift-iOS-resources.sh"; sourceTree = "<group>"; };
+		18E1D78C72E23AC0AD2EDE5825CB4E5E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40CF2134C6902C1F29AFE578ACD35F9E /* Pods-WeatherFlowApiSwift-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherFlowApiSwift-iOS-dummy.m"; sourceTree = "<group>"; };
+		5BFF4548417D4FC69D91A86E7F147192 /* Pods-WeatherFlowApiSwift-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwift-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		5C01209C2DA614775B77D0420E41DA4C /* Pods-WeatherFlowApiSwift-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WeatherFlowApiSwift-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		78505D688C76EF39970840D05654DC16 /* Pods-WeatherFlowApiSwift-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherFlowApiSwift-iOS-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94238586B3F7B43BF3DF073DC8990008 /* PazHelperSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PazHelperSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98ACAEE8090D78BF91BF2AF8ABDAB868 /* Pods-WeatherFlowApiSwiftTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeatherFlowApiSwiftTests.modulemap"; sourceTree = "<group>"; };
-		9EB72653D8378297FCF298F7A3F06550 /* PazUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazUIView.swift; path = PazHelperSwift/PazUIView.swift; sourceTree = "<group>"; };
-		9F50BD5237E00D6F7830CEFECA25FED1 /* Pods-WeatherFlowApiSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwift.release.xcconfig"; sourceTree = "<group>"; };
-		A06B2F03B4D62D8254DEA70440BAA481 /* Pods-WeatherFlowApiSwift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeatherFlowApiSwift-resources.sh"; sourceTree = "<group>"; };
-		AB3E5CB1622CF83F1601F6596EDE9B70 /* PazHelperSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PazHelperSwift-umbrella.h"; sourceTree = "<group>"; };
-		ABC2E049ACF4AC502A43CCEED7EC043E /* PazArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazArray.swift; path = PazHelperSwift/PazArray.swift; sourceTree = "<group>"; };
-		AC584BC9CF540C1C135AC363F5B057E0 /* Pods-WeatherFlowApiSwiftTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WeatherFlowApiSwiftTests-frameworks.sh"; sourceTree = "<group>"; };
-		AFE78FE942318CD77DDF8909BDA7CB02 /* Int.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Int.swift; path = PazHelperSwift/Int.swift; sourceTree = "<group>"; };
-		B5D5C715296909F547517D59333F9642 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B631927190CBA082AC6789E1CD7A6304 /* PazNotificationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazNotificationManager.swift; path = PazHelperSwift/PazNotificationManager.swift; sourceTree = "<group>"; };
-		BF6ED2795DB95AFA2A6929A7EAD75B32 /* PazHelperSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PazHelperSwift.modulemap; sourceTree = "<group>"; };
-		C773508F2D3A712CBA8ED03446B576BA /* Float.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Float.swift; path = PazHelperSwift/Float.swift; sourceTree = "<group>"; };
-		CCE8E4E7A6EEF42183AA8732373D3CCE /* Pods-WeatherFlowApiSwift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherFlowApiSwift-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CDE91D3A50BDEA33BD700B5AB12B8608 /* Pods-WeatherFlowApiSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WeatherFlowApiSwift-umbrella.h"; sourceTree = "<group>"; };
-		DA359E14431FFBF595D107243C481444 /* Pods-WeatherFlowApiSwiftTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WeatherFlowApiSwiftTests-dummy.m"; sourceTree = "<group>"; };
-		E0C7A3DCAC66FF1B5673C25B7BFD294F /* PazUILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazUILabel.swift; path = PazHelperSwift/PazUILabel.swift; sourceTree = "<group>"; };
-		E16BF77C95C354D3B6E57303F0F7B1A5 /* Pods-WeatherFlowApiSwiftTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherFlowApiSwiftTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E46ADC34670C995969C2F6242EABD7CA /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
-		EAA0658AB18B0CEAF2B2F6F3A207AAA4 /* PazArithmetic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazArithmetic.swift; path = PazHelperSwift/PazArithmetic.swift; sourceTree = "<group>"; };
-		EC135459FD4B79DEB64BC62253BB02C5 /* PazHelperSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PazHelperSwift-prefix.pch"; sourceTree = "<group>"; };
-		ED209F148723533B62C822766826AF87 /* PazProtector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazProtector.swift; path = PazHelperSwift/PazProtector.swift; sourceTree = "<group>"; };
-		F33E9D256AEBDB59D57C47F727A26E1D /* Pods_WeatherFlowApiSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFlowApiSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9CE5AA5C2AC70AF1ACC69892E222A94 /* PazIAPHelperSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PazIAPHelperSwift.swift; path = PazHelperSwift/PazIAPHelperSwift.swift; sourceTree = "<group>"; };
-		FB9356C046416D87820953D77E1E54DD /* PazHelperSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PazHelperSwift.xcconfig; sourceTree = "<group>"; };
-		FE05C6FC37F604B2E7EA80CC2EA9E319 /* PazHelperSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PazHelperSwift-dummy.m"; sourceTree = "<group>"; };
+		AF00483FD24B48CA34E4B2976E455FAE /* Pods-WeatherFlowApiSwift-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WeatherFlowApiSwift-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA4D903C8853B8BB7770356747204FA0 /* Pods-WeatherFlowApiSwift-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WeatherFlowApiSwift-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EC9F10029E1A16966FFC72B9A3AF61F4 /* Pods-WeatherFlowApiSwift-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WeatherFlowApiSwift-iOS.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4C6A411E07535D0EF4324506F587BB56 /* Frameworks */ = {
+		5DFF48AB96796134686241EA34C69149 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				465E9055CC9E9A38AA20D71E3D79D36C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B00FD22AF58CED30D511ADC812889A77 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2623DB14E4B05AB3A3E8407152DCADAA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA9DE587D093AB5F34A2AC27D648D935 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				71450C8EE1EB8608EE465573581A9B4D /* CoreGraphics.framework in Frameworks */,
-				37CD5FA7D5529A0BE026E6A1BE2F8FCB /* CoreLocation.framework in Frameworks */,
-				85CE0908BD9D70A8666A4539856C9F67 /* Foundation.framework in Frameworks */,
-				BC9A2B0D87DE11464D1840B570961F4F /* MapKit.framework in Frameworks */,
-				FD2DEBC6C858E42291782CCB22F7FD3E /* UIKit.framework in Frameworks */,
+				1BEC2692AB5B3DBA0AFA4AA2368B1B87 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				ABF968904445802D4B419BF95EEB9EB4 /* iOS */,
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
 			);
-			name = Frameworks;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		2C908311884EC6DAFD6EDB61D142050B /* Support Files */ = {
+		46784C5A4002D779A6B976DA2422EADE /* Pods-WeatherFlowApiSwift-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B5D5C715296909F547517D59333F9642 /* Info.plist */,
-				BF6ED2795DB95AFA2A6929A7EAD75B32 /* PazHelperSwift.modulemap */,
-				FB9356C046416D87820953D77E1E54DD /* PazHelperSwift.xcconfig */,
-				FE05C6FC37F604B2E7EA80CC2EA9E319 /* PazHelperSwift-dummy.m */,
-				EC135459FD4B79DEB64BC62253BB02C5 /* PazHelperSwift-prefix.pch */,
-				AB3E5CB1622CF83F1601F6596EDE9B70 /* PazHelperSwift-umbrella.h */,
+				18E1D78C72E23AC0AD2EDE5825CB4E5E /* Info.plist */,
+				EC9F10029E1A16966FFC72B9A3AF61F4 /* Pods-WeatherFlowApiSwift-iOS.modulemap */,
+				AF00483FD24B48CA34E4B2976E455FAE /* Pods-WeatherFlowApiSwift-iOS-acknowledgements.markdown */,
+				5C01209C2DA614775B77D0420E41DA4C /* Pods-WeatherFlowApiSwift-iOS-acknowledgements.plist */,
+				40CF2134C6902C1F29AFE578ACD35F9E /* Pods-WeatherFlowApiSwift-iOS-dummy.m */,
+				13E31257A1AA393422FB5CF18663C818 /* Pods-WeatherFlowApiSwift-iOS-resources.sh */,
+				78505D688C76EF39970840D05654DC16 /* Pods-WeatherFlowApiSwift-iOS-umbrella.h */,
+				BA4D903C8853B8BB7770356747204FA0 /* Pods-WeatherFlowApiSwift-iOS.debug.xcconfig */,
+				5BFF4548417D4FC69D91A86E7F147192 /* Pods-WeatherFlowApiSwift-iOS.release.xcconfig */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/PazHelperSwift";
+			name = "Pods-WeatherFlowApiSwift-iOS";
+			path = "Target Support Files/Pods-WeatherFlowApiSwift-iOS";
 			sourceTree = "<group>";
 		};
-		2FD723B5FDED013085E457E5B63E119E /* Pods */ = {
+		5BE902F372D1351CE7CB5D16A598A823 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC6648C0A00379E8506F53A62A84A934 /* PazHelperSwift */,
+				0083E4FE8846A53BCBC0FC70B3973EC7 /* Pods_WeatherFlowApiSwift_iOS.framework */,
 			);
-			name = Pods;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		564532575CF79026E9A95703EA8B9786 /* Targets Support Files */ = {
+		738956B5A8CE21911D7A089D2FD49CF6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B0CEF67051703A61B0241F189C2858E9 /* Pods-WeatherFlowApiSwift */,
-				644FE26DE0537D1EA5D537B4E3FDA6AA /* Pods-WeatherFlowApiSwiftTests */,
+				46784C5A4002D779A6B976DA2422EADE /* Pods-WeatherFlowApiSwift-iOS */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		644FE26DE0537D1EA5D537B4E3FDA6AA /* Pods-WeatherFlowApiSwiftTests */ = {
-			isa = PBXGroup;
-			children = (
-				8AD971FF3D237AD0473AC53B8FED436F /* Info.plist */,
-				98ACAEE8090D78BF91BF2AF8ABDAB868 /* Pods-WeatherFlowApiSwiftTests.modulemap */,
-				E16BF77C95C354D3B6E57303F0F7B1A5 /* Pods-WeatherFlowApiSwiftTests-acknowledgements.markdown */,
-				5C33769E1D79C96A45E2C7B0406E0547 /* Pods-WeatherFlowApiSwiftTests-acknowledgements.plist */,
-				DA359E14431FFBF595D107243C481444 /* Pods-WeatherFlowApiSwiftTests-dummy.m */,
-				AC584BC9CF540C1C135AC363F5B057E0 /* Pods-WeatherFlowApiSwiftTests-frameworks.sh */,
-				7AF663BEBC50AAE953DB37BA985FAB28 /* Pods-WeatherFlowApiSwiftTests-resources.sh */,
-				18C2D837A32B539B4CEAC78CAF82A1EF /* Pods-WeatherFlowApiSwiftTests-umbrella.h */,
-				28FAFD3B428C4A9E692DEAF70613C267 /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */,
-				E46ADC34670C995969C2F6242EABD7CA /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */,
-			);
-			name = "Pods-WeatherFlowApiSwiftTests";
-			path = "Target Support Files/Pods-WeatherFlowApiSwiftTests";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
-				2FD723B5FDED013085E457E5B63E119E /* Pods */,
-				989DAFF75CE6145CDBF169ABFB77AB70 /* Products */,
-				564532575CF79026E9A95703EA8B9786 /* Targets Support Files */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				5BE902F372D1351CE7CB5D16A598A823 /* Products */,
+				738956B5A8CE21911D7A089D2FD49CF6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		989DAFF75CE6145CDBF169ABFB77AB70 /* Products */ = {
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94238586B3F7B43BF3DF073DC8990008 /* PazHelperSwift.framework */,
-				7C45B3AB75A333613CFDE97C71ADF469 /* Pods_WeatherFlowApiSwift.framework */,
-				F33E9D256AEBDB59D57C47F727A26E1D /* Pods_WeatherFlowApiSwiftTests.framework */,
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		ABF968904445802D4B419BF95EEB9EB4 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				644F3BF1371930347BDC852796D3A3FF /* CoreGraphics.framework */,
-				8668FF01464021615F601291C2886056 /* CoreLocation.framework */,
-				58F80F498D39BBFC5E0A7405BC502041 /* Foundation.framework */,
-				886C112B7882434AF9DF56E37541E15F /* MapKit.framework */,
-				383BA84D4915BEFC1CB062EDB286E4B3 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		AC6648C0A00379E8506F53A62A84A934 /* PazHelperSwift */ = {
-			isa = PBXGroup;
-			children = (
-				7EDC7D576F899B4B38A7B4B52A529891 /* ExSwift.swift */,
-				C773508F2D3A712CBA8ED03446B576BA /* Float.swift */,
-				AFE78FE942318CD77DDF8909BDA7CB02 /* Int.swift */,
-				EAA0658AB18B0CEAF2B2F6F3A207AAA4 /* PazArithmetic.swift */,
-				ABC2E049ACF4AC502A43CCEED7EC043E /* PazArray.swift */,
-				44AF84B4E02CC2225B1E4840E6F7B035 /* PazDictionary.swift */,
-				4DA6823F51202C4C76ED7563E9639A3F /* PazExtensions.swift */,
-				57BC40DB299D48F01210A92BFB1804A2 /* PazFontHelperSwift.swift */,
-				F9CE5AA5C2AC70AF1ACC69892E222A94 /* PazIAPHelperSwift.swift */,
-				446DCFD7888A1F9DB669C1E517F776F9 /* PazLocationManager.swift */,
-				414A0C1C27D2AF3349912F64EC77E97B /* PazMapView.swift */,
-				B631927190CBA082AC6789E1CD7A6304 /* PazNotificationManager.swift */,
-				6B86F25507A3448CBB40ECC79BD47871 /* PazNSDate.swift */,
-				ED209F148723533B62C822766826AF87 /* PazProtector.swift */,
-				852E8157552396217CD51503372BB3DB /* PazString.swift */,
-				E0C7A3DCAC66FF1B5673C25B7BFD294F /* PazUILabel.swift */,
-				9EB72653D8378297FCF298F7A3F06550 /* PazUIView.swift */,
-				12456DA0DF7843B53D961B92FDE956CA /* PazUIViewController.swift */,
-				73E524D5D3D0FAB4F7FD88BB8E7A1E25 /* PazUnitManager.swift */,
-				02DFC270E9AF40DD8F152FE59AF66D32 /* Range.swift */,
-				493D3E314F272F30453EBE681CE06CC6 /* RMSun.swift */,
-				400F68D8BEAC9E37A92D4E8576318F60 /* Sequence.swift */,
-				2C908311884EC6DAFD6EDB61D142050B /* Support Files */,
-			);
-			path = PazHelperSwift;
-			sourceTree = "<group>";
-		};
-		B0CEF67051703A61B0241F189C2858E9 /* Pods-WeatherFlowApiSwift */ = {
-			isa = PBXGroup;
-			children = (
-				499338369FF52B2B8FBD7784DAFFB54A /* Info.plist */,
-				1528DAFCC2B7425589C7050ADB997712 /* Pods-WeatherFlowApiSwift.modulemap */,
-				CCE8E4E7A6EEF42183AA8732373D3CCE /* Pods-WeatherFlowApiSwift-acknowledgements.markdown */,
-				2D16A8036052BBADC577DE41FA270D54 /* Pods-WeatherFlowApiSwift-acknowledgements.plist */,
-				865AD619A13882B5D0E5BA3985028531 /* Pods-WeatherFlowApiSwift-dummy.m */,
-				A06B2F03B4D62D8254DEA70440BAA481 /* Pods-WeatherFlowApiSwift-resources.sh */,
-				CDE91D3A50BDEA33BD700B5AB12B8608 /* Pods-WeatherFlowApiSwift-umbrella.h */,
-				862D25FBEDF42BEC8F58D4B2CF4C2088 /* Pods-WeatherFlowApiSwift.debug.xcconfig */,
-				9F50BD5237E00D6F7830CEFECA25FED1 /* Pods-WeatherFlowApiSwift.release.xcconfig */,
-			);
-			name = "Pods-WeatherFlowApiSwift";
-			path = "Target Support Files/Pods-WeatherFlowApiSwift";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		028E047692E32D8EB2D87D12B7FDE7DE /* Headers */ = {
+		8D53FD4134E1876C48262E549D173B3D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E830EC0BEF36EF118ED3913AFED9AA0 /* PazHelperSwift-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		53B4336D41B0339531AC96A5948A984F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CECD1578341DF45DB670F7E906A32351 /* Pods-WeatherFlowApiSwift-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE3564C79A5A51C9BD519D20EA24DDF7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E749C61B6D7D57DD3EE70A3CA10A48D8 /* Pods-WeatherFlowApiSwiftTests-umbrella.h in Headers */,
+				CBC1BCB1E354D39DAA8DB8762D0BC75B /* Pods-WeatherFlowApiSwift-iOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		00175E519992CFA4FE1A3B9BC823259B /* Pods-WeatherFlowApiSwiftTests */ = {
+		BC1E35ACE86F375AB3F3019F6DF7AD9E /* Pods-WeatherFlowApiSwift-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CBE7A56DBD8937836FB1E51E6A5A021D /* Build configuration list for PBXNativeTarget "Pods-WeatherFlowApiSwiftTests" */;
+			buildConfigurationList = B4449BC8A7C3D81270E1BE825872B8F0 /* Build configuration list for PBXNativeTarget "Pods-WeatherFlowApiSwift-iOS" */;
 			buildPhases = (
-				915053A2A5F398153002BB2715C38F87 /* Sources */,
-				4C6A411E07535D0EF4324506F587BB56 /* Frameworks */,
-				DE3564C79A5A51C9BD519D20EA24DDF7 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0DB7F7034863B3C9F40C6446F20E3D33 /* PBXTargetDependency */,
-			);
-			name = "Pods-WeatherFlowApiSwiftTests";
-			productName = "Pods-WeatherFlowApiSwiftTests";
-			productReference = F33E9D256AEBDB59D57C47F727A26E1D /* Pods_WeatherFlowApiSwiftTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		B0AFA1C57F16A3CE04F89119F6D3508E /* PazHelperSwift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 302158D9F14EF82E5E48AAF077CCA65F /* Build configuration list for PBXNativeTarget "PazHelperSwift" */;
-			buildPhases = (
-				A74A218A677A575D97747133E49A9246 /* Sources */,
-				EA9DE587D093AB5F34A2AC27D648D935 /* Frameworks */,
-				028E047692E32D8EB2D87D12B7FDE7DE /* Headers */,
+				1850E7677D24C633DAB309CB9FE3E945 /* Sources */,
+				5DFF48AB96796134686241EA34C69149 /* Frameworks */,
+				8D53FD4134E1876C48262E549D173B3D /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PazHelperSwift;
-			productName = PazHelperSwift;
-			productReference = 94238586B3F7B43BF3DF073DC8990008 /* PazHelperSwift.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D13022A751075C2A7DFC0546EBADB1B7 /* Pods-WeatherFlowApiSwift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2C2ED93383C337A79569ABA015000BE6 /* Build configuration list for PBXNativeTarget "Pods-WeatherFlowApiSwift" */;
-			buildPhases = (
-				80C61D2BDD79834C3B707954E9F76399 /* Sources */,
-				B00FD22AF58CED30D511ADC812889A77 /* Frameworks */,
-				53B4336D41B0339531AC96A5948A984F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7761D30D2F172E68CD19BA8D1C99C324 /* PBXTargetDependency */,
-			);
-			name = "Pods-WeatherFlowApiSwift";
-			productName = "Pods-WeatherFlowApiSwift";
-			productReference = 7C45B3AB75A333613CFDE97C71ADF469 /* Pods_WeatherFlowApiSwift.framework */;
+			name = "Pods-WeatherFlowApiSwift-iOS";
+			productName = "Pods-WeatherFlowApiSwift-iOS";
+			productReference = 0083E4FE8846A53BCBC0FC70B3973EC7 /* Pods_WeatherFlowApiSwift_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -389,330 +146,28 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 989DAFF75CE6145CDBF169ABFB77AB70 /* Products */;
+			productRefGroup = 5BE902F372D1351CE7CB5D16A598A823 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B0AFA1C57F16A3CE04F89119F6D3508E /* PazHelperSwift */,
-				D13022A751075C2A7DFC0546EBADB1B7 /* Pods-WeatherFlowApiSwift */,
-				00175E519992CFA4FE1A3B9BC823259B /* Pods-WeatherFlowApiSwiftTests */,
+				BC1E35ACE86F375AB3F3019F6DF7AD9E /* Pods-WeatherFlowApiSwift-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		80C61D2BDD79834C3B707954E9F76399 /* Sources */ = {
+		1850E7677D24C633DAB309CB9FE3E945 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD5F63CC3AA8D91AE91150E6CABEA16D /* Pods-WeatherFlowApiSwift-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		915053A2A5F398153002BB2715C38F87 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				276389FDF4BC3799F1DBDA5866821D9C /* Pods-WeatherFlowApiSwiftTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A74A218A677A575D97747133E49A9246 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A76F042E37A1AC493C3311618E0F63C6 /* ExSwift.swift in Sources */,
-				4FB54B3CAB04EC81817C389208359964 /* Float.swift in Sources */,
-				5162A538CDC0C95E7A6DAEDEBBFB4B9C /* Int.swift in Sources */,
-				3F5F9FCB6A99E90F1D5B4FAA18DB1427 /* PazArithmetic.swift in Sources */,
-				8D5D413E842B28F09AB3A4E52A1BA8DD /* PazArray.swift in Sources */,
-				07C9BF762089D3BE60A3B668297E1AAE /* PazDictionary.swift in Sources */,
-				9BF8FBC8EF7ADBC5BA98A8B0BA5C581C /* PazExtensions.swift in Sources */,
-				EAA3F7D6224E413F2F231DCAB5FF0CBF /* PazFontHelperSwift.swift in Sources */,
-				D8B9C1D27063614F89D041C1A9DA69E7 /* PazHelperSwift-dummy.m in Sources */,
-				5B1A30CCFA873320D391FDB11C0EA6B7 /* PazIAPHelperSwift.swift in Sources */,
-				311E4DE37943F2060DA73DFD3CB8E127 /* PazLocationManager.swift in Sources */,
-				5BF430F246092C5DFCA1C5622FAE4DA1 /* PazMapView.swift in Sources */,
-				FD42AD79C5A59C7E44ACD633469EB9E3 /* PazNotificationManager.swift in Sources */,
-				DB6553B3F57E6779CC34E84C4F4432A2 /* PazNSDate.swift in Sources */,
-				4979923330F22160D320B0F135EBE941 /* PazProtector.swift in Sources */,
-				D82A0209EC2C727EE733756405BC581C /* PazString.swift in Sources */,
-				102E6343E572E6E8B2FCFC83AA45FBEC /* PazUILabel.swift in Sources */,
-				43B7B2CB75630BF2AAAF6E6B66551ED1 /* PazUIView.swift in Sources */,
-				91F2E2D58653AFD0B70CFA20C2C612ED /* PazUIViewController.swift in Sources */,
-				9AAE5DD8FC5F5FAD23365F00474BD559 /* PazUnitManager.swift in Sources */,
-				5098307E85D704F6D7703A20CD4D8E87 /* Range.swift in Sources */,
-				753ED9057416C361686470D48E6FE402 /* RMSun.swift in Sources */,
-				2CE3EDEFF4071A81C0378A306807A083 /* Sequence.swift in Sources */,
+				B4DA57D55DB7D131AD9E42270465791A /* Pods-WeatherFlowApiSwift-iOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		0DB7F7034863B3C9F40C6446F20E3D33 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PazHelperSwift;
-			target = B0AFA1C57F16A3CE04F89119F6D3508E /* PazHelperSwift */;
-			targetProxy = CCDE56FF185E574844C6A03ACEC533BF /* PBXContainerItemProxy */;
-		};
-		7761D30D2F172E68CD19BA8D1C99C324 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PazHelperSwift;
-			target = B0AFA1C57F16A3CE04F89119F6D3508E /* PazHelperSwift */;
-			targetProxy = 0011E5E1B6E0401FD3F4D050CCE7DDCB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		018F5050CD0844D0BD599AADEA6DB02A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 862D25FBEDF42BEC8F58D4B2CF4C2088 /* Pods-WeatherFlowApiSwift.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WeatherFlowApiSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WeatherFlowApiSwift/Pods-WeatherFlowApiSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WeatherFlowApiSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0BCE49FD9EF5C4AB1ED24ADB0B792A76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28FAFD3B428C4A9E692DEAF70613C267 /* Pods-WeatherFlowApiSwiftTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WeatherFlowApiSwiftTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WeatherFlowApiSwiftTests/Pods-WeatherFlowApiSwiftTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WeatherFlowApiSwiftTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1612A73A34782448307CEFE4982A83E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E46ADC34670C995969C2F6242EABD7CA /* Pods-WeatherFlowApiSwiftTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WeatherFlowApiSwiftTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WeatherFlowApiSwiftTests/Pods-WeatherFlowApiSwiftTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WeatherFlowApiSwiftTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		581BC0097D644DC4196ED3210D660228 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB9356C046416D87820953D77E1E54DD /* PazHelperSwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PazHelperSwift/PazHelperSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PazHelperSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PazHelperSwift/PazHelperSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = PazHelperSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7ECD2049245106B129984C0DC62D02A5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F50BD5237E00D6F7830CEFECA25FED1 /* Pods-WeatherFlowApiSwift.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WeatherFlowApiSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WeatherFlowApiSwift/Pods-WeatherFlowApiSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WeatherFlowApiSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9B9D4789D019781FCF332563F1A7546E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB9356C046416D87820953D77E1E54DD /* PazHelperSwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PazHelperSwift/PazHelperSwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PazHelperSwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PazHelperSwift/PazHelperSwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = PazHelperSwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		AADB9822762AD81BBAE83335B2AB1EB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B1B5EB0850F98CB5AECDB015B690777F /* Debug */ = {
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -748,7 +203,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -756,41 +211,133 @@
 			};
 			name = Debug;
 		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E912E940DEE244D8665AC2040915431C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BFF4548417D4FC69D91A86E7F147192 /* Pods-WeatherFlowApiSwift-iOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeatherFlowApiSwift-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeatherFlowApiSwift-iOS/Pods-WeatherFlowApiSwift-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_WeatherFlowApiSwift_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED9CFB854CDE576E40E280ADF73EE1C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA4D903C8853B8BB7770356747204FA0 /* Pods-WeatherFlowApiSwift-iOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WeatherFlowApiSwift-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WeatherFlowApiSwift-iOS/Pods-WeatherFlowApiSwift-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_WeatherFlowApiSwift_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C2ED93383C337A79569ABA015000BE6 /* Build configuration list for PBXNativeTarget "Pods-WeatherFlowApiSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				018F5050CD0844D0BD599AADEA6DB02A /* Debug */,
-				7ECD2049245106B129984C0DC62D02A5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1B5EB0850F98CB5AECDB015B690777F /* Debug */,
-				AADB9822762AD81BBAE83335B2AB1EB0 /* Release */,
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		302158D9F14EF82E5E48AAF077CCA65F /* Build configuration list for PBXNativeTarget "PazHelperSwift" */ = {
+		B4449BC8A7C3D81270E1BE825872B8F0 /* Build configuration list for PBXNativeTarget "Pods-WeatherFlowApiSwift-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9B9D4789D019781FCF332563F1A7546E /* Debug */,
-				581BC0097D644DC4196ED3210D660228 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CBE7A56DBD8937836FB1E51E6A5A021D /* Build configuration list for PBXNativeTarget "Pods-WeatherFlowApiSwiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0BCE49FD9EF5C4AB1ED24ADB0B792A76 /* Debug */,
-				1612A73A34782448307CEFE4982A83E8 /* Release */,
+				ED9CFB854CDE576E40E280ADF73EE1C7 /* Debug */,
+				E912E940DEE244D8665AC2040915431C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

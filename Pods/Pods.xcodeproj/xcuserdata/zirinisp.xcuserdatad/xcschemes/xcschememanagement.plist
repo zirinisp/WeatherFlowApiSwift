@@ -4,17 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PazHelperSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-WeatherFlowApiSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-WeatherFlowApiSwiftTests.xcscheme</key>
+		<key>Pods-WeatherFlowApiSwift-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00175E519992CFA4FE1A3B9BC823259B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B0AFA1C57F16A3CE04F89119F6D3508E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D13022A751075C2A7DFC0546EBADB1B7</key>
+		<key>BC1E35ACE86F375AB3F3019F6DF7AD9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
