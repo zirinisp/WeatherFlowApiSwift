@@ -7,42 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6407780E1DAB89E0001CEED5 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778001DAB89E0001CEED5 /* Graph.swift */; };
+		6407780F1DAB89E0001CEED5 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778001DAB89E0001CEED5 /* Graph.swift */; };
+		640778101DAB89E0001CEED5 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 640778011DAB89E0001CEED5 /* Info-iOS.plist */; };
+		640778111DAB89E0001CEED5 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 640778011DAB89E0001CEED5 /* Info-iOS.plist */; };
+		640778121DAB89E0001CEED5 /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = 640778021DAB89E0001CEED5 /* Info-OSX.plist */; };
+		640778131DAB89E0001CEED5 /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = 640778021DAB89E0001CEED5 /* Info-OSX.plist */; };
+		640778141DAB89E0001CEED5 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778031DAB89E0001CEED5 /* ModelData.swift */; };
+		640778151DAB89E0001CEED5 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778031DAB89E0001CEED5 /* ModelData.swift */; };
+		640778161DAB89E0001CEED5 /* ModelDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778041DAB89E0001CEED5 /* ModelDataSet.swift */; };
+		640778171DAB89E0001CEED5 /* ModelDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778041DAB89E0001CEED5 /* ModelDataSet.swift */; };
+		640778181DAB89E0001CEED5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778051DAB89E0001CEED5 /* Profile.swift */; };
+		640778191DAB89E0001CEED5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778051DAB89E0001CEED5 /* Profile.swift */; };
+		6407781A1DAB89E0001CEED5 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778061DAB89E0001CEED5 /* Session.swift */; };
+		6407781B1DAB89E0001CEED5 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778061DAB89E0001CEED5 /* Session.swift */; };
+		6407781C1DAB89E0001CEED5 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778071DAB89E0001CEED5 /* Spot.swift */; };
+		6407781D1DAB89E0001CEED5 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778071DAB89E0001CEED5 /* Spot.swift */; };
+		6407781E1DAB89E0001CEED5 /* SpotSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778081DAB89E0001CEED5 /* SpotSet.swift */; };
+		6407781F1DAB89E0001CEED5 /* SpotSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778081DAB89E0001CEED5 /* SpotSet.swift */; };
+		640778201DAB89E0001CEED5 /* SpotStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778091DAB89E0001CEED5 /* SpotStats.swift */; };
+		640778211DAB89E0001CEED5 /* SpotStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778091DAB89E0001CEED5 /* SpotStats.swift */; };
+		640778221DAB89E0001CEED5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407780A1DAB89E0001CEED5 /* Status.swift */; };
+		640778231DAB89E0001CEED5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407780A1DAB89E0001CEED5 /* Status.swift */; };
+		640778241DAB89E0001CEED5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407780B1DAB89E0001CEED5 /* User.swift */; };
+		640778251DAB89E0001CEED5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407780B1DAB89E0001CEED5 /* User.swift */; };
+		640778261DAB89E0001CEED5 /* WeatherFlowApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407780C1DAB89E0001CEED5 /* WeatherFlowApiSwift.swift */; };
+		640778271DAB89E0001CEED5 /* WeatherFlowApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407780C1DAB89E0001CEED5 /* WeatherFlowApiSwift.swift */; };
+		640778281DAB89E0001CEED5 /* WeatherFlowWindArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407780D1DAB89E0001CEED5 /* WeatherFlowWindArrow.swift */; };
+		640778291DAB89E0001CEED5 /* WeatherFlowWindArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407780D1DAB89E0001CEED5 /* WeatherFlowWindArrow.swift */; };
 		6412D0261DA7857F00E861F5 /* WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6412D01D1DA7857E00E861F5 /* WeatherFlowApiSwift.framework */; };
 		6412D02B1DA7857F00E861F5 /* WeatherFlowApiSwift_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412D02A1DA7857F00E861F5 /* WeatherFlowApiSwift_OSXTests.swift */; };
-		6412D0341DA785D600E861F5 /* WeatherFlowApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */; };
-		6412D0351DA785D600E861F5 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0B9B1C2D480F002C5A42 /* Spot.swift */; };
-		6412D0361DA785D600E861F5 /* SpotSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */; };
-		6412D0371DA785D600E861F5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC01C2DBCE2002C5A42 /* Profile.swift */; };
-		6412D0381DA785D600E861F5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBC1C2D6D27002C5A42 /* Status.swift */; };
-		6412D0391DA785D600E861F5 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC21C2DBEEF002C5A42 /* Session.swift */; };
-		6412D03A1DA785D600E861F5 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C647401C91F2EB00998A41 /* Graph.swift */; };
-		6412D03B1DA785D600E861F5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC41C2DC03E002C5A42 /* User.swift */; };
-		6412D03C1DA785D600E861F5 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC61C2DC45F002C5A42 /* ModelData.swift */; };
-		6412D03D1DA785D600E861F5 /* ModelDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */; };
-		6412D03E1DA785D600E861F5 /* SpotStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BF1231C59E60A004EFABE /* SpotStats.swift */; };
-		6412D0401DA78B2200E861F5 /* WeatherFlowWindArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412D03F1DA78B2200E861F5 /* WeatherFlowWindArrow.swift */; };
-		646BF1241C59E60A004EFABE /* SpotStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BF1231C59E60A004EFABE /* SpotStats.swift */; };
 		647C0C091C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */; };
 		647C0C0E1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */; };
-		647C0C161C2FF105002C5A42 /* WeatherFlowApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */; };
-		647C0C171C2FF105002C5A42 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0B9B1C2D480F002C5A42 /* Spot.swift */; };
-		647C0C181C2FF105002C5A42 /* SpotSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */; };
-		647C0C191C2FF105002C5A42 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC01C2DBCE2002C5A42 /* Profile.swift */; };
-		647C0C1A1C2FF105002C5A42 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBC1C2D6D27002C5A42 /* Status.swift */; };
-		647C0C1B1C2FF105002C5A42 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC21C2DBEEF002C5A42 /* Session.swift */; };
-		647C0C1C1C2FF105002C5A42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC41C2DC03E002C5A42 /* User.swift */; };
-		647C0C1D1C2FF105002C5A42 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC61C2DC45F002C5A42 /* ModelData.swift */; };
-		647C0C1E1C2FF105002C5A42 /* ModelDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */; };
-		647C0C1F1C2FF106002C5A42 /* WeatherFlowApiSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */; };
-		647C0C201C2FF106002C5A42 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0B9B1C2D480F002C5A42 /* Spot.swift */; };
-		647C0C211C2FF106002C5A42 /* SpotSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */; };
-		647C0C221C2FF106002C5A42 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC01C2DBCE2002C5A42 /* Profile.swift */; };
-		647C0C231C2FF106002C5A42 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BBC1C2D6D27002C5A42 /* Status.swift */; };
-		647C0C241C2FF106002C5A42 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC21C2DBEEF002C5A42 /* Session.swift */; };
-		647C0C251C2FF106002C5A42 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC41C2DC03E002C5A42 /* User.swift */; };
-		647C0C261C2FF106002C5A42 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC61C2DC45F002C5A42 /* ModelData.swift */; };
-		647C0C271C2FF106002C5A42 /* ModelDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */; };
-		64C647411C91F2EB00998A41 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C647401C91F2EB00998A41 /* Graph.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,30 +59,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		640777D01DAB6E4F001CEED5 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-OSX.plist"; path = "Sources/Info-OSX.plist"; sourceTree = SOURCE_ROOT; };
 		640777D11DAB6EFF001CEED5 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		640778001DAB89E0001CEED5 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = Sources/Graph.swift; sourceTree = SOURCE_ROOT; };
+		640778011DAB89E0001CEED5 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "Sources/Info-iOS.plist"; sourceTree = SOURCE_ROOT; };
+		640778021DAB89E0001CEED5 /* Info-OSX.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-OSX.plist"; path = "Sources/Info-OSX.plist"; sourceTree = SOURCE_ROOT; };
+		640778031DAB89E0001CEED5 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelData.swift; path = Sources/ModelData.swift; sourceTree = SOURCE_ROOT; };
+		640778041DAB89E0001CEED5 /* ModelDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDataSet.swift; path = Sources/ModelDataSet.swift; sourceTree = SOURCE_ROOT; };
+		640778051DAB89E0001CEED5 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Sources/Profile.swift; sourceTree = SOURCE_ROOT; };
+		640778061DAB89E0001CEED5 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Sources/Session.swift; sourceTree = SOURCE_ROOT; };
+		640778071DAB89E0001CEED5 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Spot.swift; path = Sources/Spot.swift; sourceTree = SOURCE_ROOT; };
+		640778081DAB89E0001CEED5 /* SpotSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotSet.swift; path = Sources/SpotSet.swift; sourceTree = SOURCE_ROOT; };
+		640778091DAB89E0001CEED5 /* SpotStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotStats.swift; path = Sources/SpotStats.swift; sourceTree = SOURCE_ROOT; };
+		6407780A1DAB89E0001CEED5 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Status.swift; path = Sources/Status.swift; sourceTree = SOURCE_ROOT; };
+		6407780B1DAB89E0001CEED5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Sources/User.swift; sourceTree = SOURCE_ROOT; };
+		6407780C1DAB89E0001CEED5 /* WeatherFlowApiSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherFlowApiSwift.swift; path = Sources/WeatherFlowApiSwift.swift; sourceTree = SOURCE_ROOT; };
+		6407780D1DAB89E0001CEED5 /* WeatherFlowWindArrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherFlowWindArrow.swift; path = Sources/WeatherFlowWindArrow.swift; sourceTree = SOURCE_ROOT; };
 		6412D01D1DA7857E00E861F5 /* WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6412D0251DA7857E00E861F5 /* WeatherFlowApiSwift-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeatherFlowApiSwift-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6412D02A1DA7857F00E861F5 /* WeatherFlowApiSwift_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwift_OSXTests.swift; sourceTree = "<group>"; };
 		6412D02C1DA7857F00E861F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6412D03F1DA78B2200E861F5 /* WeatherFlowWindArrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherFlowWindArrow.swift; path = ../Sources/WeatherFlowWindArrow.swift; sourceTree = "<group>"; };
-		646BF1231C59E60A004EFABE /* SpotStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotStats.swift; path = ../Sources/SpotStats.swift; sourceTree = "<group>"; };
-		647C0B9B1C2D480F002C5A42 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Spot.swift; path = ../Sources/Spot.swift; sourceTree = "<group>"; };
 		647C0BBB1C2D6656002C5A42 /* WeatherFlowApiSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherFlowApiSwift.podspec; sourceTree = "<group>"; };
-		647C0BBC1C2D6D27002C5A42 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Status.swift; path = ../Sources/Status.swift; sourceTree = "<group>"; };
-		647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotSet.swift; path = ../Sources/SpotSet.swift; sourceTree = "<group>"; };
-		647C0BC01C2DBCE2002C5A42 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = ../Sources/Profile.swift; sourceTree = "<group>"; };
-		647C0BC21C2DBEEF002C5A42 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = ../Sources/Session.swift; sourceTree = "<group>"; };
-		647C0BC41C2DC03E002C5A42 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../Sources/User.swift; sourceTree = "<group>"; };
-		647C0BC61C2DC45F002C5A42 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelData.swift; path = ../Sources/ModelData.swift; sourceTree = "<group>"; };
-		647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDataSet.swift; path = ../Sources/ModelDataSet.swift; sourceTree = "<group>"; };
-		647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherFlowApiSwift.swift; path = ../Sources/WeatherFlowApiSwift.swift; sourceTree = "<group>"; };
 		647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		647C0C031C2FF0F0002C5A42 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "../Sources/Info-iOS.plist"; sourceTree = "<group>"; };
 		647C0C081C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherFlowApiSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwiftTests.swift; sourceTree = "<group>"; };
 		647C0C0F1C2FF0F0002C5A42 /* Info-iOS-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS-Tests.plist"; sourceTree = "<group>"; };
-		64C647401C91F2EB00998A41 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = ../Sources/Graph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +133,7 @@
 			children = (
 				647C0BBB1C2D6656002C5A42 /* WeatherFlowApiSwift.podspec */,
 				640777D11DAB6EFF001CEED5 /* Package.swift */,
-				647C0B901C2D47A5002C5A42 /* WeatherFlowApiSwift */,
+				647C0B901C2D47A5002C5A42 /* Sources */,
 				647C0C0C1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests */,
 				6412D0291DA7857F00E861F5 /* WeatherFlowApiSwift-OSXTests */,
 				647C0B8F1C2D47A5002C5A42 /* Products */,
@@ -156,24 +152,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		647C0B901C2D47A5002C5A42 /* WeatherFlowApiSwift */ = {
+		647C0B901C2D47A5002C5A42 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				647C0C031C2FF0F0002C5A42 /* Info-iOS.plist */,
-				640777D01DAB6E4F001CEED5 /* Info-OSX.plist */,
-				647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */,
-				647C0B9B1C2D480F002C5A42 /* Spot.swift */,
-				647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */,
-				647C0BC01C2DBCE2002C5A42 /* Profile.swift */,
-				647C0BBC1C2D6D27002C5A42 /* Status.swift */,
-				647C0BC21C2DBEEF002C5A42 /* Session.swift */,
-				64C647401C91F2EB00998A41 /* Graph.swift */,
-				647C0BC41C2DC03E002C5A42 /* User.swift */,
-				647C0BC61C2DC45F002C5A42 /* ModelData.swift */,
-				647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */,
-				646BF1231C59E60A004EFABE /* SpotStats.swift */,
-				6412D03F1DA78B2200E861F5 /* WeatherFlowWindArrow.swift */,
+				640778001DAB89E0001CEED5 /* Graph.swift */,
+				640778011DAB89E0001CEED5 /* Info-iOS.plist */,
+				640778021DAB89E0001CEED5 /* Info-OSX.plist */,
+				640778031DAB89E0001CEED5 /* ModelData.swift */,
+				640778041DAB89E0001CEED5 /* ModelDataSet.swift */,
+				640778051DAB89E0001CEED5 /* Profile.swift */,
+				640778061DAB89E0001CEED5 /* Session.swift */,
+				640778071DAB89E0001CEED5 /* Spot.swift */,
+				640778081DAB89E0001CEED5 /* SpotSet.swift */,
+				640778091DAB89E0001CEED5 /* SpotStats.swift */,
+				6407780A1DAB89E0001CEED5 /* Status.swift */,
+				6407780B1DAB89E0001CEED5 /* User.swift */,
+				6407780C1DAB89E0001CEED5 /* WeatherFlowApiSwift.swift */,
+				6407780D1DAB89E0001CEED5 /* WeatherFlowWindArrow.swift */,
 			);
+			name = Sources;
 			path = WeatherFlowApiSwift;
 			sourceTree = "<group>";
 		};
@@ -300,6 +297,7 @@
 				TargetAttributes = {
 					6412D01C1DA7857E00E861F5 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					6412D0241DA7857E00E861F5 = {
@@ -341,6 +339,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640778111DAB89E0001CEED5 /* Info-iOS.plist in Resources */,
+				640778131DAB89E0001CEED5 /* Info-OSX.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +355,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640778101DAB89E0001CEED5 /* Info-iOS.plist in Resources */,
+				640778121DAB89E0001CEED5 /* Info-OSX.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,17 +422,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6412D03D1DA785D600E861F5 /* ModelDataSet.swift in Sources */,
-				6412D0341DA785D600E861F5 /* WeatherFlowApiSwift.swift in Sources */,
-				6412D03E1DA785D600E861F5 /* SpotStats.swift in Sources */,
-				6412D0381DA785D600E861F5 /* Status.swift in Sources */,
-				6412D03C1DA785D600E861F5 /* ModelData.swift in Sources */,
-				6412D03A1DA785D600E861F5 /* Graph.swift in Sources */,
-				6412D0391DA785D600E861F5 /* Session.swift in Sources */,
-				6412D03B1DA785D600E861F5 /* User.swift in Sources */,
-				6412D0371DA785D600E861F5 /* Profile.swift in Sources */,
-				6412D0361DA785D600E861F5 /* SpotSet.swift in Sources */,
-				6412D0351DA785D600E861F5 /* Spot.swift in Sources */,
+				6407781B1DAB89E0001CEED5 /* Session.swift in Sources */,
+				6407781D1DAB89E0001CEED5 /* Spot.swift in Sources */,
+				6407780F1DAB89E0001CEED5 /* Graph.swift in Sources */,
+				640778191DAB89E0001CEED5 /* Profile.swift in Sources */,
+				6407781F1DAB89E0001CEED5 /* SpotSet.swift in Sources */,
+				640778231DAB89E0001CEED5 /* Status.swift in Sources */,
+				640778271DAB89E0001CEED5 /* WeatherFlowApiSwift.swift in Sources */,
+				640778151DAB89E0001CEED5 /* ModelData.swift in Sources */,
+				640778171DAB89E0001CEED5 /* ModelDataSet.swift in Sources */,
+				640778251DAB89E0001CEED5 /* User.swift in Sources */,
+				640778291DAB89E0001CEED5 /* WeatherFlowWindArrow.swift in Sources */,
+				640778211DAB89E0001CEED5 /* SpotStats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,18 +449,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				647C0C161C2FF105002C5A42 /* WeatherFlowApiSwift.swift in Sources */,
-				647C0C1A1C2FF105002C5A42 /* Status.swift in Sources */,
-				647C0C1B1C2FF105002C5A42 /* Session.swift in Sources */,
-				647C0C191C2FF105002C5A42 /* Profile.swift in Sources */,
-				647C0C181C2FF105002C5A42 /* SpotSet.swift in Sources */,
-				646BF1241C59E60A004EFABE /* SpotStats.swift in Sources */,
-				647C0C1E1C2FF105002C5A42 /* ModelDataSet.swift in Sources */,
-				64C647411C91F2EB00998A41 /* Graph.swift in Sources */,
-				647C0C1D1C2FF105002C5A42 /* ModelData.swift in Sources */,
-				647C0C171C2FF105002C5A42 /* Spot.swift in Sources */,
-				6412D0401DA78B2200E861F5 /* WeatherFlowWindArrow.swift in Sources */,
-				647C0C1C1C2FF105002C5A42 /* User.swift in Sources */,
+				6407781A1DAB89E0001CEED5 /* Session.swift in Sources */,
+				6407781C1DAB89E0001CEED5 /* Spot.swift in Sources */,
+				6407780E1DAB89E0001CEED5 /* Graph.swift in Sources */,
+				640778181DAB89E0001CEED5 /* Profile.swift in Sources */,
+				6407781E1DAB89E0001CEED5 /* SpotSet.swift in Sources */,
+				640778221DAB89E0001CEED5 /* Status.swift in Sources */,
+				640778261DAB89E0001CEED5 /* WeatherFlowApiSwift.swift in Sources */,
+				640778141DAB89E0001CEED5 /* ModelData.swift in Sources */,
+				640778161DAB89E0001CEED5 /* ModelDataSet.swift in Sources */,
+				640778241DAB89E0001CEED5 /* User.swift in Sources */,
+				640778281DAB89E0001CEED5 /* WeatherFlowWindArrow.swift in Sources */,
+				640778201DAB89E0001CEED5 /* SpotStats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,16 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				647C0C271C2FF106002C5A42 /* ModelDataSet.swift in Sources */,
-				647C0C241C2FF106002C5A42 /* Session.swift in Sources */,
 				647C0C0E1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift in Sources */,
-				647C0C261C2FF106002C5A42 /* ModelData.swift in Sources */,
-				647C0C221C2FF106002C5A42 /* Profile.swift in Sources */,
-				647C0C201C2FF106002C5A42 /* Spot.swift in Sources */,
-				647C0C251C2FF106002C5A42 /* User.swift in Sources */,
-				647C0C211C2FF106002C5A42 /* SpotSet.swift in Sources */,
-				647C0C1F1C2FF106002C5A42 /* WeatherFlowApiSwift.swift in Sources */,
-				647C0C231C2FF106002C5A42 /* Status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -528,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -555,6 +551,7 @@
 		6412D0321DA7857F00E861F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -575,6 +572,7 @@
 		6412D0331DA7857F00E861F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -680,6 +678,7 @@
 		647C0C111C2FF0F0002C5A42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -694,6 +693,7 @@
 				PRODUCT_NAME = WeatherFlowApiSwift;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -703,6 +703,7 @@
 		647C0C121C2FF0F0002C5A42 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -716,6 +717,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.paz-labs.WeatherFlowApiSwift";
 				PRODUCT_NAME = WeatherFlowApiSwift;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -725,6 +727,7 @@
 		647C0C141C2FF0F0002C5A42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = XZ582BS8LF;
 				INFOPLIST_FILE = WeatherFlowApiSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -737,6 +740,7 @@
 		647C0C151C2FF0F0002C5A42 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = XZ582BS8LF;
 				INFOPLIST_FILE = WeatherFlowApiSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

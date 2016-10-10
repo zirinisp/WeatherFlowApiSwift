@@ -7,9 +7,16 @@
 //
 
 import Foundation
-import MapKit
 
-open class Spot: NSObject, MKAnnotation {
+#if os(OSX)
+    import CoreLocation
+#elseif os(Linux)
+    import CoreLinuxLocation
+#else
+    import MapKit
+#endif
+
+open class Spot: NSObject {
     
     open fileprivate (set) var spot_id: Int
     open fileprivate (set) var name: String?
@@ -196,8 +203,49 @@ open class Spot: NSObject, MKAnnotation {
         return self.wind_desc
     }
     
-#if !os(OSX)
-    fileprivate var annotationView__: MKAnnotationView?
+    open override func isEqual(_ object: Any?) -> Bool {
+        if !(object is Spot) {
+            return false
+        }
+        let spot: Spot = object as! Spot
+        return spot.spot_id == self.spot_id
+    }
+    
+    open func distanceFrom(_ location: CLLocation) -> CLLocationDistance? {
+        if CLLocationCoordinate2DIsValid(self.coordinate) {
+            let loc: CLLocation = CLLocation(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
+            let dist: CLLocationDistance = loc.distance(from: location)
+            return dist
+        }
+        return nil
+    }
+    
+    open func getModelData() -> ModelDataSet? {
+        do {
+            return try WeatherFlowApiSwift.getModelDataBySpot(self)
+        } catch {
+            return nil
+        }
+    }
+    
+    open func getModelDataError() throws -> ModelDataSet? {
+        return try WeatherFlowApiSwift.getModelDataBySpot(self)
+    }
+
+    // THe following dictionary is used for storage on extensions like MKAnnotation
+    open lazy var _extensionStorage = [String: Any]()
+}
+
+#if !os(OSX) && !os(Linux)
+extension Spot: MKAnnotation {
+    fileprivate var annotationView__: MKAnnotationView? {
+        get {
+            return self._extensionStorage["annotationView"] as? MKAnnotationView
+        }
+        set {
+            self._extensionStorage["annotationView"] = newValue
+        }
+    }
     open var annotationView: MKAnnotationView {
         if let view = self.annotationView__ {
             return view
@@ -244,37 +292,7 @@ open class Spot: NSObject, MKAnnotation {
             return view
         }
     }
-#endif
-
-    open override func isEqual(_ object: Any?) -> Bool {
-        if !(object is Spot) {
-            return false
-        }
-        let spot: Spot = object as! Spot
-        return spot.spot_id == self.spot_id
-    }
-    
-    open func distanceFrom(_ location: CLLocation) -> CLLocationDistance? {
-        if CLLocationCoordinate2DIsValid(self.coordinate) {
-            let loc: CLLocation = CLLocation(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
-            let dist: CLLocationDistance = loc.distance(from: location)
-            return dist
-        }
-        return nil
-    }
-    
-    open func getModelData() -> ModelDataSet? {
-        do {
-            return try WeatherFlowApiSwift.getModelDataBySpot(self)
-        } catch {
-            return nil
-        }
-    }
-    
-    open func getModelDataError() throws -> ModelDataSet? {
-        return try WeatherFlowApiSwift.getModelDataBySpot(self)
-    }
-
 }
+#endif
 
 

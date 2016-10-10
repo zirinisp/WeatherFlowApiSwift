@@ -8,7 +8,7 @@
 
 
 // File contains libraries that refer to UIKit, so building on Mac is exluded.
-#if !os(OSX)
+#if !os(OSX) && !os(Linux)
 
 import Foundation
 import UIKit

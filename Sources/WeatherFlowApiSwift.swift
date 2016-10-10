@@ -7,7 +7,12 @@
 //
 
 import Foundation
-import CoreLocation
+#if os(Linux)
+    import CoreLinuxLocation
+#else
+    import CoreLocation
+#endif
+
 
 enum WeatherFlowApiError: Error {
     case noResult
