@@ -63,29 +63,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		640777D01DAB6E4F001CEED5 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-OSX.plist"; path = "Sources/Info-OSX.plist"; sourceTree = SOURCE_ROOT; };
+		640777D11DAB6EFF001CEED5 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		6412D01D1DA7857E00E861F5 /* WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6412D0201DA7857E00E861F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6412D0251DA7857E00E861F5 /* WeatherFlowApiSwift-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WeatherFlowApiSwift-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6412D02A1DA7857F00E861F5 /* WeatherFlowApiSwift_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwift_OSXTests.swift; sourceTree = "<group>"; };
 		6412D02C1DA7857F00E861F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6412D03F1DA78B2200E861F5 /* WeatherFlowWindArrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFlowWindArrow.swift; sourceTree = "<group>"; };
-		646BF1231C59E60A004EFABE /* SpotStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotStats.swift; sourceTree = "<group>"; };
-		647C0B9B1C2D480F002C5A42 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		6412D03F1DA78B2200E861F5 /* WeatherFlowWindArrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherFlowWindArrow.swift; path = ../Sources/WeatherFlowWindArrow.swift; sourceTree = "<group>"; };
+		646BF1231C59E60A004EFABE /* SpotStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotStats.swift; path = ../Sources/SpotStats.swift; sourceTree = "<group>"; };
+		647C0B9B1C2D480F002C5A42 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Spot.swift; path = ../Sources/Spot.swift; sourceTree = "<group>"; };
 		647C0BBB1C2D6656002C5A42 /* WeatherFlowApiSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = WeatherFlowApiSwift.podspec; sourceTree = "<group>"; };
-		647C0BBC1C2D6D27002C5A42 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
-		647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotSet.swift; sourceTree = "<group>"; };
-		647C0BC01C2DBCE2002C5A42 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		647C0BC21C2DBEEF002C5A42 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		647C0BC41C2DC03E002C5A42 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		647C0BC61C2DC45F002C5A42 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDataSet.swift; sourceTree = "<group>"; };
-		647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwift.swift; sourceTree = "<group>"; };
+		647C0BBC1C2D6D27002C5A42 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Status.swift; path = ../Sources/Status.swift; sourceTree = "<group>"; };
+		647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpotSet.swift; path = ../Sources/SpotSet.swift; sourceTree = "<group>"; };
+		647C0BC01C2DBCE2002C5A42 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = ../Sources/Profile.swift; sourceTree = "<group>"; };
+		647C0BC21C2DBEEF002C5A42 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = ../Sources/Session.swift; sourceTree = "<group>"; };
+		647C0BC41C2DC03E002C5A42 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../Sources/User.swift; sourceTree = "<group>"; };
+		647C0BC61C2DC45F002C5A42 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelData.swift; path = ../Sources/ModelData.swift; sourceTree = "<group>"; };
+		647C0BC81C2EE17B002C5A42 /* ModelDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDataSet.swift; path = ../Sources/ModelDataSet.swift; sourceTree = "<group>"; };
+		647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherFlowApiSwift.swift; path = ../Sources/WeatherFlowApiSwift.swift; sourceTree = "<group>"; };
 		647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherFlowApiSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		647C0C031C2FF0F0002C5A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		647C0C031C2FF0F0002C5A42 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "../Sources/Info-iOS.plist"; sourceTree = "<group>"; };
 		647C0C081C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherFlowApiSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFlowApiSwiftTests.swift; sourceTree = "<group>"; };
-		647C0C0F1C2FF0F0002C5A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		64C647401C91F2EB00998A41 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		647C0C0F1C2FF0F0002C5A42 /* Info-iOS-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS-Tests.plist"; sourceTree = "<group>"; };
+		64C647401C91F2EB00998A41 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Graph.swift; path = ../Sources/Graph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,14 +123,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6412D01E1DA7857E00E861F5 /* WeatherFlowApiSwift-OSX */ = {
-			isa = PBXGroup;
-			children = (
-				6412D0201DA7857E00E861F5 /* Info.plist */,
-			);
-			path = "WeatherFlowApiSwift-OSX";
-			sourceTree = "<group>";
-		};
 		6412D0291DA7857F00E861F5 /* WeatherFlowApiSwift-OSXTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				647C0BBB1C2D6656002C5A42 /* WeatherFlowApiSwift.podspec */,
+				640777D11DAB6EFF001CEED5 /* Package.swift */,
 				647C0B901C2D47A5002C5A42 /* WeatherFlowApiSwift */,
 				647C0C0C1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests */,
-				6412D01E1DA7857E00E861F5 /* WeatherFlowApiSwift-OSX */,
 				6412D0291DA7857F00E861F5 /* WeatherFlowApiSwift-OSXTests */,
 				647C0B8F1C2D47A5002C5A42 /* Products */,
 				F3B7F763FBF79A99892F738B /* Frameworks */,
@@ -166,7 +159,8 @@
 		647C0B901C2D47A5002C5A42 /* WeatherFlowApiSwift */ = {
 			isa = PBXGroup;
 			children = (
-				647C0C031C2FF0F0002C5A42 /* Info.plist */,
+				647C0C031C2FF0F0002C5A42 /* Info-iOS.plist */,
+				640777D01DAB6E4F001CEED5 /* Info-OSX.plist */,
 				647C0BCA1C2FE8A6002C5A42 /* WeatherFlowApiSwift.swift */,
 				647C0B9B1C2D480F002C5A42 /* Spot.swift */,
 				647C0BBE1C2D9DEA002C5A42 /* SpotSet.swift */,
@@ -187,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */,
-				647C0C0F1C2FF0F0002C5A42 /* Info.plist */,
+				647C0C0F1C2FF0F0002C5A42 /* Info-iOS-Tests.plist */,
 			);
 			path = WeatherFlowApiSwiftTests;
 			sourceTree = "<group>";
@@ -514,7 +508,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "WeatherFlowApiSwift-OSX/Info.plist";
+				INFOPLIST_FILE = "Sources/Info-OSX.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -544,7 +538,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "WeatherFlowApiSwift-OSX/Info.plist";
+				INFOPLIST_FILE = "Sources/Info-OSX.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -692,7 +686,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WeatherFlowApiSwift/Info.plist;
+				INFOPLIST_FILE = "Sources/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -715,7 +709,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = WeatherFlowApiSwift/Info.plist;
+				INFOPLIST_FILE = "Sources/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

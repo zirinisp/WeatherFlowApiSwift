@@ -6,6 +6,10 @@
 //  Copyright © 2016 Pantelis Zirinis. All rights reserved.
 //
 
+
+// File contains libraries that refer to UIKit, so building on Mac is exluded.
+#if !os(OSX)
+
 import Foundation
 import UIKit
 
@@ -162,3 +166,5 @@ struct WeatherFlowArrowImage {
     var size: Int
     var image: UIImage
 }
+
+#endif
