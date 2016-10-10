@@ -8,6 +8,7 @@
 
 import Foundation
 #if os(Linux)
+    import Dispatch
     import CoreLinuxLocation
 #else
     import CoreLocation
@@ -143,9 +144,9 @@ open class WeatherFlowApiSwift: NSObject {
         public var name: Notification.Name {
             switch self {
             case .WeatherFlowApiToken:
-                return Notification.Name("kWeatherFlowApiTokenUpdateNotification")
+                return Notification.Name(rawValue: "kWeatherFlowApiTokenUpdateNotification")
             case .WeatherFlowRequestSent:
-                return Notification.Name("WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent") // Used to monitor server requests
+                return Notification.Name(rawValue: "WeatherFlowApiSwift.UpdateNotificationWeatherFlowRequestSent") // Used to monitor server requests
             }
         }
     }
@@ -424,7 +425,7 @@ open class WeatherFlowApiSwift: NSObject {
         }
         for dictionary: [AnyHashable: Any] in parameters {
             if let name = dictionary[NameKey], let value = dictionary[ValueKey] {
-                let parametersString = String(format: "&%@=%@", arguments: [String(describing: name), String(describing: value)])
+                let parametersString = "&"+String(describing: name)+"="+String(describing: value)
                 string += parametersString
             }
         }
