@@ -51,7 +51,7 @@ open class ModelDataSet: NSObject, NSCoding {
                     }
                     
                 }
-                let modelData = ModelData(dictionary: modelDataDic as [NSObject : AnyObject])
+                let modelData = ModelData(dictionary: modelDataDic)
                 model_data.append(modelData)
             }
             self.init(model_data: model_data)

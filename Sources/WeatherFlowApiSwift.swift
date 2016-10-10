@@ -510,7 +510,7 @@ open class WeatherFlowApiSwift: NSObject {
             let explodeRequest = requestString.explode("?")
             if explodeRequest.count > 0 {
                 let request = explodeRequest[0]
-                NotificationCenter.default.post(name: WeatherFlowApiSwift.UpdateNotification.WeatherFlowRequestSent.name, object: self, userInfo: ["request" : request])
+                NotificationCenter.default.post(name: WeatherFlowApiSwift.UpdateNotification.WeatherFlowRequestSent.name, object: nil, userInfo: ["request" : request])
             }
         }
         if let url: URL = URL(string: urlString) {

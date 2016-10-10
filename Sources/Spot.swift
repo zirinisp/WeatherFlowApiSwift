@@ -187,12 +187,17 @@ open class Spot: NSObject {
     
     open var coordinate: CLLocationCoordinate2D {
         if let lat = self.lat, let lon = self.lon {
-            let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, lon)
+            let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: lon)
             if CLLocationCoordinate2DIsValid(coordinate) {
                 return coordinate
             }
         }
-        return kCLLocationCoordinate2DInvalid
+        #if os(Linux)
+            // TODO: We have to fix this some day and make it return nil
+            return CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+        #else
+            return kCLLocationCoordinate2DInvalid
+        #endif
     }
     
     open var title: String? {
