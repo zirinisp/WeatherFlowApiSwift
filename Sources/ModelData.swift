@@ -36,7 +36,9 @@ open class ModelData: NSObject, NSCoding {
     open var modelTime: Date? {
         if let dateString = self.model_time_utc {
             let dateFormatter: DateFormatter = DateFormatter()
-            DateFormatter.defaultFormatterBehavior = DateFormatter.Behavior.default
+            #if !os(Linux)
+                DateFormatter.defaultFormatterBehavior = DateFormatter.Behavior.default
+            #endif
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             //[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZ"

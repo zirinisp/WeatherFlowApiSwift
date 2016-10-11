@@ -30,10 +30,10 @@ open class Graph {
     open fileprivate (set) var last_ob_dir: Int?
     
     
-    public init(spot_id: Int, dictionary: [String : AnyObject]) {
+    public init(spot_id: Int, dictionary: [String : Any]) {
         self.spot_id = spot_id        
         image_url = dictionary["image_url"] as? String
-        if let statusDictionary = dictionary["status"] as? [String: AnyObject] {
+        if let statusDictionary = dictionary["status"] as? [String: Any] {
             self.status = Status(dictionary: statusDictionary)
         }
         name = dictionary["name"] as? String

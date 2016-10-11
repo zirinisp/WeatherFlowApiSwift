@@ -14,7 +14,7 @@ open class Session {
     open fileprivate (set) var token: String?
     open fileprivate (set) var user: User?
     
-    convenience public init(dictionary: [String : AnyObject]) {
+    convenience public init(dictionary: [String : Any]) {
         self.init()
         self.status = (dictionary[Status.Key] as? Status)
         self.token = (dictionary[Session.TokenKey] as? String)

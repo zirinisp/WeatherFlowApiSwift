@@ -31,14 +31,14 @@ open class SpotSet {
     open var center_lon: Double?
     open var profile: Profile?
     
-    convenience public init(dictionary: [String : AnyObject]) {
+    convenience public init(dictionary: [String : Any]) {
         self.init()
 
         let data_names: [String]? = (dictionary["data_names"] as? [String])
-        let data_values: [[AnyObject]]? = (dictionary["data_values"] as? [[AnyObject]])
+        let data_values: [[Any]]? = (dictionary["data_values"] as? [[Any]])
         self.setSpotsWithNames(data_names, values: data_values)
 
-        if let statusDictionary = dictionary["status"] as? [String: AnyObject] {
+        if let statusDictionary = dictionary["status"] as? [String: Any] {
             self.status = Status(dictionary: statusDictionary)
         }
         search_lat = (dictionary["search_lat"] as? Double)
@@ -58,7 +58,7 @@ open class SpotSet {
         current_time_local = (dictionary["current_time_local"] as? String)
         center_lat = (dictionary["center_lat"] as? Double)
         center_lon = (dictionary["center_lon"] as? Double)
-        if let profileDictionary = dictionary["profile"] as? [String: AnyObject] {
+        if let profileDictionary = dictionary["profile"] as? [String: Any] {
             profile = Profile(dictionary: profileDictionary)
         }
     }
@@ -68,14 +68,14 @@ open class SpotSet {
         return "<\(type(of: self)): \(self), \(description)>"
     }
     
-    func setSpotsWithNames(_ data_names: [String]?, values data_values: [[AnyObject]]?) {
+    func setSpotsWithNames(_ data_names: [String]?, values data_values: [[Any]]?) {
         var array: [Spot] = [Spot]()
         if let names = data_names, let values = data_values {
-            for values: [AnyObject] in values {
-                var dictionary: [String : AnyObject] = [String : AnyObject]()
+            for values: [Any] in values {
+                var dictionary: [String : Any] = [String : Any]()
                 var index: Int = 0
                 for key: String in names {
-                    let value: AnyObject = values[index]
+                    let value: Any = values[index]
                     dictionary[key] = value
                     index += 1
                 }

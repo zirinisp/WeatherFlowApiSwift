@@ -22,7 +22,7 @@ open class ModelDataSet: NSObject, NSCoding {
     open fileprivate (set) var model_color: String?
     open fileprivate (set) var spot: Spot?
     
-    convenience public init?(dictionary: [String : AnyObject]) {
+    convenience public init?(dictionary: [String : Any]) {
         self.init(dictionary: dictionary, andSpot: nil)
     }
     
@@ -31,10 +31,10 @@ open class ModelDataSet: NSObject, NSCoding {
         super.init()
     }
     
-    public convenience init?(dictionary: [String : AnyObject], andSpot spot: Spot?) {
+    public convenience init?(dictionary: [String : Any], andSpot spot: Spot?) {
         var model_data = [ModelData]()
-        if let modelDataArray: [[String: AnyObject]] = (dictionary["model_data"] as? [[String: AnyObject]]) {
-            for dictionary: [String : AnyObject] in modelDataArray {
+        if let modelDataArray: [[String: Any]] = (dictionary["model_data"] as? [[String: Any]]) {
+            for dictionary: [String : Any] in modelDataArray {
                 // For some reason we do not get location on all modelData, so lets add it
                 var modelDataDic = dictionary
                 var updateLocation = false
@@ -46,8 +46,8 @@ open class ModelDataSet: NSObject, NSCoding {
                 }
                 if updateLocation {
                     if let lon = spot?.lon, let lat = spot?.lat {
-                        modelDataDic["lat"] = Int(lat) as AnyObject?
-                        modelDataDic["lon"] = Int(lon) as AnyObject?
+                        modelDataDic["lat"] = Int(lat) as Any?
+                        modelDataDic["lon"] = Int(lon) as Any?
                     }
                     
                 }
@@ -63,7 +63,7 @@ open class ModelDataSet: NSObject, NSCoding {
         units_wind = (dictionary["units_wind"] as? String)
         units_temp = (dictionary["units_temp"] as? String)
         units_distance = (dictionary["units_distance"] as? String)
-        if let statusDictionary = dictionary["status"] as? [String: AnyObject] {
+        if let statusDictionary = dictionary["status"] as? [String: Any] {
             self.status = Status(dictionary: statusDictionary)
         }
         max_wind = (dictionary["max_wind"] as? Double)

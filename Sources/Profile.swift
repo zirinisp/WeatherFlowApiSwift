@@ -32,7 +32,7 @@ open class Profile {
     open fileprivate (set) var map_count: Int?
     open fileprivate (set) var description: String?
     
-    convenience public init(dictionary: [String : AnyObject]) {
+    convenience public init(dictionary: [String : Any]) {
         self.init()
         profile_id = (dictionary["profile_id"] as? Int)
         name = (dictionary["name"] as? String)

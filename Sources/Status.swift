@@ -9,7 +9,7 @@
 import Foundation
 
 open class Status: NSObject, NSCoding {
-    public convenience init?(dictionary: [String : AnyObject]) {
+    public convenience init?(dictionary: [String : Any]) {
         self.init()
         if let statusCode = dictionary[Status.CodeKey] as? Int, let statusMessage = dictionary[Status.MessageKey] as? String {
             self.statusCode = statusCode

@@ -15,15 +15,15 @@ open class SpotStats {
     open fileprivate (set) var start_month: String?
     open fileprivate (set) var year_stats: [YearStat]?
     
-    public init?(spot_id: Int, dictionary: [String : AnyObject]) {
+    public init?(spot_id: Int, dictionary: [String : Any]) {
         self.spot_id = spot_id
         self.name = (dictionary["name"] as? String)
         self.start_month = (dictionary["start_month"] as? String)
-        if let statusDictionary = dictionary["status"] as? [String: AnyObject] {
+        if let statusDictionary = dictionary["status"] as? [String: Any] {
             self.status = Status(dictionary: statusDictionary)
         }
         var year_stats = [YearStat]()
-        if let statistics = dictionary["year_stat"] as? [[String: AnyObject]] {
+        if let statistics = dictionary["year_stat"] as? [[String: Any]] {
             for yearStatDictionary in statistics {
                 if let yearStat = YearStat(dictionary: yearStatDictionary) {
                     year_stats.append(yearStat)
@@ -132,7 +132,7 @@ open class YearStat {
     open fileprivate (set) var dir_gust_t25: [YearStatMonth: [YearStatDirection: Int]]?
     
 
-    public init?(dictionary: [String : AnyObject]) {
+    public init?(dictionary: [String : Any]) {
         if let year = dictionary["year"] as? String {
             self.year = year
         } else {

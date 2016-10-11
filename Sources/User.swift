@@ -27,7 +27,7 @@ open class User {
     var trial_status: String?
     var trial_message: String?
     var trial_days_left: Int?
-    var messages: [AnyObject]?
+    var messages: [Any]?
     var non_trial_member_level: Int?
     var non_trial_member_level_name: String?
     var trialEndDate: Date?
@@ -50,7 +50,7 @@ open class User {
         trial_status = (dictionary["trial_status"] as? String)
         trial_message = (dictionary["trial_message"] as? String)
         trial_days_left = (dictionary["trial_days_left"] as? Int)
-        messages = (dictionary["messages"] as? [AnyObject])
+        messages = (dictionary["messages"] as? [Any])
         non_trial_member_level = (dictionary["non_trial_member_level"] as? Int)
         non_trial_member_level_name = (dictionary["non_trial_member_level_name"] as? String)
         trialEndDate = (dictionary["trialEndDate"] as? Date)

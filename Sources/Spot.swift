@@ -57,7 +57,7 @@ open class Spot: NSObject {
         super.init()
     }
     
-    public convenience init?(dictionary: [String : AnyObject]) {
+    public convenience init?(dictionary: [String : Any]) {
         if let spot_id = dictionary["spot_id"] as? Int {
             self.init(spot_id: spot_id)
         } else {
@@ -82,7 +82,7 @@ open class Spot: NSObject {
         self.dir_text = (dictionary["dir_text"] as? String)
         self.atemp = (dictionary["atemp"] as? Double)
         self.wtemp = (dictionary["wtemp"] as? Double)
-        if let statusDictionary = dictionary["status"] as? [String: AnyObject] {
+        if let statusDictionary = dictionary["status"] as? [String: Any] {
             self.status = Status(dictionary: statusDictionary)
         }
         self.spot_message = (dictionary["spot_message"] as? String)

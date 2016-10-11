@@ -108,7 +108,7 @@ public enum WFUnitTemp : Int {
     }
 }
 
-open class WeatherFlowApiSwift: NSObject {
+open class WeatherFlowApiSwift {
     // MARK: Keys and Static Definitions
     static var api = "http://api.weatherflow.com"
     static var format = "json"
@@ -503,7 +503,7 @@ open class WeatherFlowApiSwift: NSObject {
     }
     
     // JSON Helper
-    class func dictionaryFromURL(_ urlString: String) throws -> [String: AnyObject] {
+    class func dictionaryFromURL(_ urlString: String) throws -> [String: Any] {
         let explode = urlString.explode("/")
         if explode.count > 5 {
             let requestString = explode[5]
@@ -530,9 +530,9 @@ open class WeatherFlowApiSwift: NSObject {
         }
     }
     
-    class func responseDictionaryFromJSONData(_ data: Data) throws -> [String: AnyObject] {
+    class func responseDictionaryFromJSONData(_ data: Data) throws -> [String: Any] {
         do {
-            if let responseDictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? [String: AnyObject] {
+            if let responseDictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? [String: Any] {
                 return responseDictionary
             }
         } catch let error as NSError {
