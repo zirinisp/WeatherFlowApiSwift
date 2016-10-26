@@ -15,13 +15,19 @@ import Foundation
 #endif
 
 
-enum WeatherFlowApiError: Error {
+public enum WeatherFlowApiError: Error {
     case noResult
     case notInitialized
     case urlError
     case serverError(error: Error)
     case jSonError(error: Error?)
+    case duplicateRequest
     case unknown
+}
+
+public enum WeatherFlowApiResult<T> {
+    case success(T)
+    case error(error: WeatherFlowApiError)
 }
 
 public enum WFUnitDistance : Int {
@@ -108,6 +114,13 @@ public enum WFUnitTemp : Int {
     }
 }
 
+public typealias WFParameters = [[AnyHashable: Any]]
+public typealias SpotSetCompletion = (WeatherFlowApiResult<SpotSet>) -> Void
+public typealias SpotCompletion = (WeatherFlowApiResult<Spot?>) -> Void
+public typealias ModelDataSetCompletion = (WeatherFlowApiResult<ModelDataSet?>) -> Void
+public typealias SpotStatsCompletion = (WeatherFlowApiResult<SpotStats?>) -> Void
+public typealias GraphCompletion = (WeatherFlowApiResult<Graph>) -> Void
+
 open class WeatherFlowApiSwift {
     // MARK: Keys and Static Definitions
     static var api = "http://api.weatherflow.com"
@@ -150,6 +163,8 @@ open class WeatherFlowApiSwift {
             }
         }
     }
+    
+    static open var urlSession: URLSession = URLSession.shared
     
     // MARK: - Units and Settings
     static open var unitDistance: WFUnitDistance {
@@ -223,7 +238,12 @@ open class WeatherFlowApiSwift {
     /// WeatherFlow api key. Used to authenticate with the server
     static open var apiKey: String?
     
-    fileprivate static var session__: Session?
+    fileprivate static var session__: Session? {
+        didSet {
+            NotificationCenter.default.post(name: WeatherFlowApiSwift.UpdateNotification.WeatherFlowApiToken.name, object: self.session__)
+            NSLog("Weather Token Ready")
+        }
+    }
     fileprivate static var tokenRequestActive = false
     /// Session Information
     open static var session: Session? {
@@ -247,11 +267,11 @@ open class WeatherFlowApiSwift {
         return self.session != nil
     }
     
-    /// Connect to the server and request a new token. Nil for active request
+    /// Connect to the server and request a new token. Nil for active request (sync)
     open class func getToken() throws -> Session? {
         // Print Sample Request
         if tokenRequestActive {
-            return nil
+            throw WeatherFlowApiError.duplicateRequest
         }
         if (self.apiKey?.characters.count ?? 0) == 0 {
             NSLog("Weather Token failed no api key")
@@ -259,7 +279,7 @@ open class WeatherFlowApiSwift {
         }
         tokenRequestActive = true
         NSLog("Requesting Weather Token")
-        let urlString: String = "\(api)\(getTokenURL)\("?wf_apikey=")\(self.apiKey!)\("&format=")\(format)"
+        let urlString = self.tokenUrlString
 
         do {
             defer {
@@ -268,44 +288,114 @@ open class WeatherFlowApiSwift {
             let dictionary = try self.dictionaryFromURL(urlString)
             let session = Session(dictionary: dictionary)
             self.session__ = session
-            NotificationCenter.default.post(name: WeatherFlowApiSwift.UpdateNotification.WeatherFlowApiToken.name, object: session__)
-            NSLog("Weather Token Ready")
             return session
         }
     }
+
+    /// Connect to the server and request a new token. Nil for active request (async)
+    open class func getToken(completion: @escaping (WeatherFlowApiResult<Session>) -> Void) {
+        // Print Sample Request
+        if tokenRequestActive {
+            return completion(.error(error: .duplicateRequest))
+        }
+        if (self.apiKey?.characters.count ?? 0) == 0 {
+            print("Weather Token failed no api key")
+            return completion(.error(error: WeatherFlowApiError.notInitialized))
+        }
+        tokenRequestActive = true
+        NSLog("Requesting Weather Token")
+        let urlString = self.tokenUrlString
+        
+        self.dictionaryFromURL(urlString) { (result) in
+            defer {
+                tokenRequestActive = false
+            }
+            switch result {
+            case .success(let dictionary):
+                let session = Session(dictionary: dictionary)
+                self.session__ = session
+                return completion(.success(session))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+            
+        }
+    }
     
+    class var tokenUrlString: String {
+        let urlString: String = "\(api)\(getTokenURL)\("?wf_apikey=")\(self.apiKey!)\("&format=")\(format)"
+        return urlString
+    }
+
     // MARK: - Api Calls
-    
-    open class func getSpotSetBySearch(_ search: String, distance: Int) throws -> SpotSet {
-        var parameters = [[AnyHashable: Any]]()
+ 
+    // Spot Set By Search
+    class func parametersForSpotSetBySearch(_ search: String, distance: Int) -> WFParameters {
+        var parameters = WFParameters()
         parameters.append(self.searchDictionaryWithValue(search))
         parameters += self.unitsArray
         parameters += self.searchArray
         parameters.append(self.formatDictionary)
         parameters.append(self.distanceDictionaryWithValue(distance))
+        return parameters
+    }
+    
+    open class func getSpotSetBySearch(_ search: String, distance: Int) throws -> SpotSet {
+        let parameters = self.parametersForSpotSetBySearch(search, distance: distance)
         let urlString: String = self.urlForService(getSpotSetBySearchURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
         return SpotSet(dictionary: dictionary)
     }
-    
-    open class func getSpotSetByLocation(_ location: CLLocationCoordinate2D, distance: Int) throws -> SpotSet {
-        return try WeatherFlowApiSwift.getSpotSetByLocationCoordinate(location, distance: distance)
+
+    open class func getSpotSetBySearch(_ search: String, distance: Int, completion: @escaping SpotSetCompletion) {
+        let parameters = self.parametersForSpotSetBySearch(search, distance: distance)
+        let urlString: String = self.urlForService(getSpotSetBySearchURL, andParameters: parameters)
+        self.dictionaryFromURL(urlString) { (result) in
+            switch result {
+            case .success(let dictionary):
+                let spotSet = SpotSet(dictionary: dictionary)
+                return completion(.success(spotSet))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
     }
     
-    open class func getSpotSetByLocationCoordinate(_ location: CLLocationCoordinate2D, distance: Int) throws -> SpotSet {
-        var parameters = [[AnyHashable: Any]]()
-        parameters += self.locationArray(location)
+    // Spot Set By Location Coordinate
+    class func parametersForSpotSetByLocationCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int) -> WFParameters {
+        var parameters = WFParameters()
+        parameters += self.coordinateArray(coordinate)
         parameters += self.unitsArray
         parameters += self.searchArray
         parameters.append(self.distanceDictionaryWithValue(distance))
         parameters.append(self.formatDictionary)
+        return parameters
+    }
+    
+    open class func getSpotSetByCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int) throws -> SpotSet {
+        let parameters = self.parametersForSpotSetByLocationCoordinate(coordinate, distance: distance)
         let urlString: String = self.urlForService(getSpotSetByLatLonURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
         return SpotSet(dictionary: dictionary)
     }
+
+    open class func getSpotSetByCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int, completion: @escaping SpotSetCompletion) {
+        let parameters = self.parametersForSpotSetByLocationCoordinate(coordinate, distance: distance)
+        let urlString: String = self.urlForService(getSpotSetByLatLonURL, andParameters: parameters)
+        self.dictionaryFromURL(urlString) { (result) in
+            switch result {
+            case .success(let dictionary):
+                let spotSet = SpotSet(dictionary: dictionary)
+                return completion(.success(spotSet))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
+    }
     
-    open class func getSpotSetByZoomLevel(_ zoomLevel: Int, lat_min latMin: Float, lon_min lonMin: Float, lat_max latMax: Float, lon_max lonMax: Float) throws -> SpotSet {
-        var parameters = [[AnyHashable: Any]]()
+    // Spot Set By Zoom Level
+    class func parametersForSpotSetByZoomLevel(_ zoomLevel: Int, lat_min latMin: Float, lon_min lonMin: Float, lat_max latMax: Float, lon_max lonMax: Float) -> WFParameters {
+        var parameters = WFParameters()
         parameters.append(self.dictionaryWithParameter("lat_min", value: String(format: "%0.5f", latMin)))
         parameters.append(self.dictionaryWithParameter("lon_min", value: String(format: "%0.5f", lonMin)))
         parameters.append(self.dictionaryWithParameter("lat_max", value: String(format: "%0.5f", latMax)))
@@ -314,24 +404,64 @@ open class WeatherFlowApiSwift {
         parameters += (self.unitsArray)
         parameters += (self.searchArray)
         parameters.append(self.formatDictionary)
+        return parameters
+    }
+    
+    open class func getSpotSetByZoomLevel(_ zoomLevel: Int, lat_min latMin: Float, lon_min lonMin: Float, lat_max latMax: Float, lon_max lonMax: Float) throws -> SpotSet {
+        let parameters = self.parametersForSpotSetByZoomLevel(zoomLevel, lat_min: latMin, lon_min: lonMin, lat_max: latMax, lon_max: lonMax)
         let urlString: String = self.urlForService(getSpotSetByZoomLevelURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
         return SpotSet(dictionary: dictionary)
     }
-    
-    open class func getSpotSetByList(_ list: IndexSet) throws -> SpotSet {
-        var parameters = [[AnyHashable: Any]]()
+
+    open class func getSpotSetByZoomLevel(_ zoomLevel: Int, lat_min latMin: Float, lon_min lonMin: Float, lat_max latMax: Float, lon_max lonMax: Float, completion: @escaping SpotSetCompletion) {
+        let parameters = self.parametersForSpotSetByZoomLevel(zoomLevel, lat_min: latMin, lon_min: lonMin, lat_max: latMax, lon_max: lonMax)
+        let urlString: String = self.urlForService(getSpotSetByZoomLevelURL, andParameters: parameters)
+        self.dictionaryFromURL(urlString) { (result) in
+            switch result {
+            case .success(let dictionary):
+                let spotSet = SpotSet(dictionary: dictionary)
+                return completion(.success(spotSet))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
+    }
+
+    // Spot Set By List
+    class func parametersForSpotSetByList(list: IndexSet) -> WFParameters {
+        var parameters = WFParameters()
         parameters += (self.unitsArray)
         parameters.append(self.spotSetByListDictionaryWithValue(list))
         parameters.append(self.formatDictionary)
         parameters += self.searchArray
+        return parameters
+    }
+    
+    open class func getSpotSetByList(_ list: IndexSet) throws -> SpotSet {
+        let parameters = self.parametersForSpotSetByList(list: list)
         let urlString: String = self.urlForService(getSpotSetByListURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
         return SpotSet(dictionary: dictionary)
     }
-    
-    open class func getClosestSpotByLocation(_ location: CLLocationCoordinate2D, distance: Int) throws -> Spot? {
-        let set: SpotSet = try self.getSpotSetByLocation(location, distance: distance)
+
+    open class func getSpotSetByList(_ list: IndexSet, completion: @escaping SpotSetCompletion) {
+        let parameters = self.parametersForSpotSetByList(list: list)
+        let urlString: String = self.urlForService(getSpotSetByListURL, andParameters: parameters)
+        self.dictionaryFromURL(urlString) { (result) in
+            switch result {
+            case .success(let dictionary):
+                let spotSet = SpotSet(dictionary: dictionary)
+                return completion(.success(spotSet))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
+    }
+
+    // Closest Spot By Coordinate
+    open class func getClosestSpotByCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int) throws -> Spot? {
+        let set: SpotSet = try self.getSpotSetByCoordinate(coordinate, distance: distance)
         if set.status?.statusCode != 0 {
             return nil
         }
@@ -342,58 +472,158 @@ open class WeatherFlowApiSwift {
         }
         return nil
     }
-    
-    open class func getModelDataBySpot(_ spot: Spot) throws -> ModelDataSet? {
-        var parameters = [[AnyHashable: Any]]()
+
+    open class func getClosestSpotByCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int, completion: @escaping SpotCompletion) {
+        self.getSpotSetByCoordinate(coordinate, distance: distance) { (result) in
+            switch result {
+            case .success(let set):
+                if set.status?.statusCode != 0 {
+                    return completion(.success(nil))
+                }
+                for spot: Spot in set.spots {
+                    if spot.status?.statusCode == 0 && spot.avg != nil {
+                        return completion(.success(spot))
+                    }
+                }
+                return completion(.success(nil))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
+    }
+
+    // Model Data Set By Spot
+    class func parametersForModelDataBySpot(_ spot: Spot) -> WFParameters {
+        var parameters = WFParameters()
         parameters.append(self.spotIDDictionary(spot.spot_id))
         parameters += (self.unitsArray)
         parameters.append(self.formatDictionary)
+        return parameters
+    }
+    
+    open class func getModelDataBySpot(_ spot: Spot) throws -> ModelDataSet? {
+        let parameters = self.parametersForModelDataBySpot(spot)
         let urlString: String = self.urlForService(getModelDataBySpotURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
         let modelDataSet: ModelDataSet? = ModelDataSet(dictionary: dictionary, andSpot: spot)
         return modelDataSet
     }
-    
-    open class func getModelDataBySpotID(_ spotID: Int) throws -> ModelDataSet? {
-        var parameters = [[AnyHashable: Any]]()
+
+    open class func getModelDataBySpot(_ spot: Spot, completion: @escaping ModelDataSetCompletion) {
+        let parameters = self.parametersForModelDataBySpot(spot)
+        let urlString: String = self.urlForService(getModelDataBySpotURL, andParameters: parameters)
+        self.dictionaryFromURL(urlString) { (result) in
+            switch result {
+            case .success(let dictionary):
+                let modelDataSet = ModelDataSet(dictionary: dictionary, andSpot: spot)
+                return completion(.success(modelDataSet))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
+    }
+
+    // Model Data Set by Spot ID
+    class func parametersForModelDataBySpotID(_ spotID: Int) -> WFParameters {
+        var parameters = WFParameters()
         parameters.append(self.spotIDDictionary(spotID))
         parameters += (self.unitsArray)
         parameters.append(self.formatDictionary)
+        return parameters
+    }
+
+    open class func getModelDataBySpotID(_ spotID: Int) throws -> ModelDataSet? {
+        let parameters = self.parametersForModelDataBySpotID(spotID)
         let urlString: String = self.urlForService(getModelDataBySpotURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
         let modelDataSet = ModelDataSet(dictionary: dictionary)
         return modelDataSet
     }
-    
-    open class func getModelDataByCoordinates(_ coordinate: CLLocationCoordinate2D) throws -> ModelDataSet? {
-        var parameters = [[AnyHashable: Any]]()
-        parameters += (self.locationArray(coordinate))
+
+    open class func getModelDataBySpotID(_ spotID: Int, completion: @escaping ModelDataSetCompletion) {
+        let parameters = self.parametersForModelDataBySpotID(spotID)
+        let urlString: String = self.urlForService(getModelDataBySpotURL, andParameters: parameters)
+        self.dictionaryFromURL(urlString) { (result) in
+            switch result {
+            case .success(let dictionary):
+                let modelDataSet = ModelDataSet(dictionary: dictionary)
+                return completion(.success(modelDataSet))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
+    }
+
+    // Model Data By Coordinate
+    class func parametersForModelDataByCoordinate(_ coordinate: CLLocationCoordinate2D) -> WFParameters {
+        var parameters = WFParameters()
+        parameters += (self.coordinateArray(coordinate))
         parameters += (self.unitsArray)
         parameters.append(self.formatDictionary)
+        return parameters
+    }
+    
+    open class func getModelDataByCoordinate(_ coordinate: CLLocationCoordinate2D) throws -> ModelDataSet? {
+        let parameters = self.parametersForModelDataByCoordinate(coordinate)
         let urlString: String = self.urlForService(getModelDataByLatLonURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
         let modelDataSet = ModelDataSet(dictionary: dictionary)
         return modelDataSet
     }
 
-    open class func getSpotStatsBySpotID(_ spotID: Int, years: Int?) throws -> SpotStats? {
-        var parameters = [[AnyHashable: Any]]()
+    open class func getModelDataByCoordinate(_ coordinate: CLLocationCoordinate2D, completion: @escaping ModelDataSetCompletion) {
+        let parameters = self.parametersForModelDataByCoordinate(coordinate)
+        let urlString: String = self.urlForService(getModelDataByLatLonURL, andParameters: parameters)
+        self.dictionaryFromURL(urlString) { (result) in
+            switch result {
+            case .success(let dictionary):
+                let modelDataSet = ModelDataSet(dictionary: dictionary)
+                return completion(.success(modelDataSet))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
+    }
+
+    // Spot Stats By Spot Id
+    class func parametersForSpotStatsBySpotID(_ spotID: Int, years: Int?) -> WFParameters {
+        var parameters = WFParameters()
         parameters.append(self.spotIDDictionary(spotID))
-//        parameters += (self.unitsArray)
+        //        parameters += (self.unitsArray)
         if let letYears = years {
-            let yearsParam: [[AnyHashable: Any]] = [self.dictionaryWithParameter("years_back", value: "\(letYears)")]
+            let yearsParam: WFParameters = [self.dictionaryWithParameter("years_back", value: "\(letYears)")]
             parameters += yearsParam
         }
         parameters += self.thresholdList
         parameters.append(self.formatDictionary)
-        let urlString: String = self.urlForService(getSpotStatsURL, andParameters: parameters)
-        let dictionary = try self.dictionaryFromURL(urlString)
-        let modelDataSet = SpotStats(spot_id: spotID, dictionary: dictionary)
-        return modelDataSet
+        return parameters
     }
     
-    open class func getGraphForSpotID(_ spotID: Int, unitWind: WFUnitWind?) throws -> Graph {
-        var parameters = [[AnyHashable: Any]]()
+    open class func getSpotStatsBySpotID(_ spotID: Int, years: Int?) throws -> SpotStats? {
+        let parameters = self.parametersForSpotStatsBySpotID(spotID, years: years)
+        let urlString: String = self.urlForService(getSpotStatsURL, andParameters: parameters)
+        let dictionary = try self.dictionaryFromURL(urlString)
+        let spotStats = SpotStats(spot_id: spotID, dictionary: dictionary)
+        return spotStats
+    }
+    
+    open class func getSpotStatsBySpotID(_ spotID: Int, years: Int?, completion: @escaping SpotStatsCompletion) {
+        let parameters = self.parametersForSpotStatsBySpotID(spotID, years: years)
+        let urlString: String = self.urlForService(getSpotStatsURL, andParameters: parameters)
+        self.dictionaryFromURL(urlString) { (result) in
+            switch result {
+            case .success(let dictionary):
+                let spotStats = SpotStats(spot_id: spotID, dictionary: dictionary)
+                return completion(.success(spotStats))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
+    }
+    
+    // Graph For Spot Id
+    class func parametersForGraphForSpotID(_ spotID: Int, unitWind: WFUnitWind?) -> WFParameters {
+        var parameters = WFParameters()
         parameters.append(self.spotIDDictionary(spotID))
         //        parameters += (self.unitsArray)
         parameters.append(self.formatDictionary)
@@ -401,19 +631,37 @@ open class WeatherFlowApiSwift {
         parameters.append(self.dictionaryWithParameter("show_virtual_obs", value: "true"))
         if let unitWind = unitWind {
             parameters.append(self.dictionaryWithParameter("units_wind", value: unitWind.parameter))
-
+            
         } else {
             parameters.append(self.unitWindDictionary)
         }
+        return parameters
+    }
+
+    open class func getGraphForSpotID(_ spotID: Int, unitWind: WFUnitWind?) throws -> Graph {
+        let parameters = self.parametersForGraphForSpotID(spotID, unitWind: unitWind)
         let urlString: String = self.urlForService(getGraphURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
         let graph = Graph(spot_id: spotID, dictionary: dictionary)
         return graph
-        
+    }
+
+    open class func getGraphForSpotID(_ spotID: Int, unitWind: WFUnitWind?, completion: @escaping GraphCompletion) {
+        let parameters = self.parametersForGraphForSpotID(spotID, unitWind: unitWind)
+        let urlString: String = self.urlForService(getGraphURL, andParameters: parameters)
+        self.dictionaryFromURL(urlString) { (result) in
+            switch result {
+            case .success(let dictionary):
+                let graph = Graph(spot_id: spotID, dictionary: dictionary)
+                return completion(.success(graph))
+            case .error(let error):
+                return completion(.error(error: error))
+            }
+        }
     }
 
     // MARK: - UrlParameters Helpers
-    open class func urlForService(_ service: String, andParameters parameters: [[AnyHashable: Any]]) -> String {
+    open class func urlForService(_ service: String, andParameters parameters: WFParameters) -> String {
         var string = String()
         var token = ""
         if let letToken = self.session?.token {
@@ -432,12 +680,12 @@ open class WeatherFlowApiSwift {
         return string
     }
     
-    class var unitsArray: [[AnyHashable: Any]] {
-        let array: [[AnyHashable: Any]] = [self.unitWindDictionary, self.unitDistanceDictionary, self.unitTempDictionary]
+    class var unitsArray: WFParameters {
+        let array: WFParameters = [self.unitWindDictionary, self.unitDistanceDictionary, self.unitTempDictionary]
         return array
     }
     
-    class var searchArray: [[AnyHashable: Any]] {
+    class var searchArray: WFParameters {
         if self.includeVirtualWeatherStations {
             return [self.dictionaryWithParameter("spot_types", value: "1,100,101")]
         }
@@ -446,14 +694,14 @@ open class WeatherFlowApiSwift {
         }
     }
     
-    class var thresholdList: [[AnyHashable: Any]] {
+    class var thresholdList: WFParameters {
         return [self.dictionaryWithParameter("threshold_list", value: "5,10,15,20,25")]
     }
     
 
-    class func locationArray(_ location: CLLocationCoordinate2D) -> [[AnyHashable: Any]] {
-        let lat: String = String(format: "%0.5f", location.latitude)
-        let lon: String = String(format: "%0.5f", location.longitude)
+    class func coordinateArray(_ coordinate: CLLocationCoordinate2D) -> WFParameters {
+        let lat: String = String(format: "%0.5f", coordinate.latitude)
+        let lon: String = String(format: "%0.5f", coordinate.longitude)
         return [self.dictionaryWithParameter("lat", value: lat), self.dictionaryWithParameter("lon", value: lon)]
     }
     
@@ -503,7 +751,53 @@ open class WeatherFlowApiSwift {
     }
     
     // JSON Helper
+    /// URL Request and then convert to Dictionary (sync)
     class func dictionaryFromURL(_ urlString: String) throws -> [String: Any] {
+        self.postRequestSentNotification(urlString: urlString)
+        guard let url: URL = URL(string: urlString) else {
+            throw WeatherFlowApiError.urlError
+        }
+        let (data, _, error) = self.urlSession.synchronousDataTaskWithURL(url)
+            
+        if let result = data {
+            let dictionary = try self.responseDictionaryFromJSONData(result)
+            return dictionary
+        } else {
+            if let letError = error {
+                throw WeatherFlowApiError.serverError(error: letError)
+            }
+            throw WeatherFlowApiError.unknown
+        }
+    }
+    
+    /// URL Request and then convert to Dictionary (sync)
+    class func dictionaryFromURL(_ urlString: String, completion: @escaping (WeatherFlowApiResult<[String: Any]>) -> Void) {
+        guard let url: URL = URL(string: urlString)  else {
+            return completion(WeatherFlowApiResult.error(error: WeatherFlowApiError.urlError))
+        }
+
+        self.urlSession.dataTask(with: url) { (data, response, error) in
+            if let result = data {
+                do {
+                    let dictionary = try self.responseDictionaryFromJSONData(result)
+                    return completion(.success(dictionary))
+                } catch let error as WeatherFlowApiError {
+                    return completion(.error(error: error))
+                } catch {
+                    return completion(.error(error: .unknown))
+                }
+            } else {
+                if let letError = error {
+                    return completion(.error(error: .serverError(error: letError)))
+                }
+                return completion(.error(error: .unknown))
+            }
+        }
+    }
+    
+    
+    /// Post Request Sent Notification
+    class func postRequestSentNotification(urlString: String) {
         let explode = urlString.explode("/")
         if explode.count > 5 {
             let requestString = explode[5]
@@ -512,21 +806,6 @@ open class WeatherFlowApiSwift {
                 let request = explodeRequest[0]
                 NotificationCenter.default.post(name: WeatherFlowApiSwift.UpdateNotification.WeatherFlowRequestSent.name, object: nil, userInfo: ["request" : request])
             }
-        }
-        if let url: URL = URL(string: urlString) {
-            let (data, _, error) = URLSession.shared.synchronousDataTaskWithURL(url)
-            
-            if let result = data {
-                let dictionary = try self.responseDictionaryFromJSONData(result)
-                return dictionary
-            } else {
-                if let letError = error {
-                    throw WeatherFlowApiError.serverError(error: letError)
-                }
-                throw WeatherFlowApiError.unknown
-            }
-        } else {
-            throw WeatherFlowApiError.urlError
         }
     }
     
