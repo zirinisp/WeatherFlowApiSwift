@@ -143,7 +143,7 @@ extension WeatherFlowApiSwift {
     
     class func rotatedImage(_ image: UIImage, degrees: Float) -> UIImage {
         // We add 180 to callibrate the arrow and then conver to radians.
-        let rads: CGFloat = CGFloat(degrees) * CGFloat(M_PI / 180.0)
+        let rads: CGFloat = CGFloat(degrees) * CGFloat(Double.pi / 180.0)
         let newSide: CGFloat = max(image.size.width, image.size.height)
         // Start Context
         let size: CGSize = CGSize(width: newSide, height: newSide)
