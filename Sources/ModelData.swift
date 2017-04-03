@@ -76,7 +76,7 @@ open class ModelData: NSObject, NSCoding {
     }
     
     open override var description: String {
-        let description: String = "%0.1f %0.1f \(self.lat) %0.1f \(self.lon)"
+        let description: String = "%0.1f %0.1f \(self.lat ?? 0.0) %0.1f \(self.lon ?? 0.0)"
         return "<\(type(of: self)): \(self), \(description)>"
     }
     //===========================================================

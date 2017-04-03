@@ -73,7 +73,7 @@ open class ModelDataSet: NSObject, NSCoding {
     }
     
     open override var description: String {
-        let description: String = "\(self.model_name) \(self.status) \(self.spot)"
+        let description: String = "\(String(describing: self.model_name)) \(String(describing: self.status)) \(String(describing: self.spot))"
         return "<\(type(of: self)): \(self), \(description)>"
     }
     //===========================================================

@@ -64,7 +64,7 @@ open class SpotSet {
     }
     
     func description() -> String {
-        let description: String = "%0.4f %0.4f\n\(self.search_lat)"
+        let description: String = "%0.4f %0.4f\n\(self.search_lat ?? 0.0)"
         return "<\(type(of: self)): \(self), \(description)>"
     }
     

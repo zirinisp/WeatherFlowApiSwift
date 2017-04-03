@@ -22,7 +22,7 @@ open class Session {
     }
     
     open var description: String {
-        let description: String = "\(self.status) \(self.token) \(self.user)"
+        let description: String = "\(String(describing: self.status)) \(String(describing: self.token)) \(String(describing: self.user))"
         return "<\(type(of: self)): \(self), \(description)>"
     }
 
