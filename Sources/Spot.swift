@@ -61,9 +61,6 @@ open class Spot: NSObject {
         } else {
             return nil
         }
-        if let isFav = BoolConverter.convert(dictionary["is_favorite"]) {
-            print(isFav)
-        }
         self.name = (dictionary["name"] as? String)
         self.type = (dictionary["type"] as? Int)
         self.distance = (dictionary["distance"] as? Double)
