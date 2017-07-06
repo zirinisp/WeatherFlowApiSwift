@@ -22,7 +22,6 @@ open class Session {
     }
     
     open var description: String {
-<<<<<<< HEAD
         var description: String = ""
         if let status = self.status {
             description += "\(status) "
@@ -39,9 +38,6 @@ open class Session {
         } else {
             description += "No User"
         }
-=======
-        let description: String = "\(String(describing: self.status)) \(String(describing: self.token)) \(String(describing: self.user))"
->>>>>>> ca162588cf54c67900d40796d11cdf91ac2bbc10
         return "<\(type(of: self)): \(self), \(description)>"
     }
 

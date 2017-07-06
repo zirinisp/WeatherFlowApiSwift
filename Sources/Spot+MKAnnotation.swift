@@ -65,3 +65,4 @@ extension Spot: MKAnnotation {
         }
     }
 }
+
