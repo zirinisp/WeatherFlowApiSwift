@@ -875,3 +875,27 @@ struct URLSessionError: Error {
     }
 }
 
+internal class BoolConverter {
+    static func convert(_ value: Any?) -> Bool? {
+        if let bool = value as? Bool {
+            return bool
+        }
+        if let string = value as? String {
+            return string.toBool()
+        }
+        return nil
+    }
+}
+
+internal extension String {
+    func toBool() -> Bool? {
+        switch self {
+        case "True", "true", "yes", "1":
+            return true
+        case "False", "false", "no", "0":
+            return false
+        default:
+            return nil
+        }
+    }
+}

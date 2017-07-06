@@ -7,12 +7,16 @@
 //
 
 import XCTest
-@testable import WeatherFlowApiSwift_OSX
+import WeatherFlowApiSwift
+import CoreLocation
 
 class WeatherFlowApiSwift_OSXTests: XCTestCase {
     
+    
     override func setUp() {
         super.setUp()
+        WeatherFlowApiSwift.apiKey = ""
+        try? WeatherFlowApiSwift.getToken()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -24,6 +28,9 @@ class WeatherFlowApiSwift_OSXTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(WeatherFlowApiSwift.isReady, "Weather Flow is not ready")
+        let spot = try? WeatherFlowApiSwift.getClosestSpotByCoordinate(CLLocationCoordinate2D(latitude: 42.56, longitude: -82.806), distance: 10)
+        XCTAssertNotNil(spot)
     }
     
     func testPerformanceExample() {

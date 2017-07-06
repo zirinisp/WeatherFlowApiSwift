@@ -22,7 +22,22 @@ open class Session {
     }
     
     open var description: String {
-        let description: String = "\(self.status) \(self.token) \(self.user)"
+        var description: String = ""
+        if let status = self.status {
+            description += "\(status) "
+        } else {
+            description += "No Status "
+        }
+        if let token = self.token {
+            description += "\(token) "
+        } else {
+            description += "No Token "
+        }
+        if let user = self.user {
+            description += "\(user)"
+        } else {
+            description += "No User"
+        }
         return "<\(type(of: self)): \(self), \(description)>"
     }
 

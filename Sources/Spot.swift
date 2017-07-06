@@ -63,6 +63,9 @@ open class Spot: NSObject {
         } else {
             return nil
         }
+        if let isFav = BoolConverter.convert(dictionary["is_favorite"]) {
+            print(isFav)
+        }
         self.name = (dictionary["name"] as? String)
         self.type = (dictionary["type"] as? Int)
         self.distance = (dictionary["distance"] as? Double)
@@ -70,10 +73,10 @@ open class Spot: NSObject {
         self.lon = (dictionary["lon"] as? Double)
         self.provider = (dictionary["provider"] as? Int)
         self.region_id = (dictionary["region_id"] as? Int)
-        self.is_favorite = (dictionary["is_favorite"] as? Bool)
-        self.wind_alert_exists = (dictionary["wind_alert_exists"] as? Bool)
-        self.wind_alert_active = (dictionary["wind_alert_active"] as? Bool)
-        self.upgrade_available = (dictionary["upgrade_available"] as? Bool)
+        self.is_favorite = BoolConverter.convert(dictionary["is_favorite"])
+        self.wind_alert_exists = BoolConverter.convert(dictionary["wind_alert_exists"])
+        self.wind_alert_active = BoolConverter.convert(dictionary["wind_alert_active"])
+        self.upgrade_available = BoolConverter.convert(dictionary["upgrade_available"])
         self.timestamp = (dictionary["timestamp"] as? String)
         self.avg = (dictionary["avg"] as? Double)
         self.lull = (dictionary["lull"] as? Double)
@@ -181,7 +184,7 @@ open class Spot: NSObject {
     }
     
     open override var description: String {
-        let description: String = "\(self.spot_id) \(self.name) %0.4f %0.4f"
+        let description: String = "\(self.spot_id) \(self.name ?? "No Name") %0.4f %0.4f"
         return "<\(type(of: self)): \(self), \(description)>"
     }
     
@@ -299,5 +302,3 @@ extension Spot: MKAnnotation {
     }
 }
 #endif
-
-

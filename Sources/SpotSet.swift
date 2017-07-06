@@ -52,7 +52,7 @@ open class SpotSet {
         profile_name = (dictionary["profile_name"] as? String)
         profile_id = (dictionary["profile_id"] as? Int)
         units_distance = (dictionary["units_distance"] as? String)
-        profile_alerts_enabled = (dictionary["profile_alerts_enabled"] as? Bool)
+        profile_alerts_enabled = BoolConverter.convert(dictionary["profile_alerts_enabled"])
         accuracy = (dictionary["accuracy"] as? Int)
         current_time_utc = (dictionary["current_time_utc"] as? String)
         current_time_local = (dictionary["current_time_local"] as? String)
@@ -64,7 +64,7 @@ open class SpotSet {
     }
     
     func description() -> String {
-        let description: String = "%0.4f %0.4f\n\(self.search_lat)"
+        let description: String = "%0.4f %0.4f\n\(self.search_lat ?? 0.0)"
         return "<\(type(of: self)): \(self), \(description)>"
     }
     

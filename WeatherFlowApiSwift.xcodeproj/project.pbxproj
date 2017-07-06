@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		6407780E1DAB89E0001CEED5 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778001DAB89E0001CEED5 /* Graph.swift */; };
 		6407780F1DAB89E0001CEED5 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778001DAB89E0001CEED5 /* Graph.swift */; };
-		640778101DAB89E0001CEED5 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 640778011DAB89E0001CEED5 /* Info-iOS.plist */; };
 		640778111DAB89E0001CEED5 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 640778011DAB89E0001CEED5 /* Info-iOS.plist */; };
 		640778121DAB89E0001CEED5 /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = 640778021DAB89E0001CEED5 /* Info-OSX.plist */; };
-		640778131DAB89E0001CEED5 /* Info-OSX.plist in Resources */ = {isa = PBXBuildFile; fileRef = 640778021DAB89E0001CEED5 /* Info-OSX.plist */; };
 		640778141DAB89E0001CEED5 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778031DAB89E0001CEED5 /* ModelData.swift */; };
 		640778151DAB89E0001CEED5 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778031DAB89E0001CEED5 /* ModelData.swift */; };
 		640778161DAB89E0001CEED5 /* ModelDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640778041DAB89E0001CEED5 /* ModelDataSet.swift */; };
@@ -39,6 +37,7 @@
 		6412D02B1DA7857F00E861F5 /* WeatherFlowApiSwift_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6412D02A1DA7857F00E861F5 /* WeatherFlowApiSwift_OSXTests.swift */; };
 		647C0C091C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */; };
 		647C0C0E1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C0C0D1C2FF0F0002C5A42 /* WeatherFlowApiSwiftTests.swift */; };
+		64F5927C1F0E1F64008F8F3F /* WeatherFlowApiSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647C0BFF1C2FF0F0002C5A42 /* WeatherFlowApiSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F5927C1F0E1F64008F8F3F /* WeatherFlowApiSwift.framework in Frameworks */,
 				6412D0261DA7857F00E861F5 /* WeatherFlowApiSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +292,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Pantelis Zirinis";
 				TargetAttributes = {
 					6412D01C1DA7857E00E861F5 = {
@@ -340,7 +340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				640778111DAB89E0001CEED5 /* Info-iOS.plist in Resources */,
-				640778131DAB89E0001CEED5 /* Info-OSX.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +354,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				640778101DAB89E0001CEED5 /* Info-iOS.plist in Resources */,
 				640778121DAB89E0001CEED5 /* Info-OSX.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

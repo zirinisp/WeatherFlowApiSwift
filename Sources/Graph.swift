@@ -52,7 +52,7 @@ open class Graph {
         last_ob_avg = dictionary["last_ob_avg"] as? Double
         last_ob_lull = dictionary["last_ob_lull"] as? Double
         last_ob_temp = dictionary["last_ob_temp"] as? Double
-        upgrade_available = dictionary["upgrade_available"] as? Bool
+        upgrade_available = BoolConverter.convert(dictionary["upgrade_available"])
         last_ob_dir = dictionary["last_ob_dir"] as? Int
     }
 }
