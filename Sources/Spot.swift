@@ -8,12 +8,10 @@
 
 import Foundation
 
-#if os(OSX)
-    import CoreLocation
-#elseif os(Linux)
+#if os(Linux)
     import CoreLinuxLocation
 #else
-    import MapKit
+    import CoreLocation
 #endif
 
 open class Spot: NSObject {
@@ -244,6 +242,7 @@ open class Spot: NSObject {
     open lazy var _extensionStorage = [String: Any]()
 }
 
+<<<<<<< HEAD
 #if !os(OSX) && !os(Linux)
 extension Spot: MKAnnotation {
     fileprivate var annotationView__: MKAnnotationView? {
@@ -302,3 +301,6 @@ extension Spot: MKAnnotation {
     }
 }
 #endif
+=======
+
+>>>>>>> ca162588cf54c67900d40796d11cdf91ac2bbc10

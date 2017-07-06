@@ -73,6 +73,7 @@ open class ModelDataSet: NSObject, NSCoding {
     }
     
     open override var description: String {
+<<<<<<< HEAD
         var description: String = "\(self.model_name ?? "No Model Name") "
         if let status = self.status {
             description += "\(status) "
@@ -84,6 +85,9 @@ open class ModelDataSet: NSObject, NSCoding {
         } else {
             description += "No Spot"
         }
+=======
+        let description: String = "\(String(describing: self.model_name)) \(String(describing: self.status)) \(String(describing: self.spot))"
+>>>>>>> ca162588cf54c67900d40796d11cdf91ac2bbc10
         return "<\(type(of: self)): \(self), \(description)>"
     }
     //===========================================================
