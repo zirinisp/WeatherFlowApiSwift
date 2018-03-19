@@ -12,7 +12,7 @@ import Foundation
 public struct SpotSet: Codable {
     public let status: Status?
     public let searchLat: Double?
-    public let searchLon: Int?
+    public let searchLon: Double?
     public let searchDist: Int?
     public let accuracy: Int?
     public let spotCount: Int?
@@ -47,16 +47,24 @@ public struct SpotSet: Codable {
     public lazy var spots: [Spot] = {
         var array: [Spot] = [Spot]()
         if let names = self.dataNames, let values = self.dataValues {
-            for values: [Any] in values {
-                var dictionary: [String : Any] = [String : Any]()
+            for values: [DataValue] in values {
+                var dictionary: [String : DataValue] = [String : DataValue]()
                 var index: Int = 0
                 for key: String in names {
-                    let value: Any = values[index]
+                    let value = values[index]
                     dictionary[key] = value
                     index += 1
                 }
-                if let spot: Spot = (try? Spot(dictionary: dictionary)) {
-                    array.append(spot)
+                do {
+                    if let jsonString = try dictionary.jsonString() {
+                        var spot: Spot = try Spot(jsonString)
+                        spot.status = self.status
+                        array.append(spot)
+                    } else {
+                        print("Could not convert to json")
+                    }
+                } catch {
+                    print(error)
                 }
             }
         }
@@ -71,15 +79,17 @@ public struct SpotSet: Codable {
 }
 
 enum DataValue: Codable {
-    case anythingArray([Any])
+    case intArray([Int])
+    case bool(Bool)
+    case int(Int)
     case double(Double)
     case string(String)
     case null
     
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        if let x = try? container.decode([Any].self) {
-            self = .anythingArray(x)
+        if let x = try? container.decode([Int].self) {
+            self = .intArray(x)
             return
         }
         if let x = try? container.decode(Double.self) {
@@ -90,21 +100,35 @@ enum DataValue: Codable {
             self = .string(x)
             return
         }
+        if let x = try? container.decode(Int.self) {
+            self = .int(x)
+            return
+        }
+        if let x = try? container.decode(Bool.self) {
+            self = .bool(x)
+            return
+        }
+
         if container.decodeNil() {
             self = .null
             return
         }
+        print("\(DataValue.self) not found for \(decoder.codingPath)")
         throw DecodingError.typeMismatch(DataValue.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for DataValue"))
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
-        case .anythingArray(let x):
+        case .intArray(let x):
             try container.encode(x)
         case .double(let x):
             try container.encode(x)
         case .string(let x):
+            try container.encode(x)
+        case .bool(let x):
+            try container.encode(x)
+        case .int(let x):
             try container.encode(x)
         case .null:
             try container.encodeNil()

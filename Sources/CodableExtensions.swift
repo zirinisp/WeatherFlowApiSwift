@@ -24,10 +24,6 @@ extension Decodable {
         try self.init(data: try Data(contentsOf: url))
     }
     
-    init(dictionary: [String: Any]) throws {
-        let data = try dictionary.jsonData()
-        try self.init(data: data)
-    }
 }
 
 extension Encodable {

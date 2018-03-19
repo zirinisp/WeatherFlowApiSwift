@@ -9,21 +9,21 @@
 import Foundation
 
 public struct ModelDataSet: Codable {
-    public let  modelName: String?
-    public let  unitsWind: String?
-    public let  unitsTemp: String?
-    public let  unitsDistance: String?
-    public let  modelData: [ModelData]?
-    public let  status: Status?
-    public let  maxWind: Double?
-    public let  maxWindDirTxt: String?
-    public let  maxWindTimeLocal: String?
-    public let  modelColor: String?
-    public let  tzName: String?
-    public let  isPremium: Bool?
-    public let  isUpgradeAvailable: Bool?
-    public let  graphDataExists: Bool?
-    public let  spot: Spot?
+    public let modelName: String?
+    public let unitsWind: String?
+    public let unitsTemp: String?
+    public let unitsDistance: String?
+    public let modelData: [ModelData]?
+    public let status: Status?
+    public let maxWind: Double?
+    public let maxWindDirTxt: String?
+    public let maxWindTimeLocal: String?
+    public let modelColor: String?
+    public let tzName: String?
+    public let isPremium: Bool?
+    public let isUpgradeAvailable: Bool?
+    public let graphDataExists: Bool?
+    public var spot: Spot?
 
     
     enum CodingKeys: String, CodingKey {

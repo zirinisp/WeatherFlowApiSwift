@@ -18,7 +18,7 @@ public struct Status: Codable {
     }
     
     public var description: String {
-        let description: String = "\(Int(self.statusCode)) \(self.statusMessage)"
+        let description: String = "\(Int(self.statusCode)) \(self.statusMessage ?? "No Status")"
         return "<\(type(of: self)): \(self), \(description)>"
     }
 

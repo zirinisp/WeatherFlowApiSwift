@@ -7,6 +7,7 @@
 //
 
 // TODO: Convert to codable
+/*
 open class SpotStats {
 
     open fileprivate (set) var spot_id: Int!
@@ -259,3 +260,4 @@ open class YearStat {
     }
     
 }
+*/

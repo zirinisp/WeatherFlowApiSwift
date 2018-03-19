@@ -16,7 +16,7 @@ import Foundation
 
 public struct Spot: Codable {
     
-    public let spotId: Int
+    public let spotId: Int = 0
     public let name: String?
     public let type: Int?
     public let distance: Double?
@@ -24,10 +24,10 @@ public struct Spot: Codable {
     public let lon: Double?
     public let provider: Int?
     public let regionId: Int?
-    public let favorite: Bool?
-    public let windAlertExists: Bool?
-    public let windAlertActive: Bool?
-    public let upgradeAvailable: Bool?
+    public let favorite: String?
+    public let windAlertExists: String?
+    public let windAlertActive: String?
+    public let upgradeAvailable: String?
     public let timestamp: String?
     public let avg: Double?
     public let lull: Double?
@@ -36,7 +36,7 @@ public struct Spot: Codable {
     public let dirText: String?
     public let atemp: Double?
     public let wtemp: Double?
-    public let status: Status?
+    public var status: Status?
     public let spotMessage: String?
     public let sourceMessage: String?
     public let rank: Double?
