@@ -109,13 +109,13 @@ extension WeatherFlowApiSwift {
     }
     
     class func addText(_ text: String?, toImage image: UIImage) -> UIImage {
-        guard let text = text , text.characters.count != 0 else {
+        guard let text = text , text.count != 0 else {
             return image
         }
         let font: UIFont = UIFont.boldSystemFont(ofSize: 14.0)
         let constrainSize: CGSize = CGSize(width: 30, height: image.size.height)
         let string = text as NSString
-        var stringSize: CGSize = string.size(attributes: [NSFontAttributeName: font])
+        var stringSize: CGSize = string.size(withAttributes: [NSAttributedStringKey.font: font])
         stringSize = CGSize(width: min(constrainSize.width, stringSize.width), height: min(constrainSize.height, stringSize.height))
         let size: CGSize = CGSize(width: image.size.width + stringSize.width, height: max(image.size.height, stringSize.height))
         UIGraphicsBeginImageContext(size)
@@ -132,7 +132,7 @@ extension WeatherFlowApiSwift {
         /// Set text alignment
         paragraphStyle.alignment = NSTextAlignment.left
         
-        let attributes = [NSFontAttributeName: font, NSParagraphStyleAttributeName: paragraphStyle] as [String : Any]
+        let attributes: [NSAttributedStringKey : Any] = [NSAttributedStringKey.font: font, NSAttributedStringKey.paragraphStyle: paragraphStyle]
         
         string.draw(in: renderingRect, withAttributes: attributes)
         

@@ -273,7 +273,7 @@ open class WeatherFlowApiSwift {
         if tokenRequestActive {
             throw WeatherFlowApiError.duplicateRequest
         }
-        if (self.apiKey?.characters.count ?? 0) == 0 {
+        if (self.apiKey?.count ?? 0) == 0 {
             NSLog("Weather Token failed no api key")
             throw WeatherFlowApiError.notInitialized
         }
@@ -298,7 +298,7 @@ open class WeatherFlowApiSwift {
         if tokenRequestActive {
             return completion(.error(error: .duplicateRequest))
         }
-        if (self.apiKey?.characters.count ?? 0) == 0 {
+        if (self.apiKey?.count ?? 0) == 0 {
             print("Weather Token failed no api key")
             return completion(.error(error: WeatherFlowApiError.notInitialized))
         }
@@ -712,8 +712,8 @@ open class WeatherFlowApiSwift {
             string += spotId
             string += ","
         }
-        if string.characters.count > 0 {
-            string.remove(at: string.characters.index(before: string.endIndex))
+        if string.count > 0 {
+            string.remove(at: string.index(before: string.endIndex))
         }
         return self.dictionaryWithParameter("spot_list", value: string)
     }
@@ -858,7 +858,7 @@ extension String {
      - returns: Array of substrings
      */
     func explode (_ separator: Character) -> [String] {
-        return self.characters.split { $0 == separator }.map { String($0) }
+        return self.split { $0 == separator }.map { String($0) }
     }
 }
 

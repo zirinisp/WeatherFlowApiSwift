@@ -180,7 +180,7 @@ open class Spot: NSObject {
     
     open override var description: String {
         let description: String = "\(self.spot_id) \(self.name ?? "No Name") %0.4f %0.4f"
-        return "<\(type(of: self)): \(self), \(description)>"
+        return "<\(Swift.type(of: self)): \(self), \(description)>"
     }
     
     open var coordinate: CLLocationCoordinate2D {
