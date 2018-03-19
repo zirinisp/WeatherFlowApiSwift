@@ -34,7 +34,7 @@ open class Graph {
         self.spot_id = spot_id        
         image_url = dictionary["image_url"] as? String
         if let statusDictionary = dictionary["status"] as? [String: Any] {
-            self.status = Status(dictionary: statusDictionary)
+            self.status = try? Status(dictionary: statusDictionary)
         }
         name = dictionary["name"] as? String
         local_timezone = dictionary["local_timezone"] as? String

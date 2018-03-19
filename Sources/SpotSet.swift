@@ -8,69 +8,45 @@
 
 import Foundation
 
-open class SpotSet {
-    
-    open var spots = [Spot]()
-    open var status: Status?
-    open var search_lat: Double?
-    open var search_lon: Double?
-    open var search_dist: Int?
-    open var spot_count: Int?
-    open var num_per_page: Int?
-    open var page: Int?
-    open var units_temp: String?
-    open var units_wind: String?
-    open var profile_name: String?
-    open var profile_id: Int?
-    open var units_distance: String?
-    open var profile_alerts_enabled: Bool?
-    open var accuracy: Int?
-    open var current_time_utc: String?
-    open var current_time_local: String?
-    open var center_lat: Double?
-    open var center_lon: Double?
-    open var profile: Profile?
-    
-    convenience public init(dictionary: [String : Any]) {
-        self.init()
 
-        let data_names: [String]? = (dictionary["data_names"] as? [String])
-        let data_values: [[Any]]? = (dictionary["data_values"] as? [[Any]])
-        self.setSpotsWithNames(data_names, values: data_values)
-
-        if let statusDictionary = dictionary["status"] as? [String: Any] {
-            self.status = Status(dictionary: statusDictionary)
-        }
-        search_lat = (dictionary["search_lat"] as? Double)
-        search_lon = (dictionary["search_lon"] as? Double)
-        search_dist = (dictionary["search_dist"] as? Int)
-        spot_count = (dictionary["spot_count"] as? Int)
-        num_per_page = (dictionary["num_per_page"] as? Int)
-        page = (dictionary["page"] as? Int)
-        units_temp = (dictionary["units_temp"] as? String)
-        units_wind = (dictionary["units_wind"] as? String)
-        profile_name = (dictionary["profile_name"] as? String)
-        profile_id = (dictionary["profile_id"] as? Int)
-        units_distance = (dictionary["units_distance"] as? String)
-        profile_alerts_enabled = BoolConverter.convert(dictionary["profile_alerts_enabled"])
-        accuracy = (dictionary["accuracy"] as? Int)
-        current_time_utc = (dictionary["current_time_utc"] as? String)
-        current_time_local = (dictionary["current_time_local"] as? String)
-        center_lat = (dictionary["center_lat"] as? Double)
-        center_lon = (dictionary["center_lon"] as? Double)
-        if let profileDictionary = dictionary["profile"] as? [String: Any] {
-            profile = Profile(dictionary: profileDictionary)
-        }
+public struct SpotSet: Codable {
+    public let status: Status?
+    public let searchLat: Double?
+    public let searchLon: Int?
+    public let searchDist: Int?
+    public let accuracy: Int?
+    public let spotCount: Int?
+    public let numPerPage: Int?
+    public let page: Int?
+    public let unitsTemp: String?
+    public let unitsWind: String?
+    public let unitsDistance: String?
+    public let currentTimeUTC: String?
+    public let currentTimeLocal: String?
+    let dataNames: [String]?
+    let dataValues: [[DataValue]]?
+    
+    enum CodingKeys: String, CodingKey {
+        case status = "status"
+        case searchLat = "search_lat"
+        case searchLon = "search_lon"
+        case searchDist = "search_dist"
+        case accuracy = "accuracy"
+        case spotCount = "spot_count"
+        case numPerPage = "num_per_page"
+        case page = "page"
+        case unitsTemp = "units_temp"
+        case unitsWind = "units_wind"
+        case unitsDistance = "units_distance"
+        case currentTimeUTC = "current_time_utc"
+        case currentTimeLocal = "current_time_local"
+        case dataNames = "data_names"
+        case dataValues = "data_values"
     }
     
-    func description() -> String {
-        let description: String = "%0.4f %0.4f\n\(self.search_lat ?? 0.0)"
-        return "<\(type(of: self)): \(self), \(description)>"
-    }
-    
-    func setSpotsWithNames(_ data_names: [String]?, values data_values: [[Any]]?) {
+    public lazy var spots: [Spot] = {
         var array: [Spot] = [Spot]()
-        if let names = data_names, let values = data_values {
+        if let names = self.dataNames, let values = self.dataValues {
             for values: [Any] in values {
                 var dictionary: [String : Any] = [String : Any]()
                 var index: Int = 0
@@ -79,12 +55,59 @@ open class SpotSet {
                     dictionary[key] = value
                     index += 1
                 }
-                if let spot: Spot = Spot(dictionary: dictionary) {
-                    array.append(spot)                    
+                if let spot: Spot = (try? Spot(dictionary: dictionary)) {
+                    array.append(spot)
                 }
             }
         }
-        self.spots = array
+        return array
+    }()
+    
+    public func description() -> String {
+        let description: String = "%0.4f %0.4f\n\(self.searchLat ?? 0.0)"
+        return "<\(type(of: self)): \(self), \(description)>"
     }
+    
 }
 
+enum DataValue: Codable {
+    case anythingArray([Any])
+    case double(Double)
+    case string(String)
+    case null
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let x = try? container.decode([Any].self) {
+            self = .anythingArray(x)
+            return
+        }
+        if let x = try? container.decode(Double.self) {
+            self = .double(x)
+            return
+        }
+        if let x = try? container.decode(String.self) {
+            self = .string(x)
+            return
+        }
+        if container.decodeNil() {
+            self = .null
+            return
+        }
+        throw DecodingError.typeMismatch(DataValue.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for DataValue"))
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .anythingArray(let x):
+            try container.encode(x)
+        case .double(let x):
+            try container.encode(x)
+        case .string(let x):
+            try container.encode(x)
+        case .null:
+            try container.encodeNil()
+        }
+    }
+}

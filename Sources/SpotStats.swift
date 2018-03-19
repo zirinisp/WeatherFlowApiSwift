@@ -6,7 +6,7 @@
 //  Copyright © 2016 Pantelis Zirinis. All rights reserved.
 //
 
-
+// TODO: Convert to codable
 open class SpotStats {
 
     open fileprivate (set) var spot_id: Int!
@@ -20,7 +20,7 @@ open class SpotStats {
         self.name = (dictionary["name"] as? String)
         self.start_month = (dictionary["start_month"] as? String)
         if let statusDictionary = dictionary["status"] as? [String: Any] {
-            self.status = Status(dictionary: statusDictionary)
+            self.status = try? Status(dictionary: statusDictionary)
         }
         var year_stats = [YearStat]()
         if let statistics = dictionary["year_stat"] as? [[String: Any]] {

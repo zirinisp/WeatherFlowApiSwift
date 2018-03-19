@@ -166,6 +166,17 @@ open class WeatherFlowApiSwift {
     
     static open var urlSession: URLSession = URLSession.shared
     
+    static let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        #if !os(Linux)
+            DateFormatter.defaultFormatterBehavior = DateFormatter.Behavior.default
+        #endif
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        //[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZZ"
+        return dateFormatter
+    }()
+    
     // MARK: - Units and Settings
     static open var unitDistance: WFUnitDistance {
         get {
@@ -286,7 +297,7 @@ open class WeatherFlowApiSwift {
                 tokenRequestActive = false
             }
             let dictionary = try self.dictionaryFromURL(urlString)
-            let session = Session(dictionary: dictionary)
+            let session = try Session(dictionary: dictionary)
             self.session__ = session
             return session
         }
@@ -312,9 +323,13 @@ open class WeatherFlowApiSwift {
             }
             switch result {
             case .success(let dictionary):
-                let session = Session(dictionary: dictionary)
-                self.session__ = session
-                return completion(.success(session))
+                do {
+                    let session = try Session(dictionary: dictionary)
+                    self.session__ = session
+                    return completion(.success(session))
+                } catch  {
+                    return completion(.error(error: WeatherFlowApiError.jSonError(error: error)))
+                }
             case .error(let error):
                 return completion(.error(error: error))
             }
@@ -344,7 +359,7 @@ open class WeatherFlowApiSwift {
         let parameters = self.parametersForSpotSetBySearch(search, distance: distance)
         let urlString: String = self.urlForService(getSpotSetBySearchURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
-        return SpotSet(dictionary: dictionary)
+        return try SpotSet(dictionary: dictionary)
     }
 
     open class func getSpotSetBySearch(_ search: String, distance: Int, completion: @escaping SpotSetCompletion) {
@@ -353,8 +368,12 @@ open class WeatherFlowApiSwift {
         self.dictionaryFromURL(urlString) { (result) in
             switch result {
             case .success(let dictionary):
-                let spotSet = SpotSet(dictionary: dictionary)
-                return completion(.success(spotSet))
+                do {
+                    let spotSet = try SpotSet(dictionary: dictionary)
+                    return completion(.success(spotSet))
+                } catch {
+                    return completion(.error(error: WeatherFlowApiError.jSonError(error: error)))
+                }
             case .error(let error):
                 return completion(.error(error: error))
             }
@@ -376,7 +395,7 @@ open class WeatherFlowApiSwift {
         let parameters = self.parametersForSpotSetByLocationCoordinate(coordinate, distance: distance)
         let urlString: String = self.urlForService(getSpotSetByLatLonURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
-        return SpotSet(dictionary: dictionary)
+        return try SpotSet(dictionary: dictionary)
     }
 
     open class func getSpotSetByCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int, completion: @escaping SpotSetCompletion) {
@@ -385,8 +404,12 @@ open class WeatherFlowApiSwift {
         self.dictionaryFromURL(urlString) { (result) in
             switch result {
             case .success(let dictionary):
-                let spotSet = SpotSet(dictionary: dictionary)
-                return completion(.success(spotSet))
+                do {
+                    let spotSet = try SpotSet(dictionary: dictionary)
+                    return completion(.success(spotSet))
+                } catch {
+                    return completion(.error(error: WeatherFlowApiError.jSonError(error: error)))
+                }
             case .error(let error):
                 return completion(.error(error: error))
             }
@@ -411,7 +434,7 @@ open class WeatherFlowApiSwift {
         let parameters = self.parametersForSpotSetByZoomLevel(zoomLevel, lat_min: latMin, lon_min: lonMin, lat_max: latMax, lon_max: lonMax)
         let urlString: String = self.urlForService(getSpotSetByZoomLevelURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
-        return SpotSet(dictionary: dictionary)
+        return try SpotSet(dictionary: dictionary)
     }
 
     open class func getSpotSetByZoomLevel(_ zoomLevel: Int, lat_min latMin: Float, lon_min lonMin: Float, lat_max latMax: Float, lon_max lonMax: Float, completion: @escaping SpotSetCompletion) {
@@ -420,8 +443,12 @@ open class WeatherFlowApiSwift {
         self.dictionaryFromURL(urlString) { (result) in
             switch result {
             case .success(let dictionary):
-                let spotSet = SpotSet(dictionary: dictionary)
-                return completion(.success(spotSet))
+                do {
+                    let spotSet = try SpotSet(dictionary: dictionary)
+                    return completion(.success(spotSet))
+                } catch  {
+                    return completion(.error(error: WeatherFlowApiError.jSonError(error: error)))
+                }
             case .error(let error):
                 return completion(.error(error: error))
             }
@@ -442,7 +469,7 @@ open class WeatherFlowApiSwift {
         let parameters = self.parametersForSpotSetByList(list: list)
         let urlString: String = self.urlForService(getSpotSetByListURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
-        return SpotSet(dictionary: dictionary)
+        return try SpotSet(dictionary: dictionary)
     }
 
     open class func getSpotSetByList(_ list: IndexSet, completion: @escaping SpotSetCompletion) {
@@ -451,8 +478,12 @@ open class WeatherFlowApiSwift {
         self.dictionaryFromURL(urlString) { (result) in
             switch result {
             case .success(let dictionary):
-                let spotSet = SpotSet(dictionary: dictionary)
-                return completion(.success(spotSet))
+                do {
+                    let spotSet = try SpotSet(dictionary: dictionary)
+                    return completion(.success(spotSet))
+                } catch {
+                    return completion(.error(error: WeatherFlowApiError.jSonError(error: error)))
+                }
             case .error(let error):
                 return completion(.error(error: error))
             }
@@ -461,7 +492,7 @@ open class WeatherFlowApiSwift {
 
     // Closest Spot By Coordinate
     open class func getClosestSpotByCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int) throws -> Spot? {
-        let set: SpotSet = try self.getSpotSetByCoordinate(coordinate, distance: distance)
+        var set: SpotSet = try self.getSpotSetByCoordinate(coordinate, distance: distance)
         if set.status?.statusCode != 0 {
             return nil
         }
@@ -476,7 +507,7 @@ open class WeatherFlowApiSwift {
     open class func getClosestSpotByCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int, completion: @escaping SpotCompletion) {
         self.getSpotSetByCoordinate(coordinate, distance: distance) { (result) in
             switch result {
-            case .success(let set):
+            case .success(var set):
                 if set.status?.statusCode != 0 {
                     return completion(.success(nil))
                 }
@@ -495,7 +526,7 @@ open class WeatherFlowApiSwift {
     // Model Data Set By Spot
     class func parametersForModelDataBySpot(_ spot: Spot) -> WFParameters {
         var parameters = WFParameters()
-        parameters.append(self.spotIDDictionary(spot.spot_id))
+        parameters.append(self.spotIDDictionary(spot.spotId))
         parameters += (self.unitsArray)
         parameters.append(self.formatDictionary)
         return parameters
@@ -504,8 +535,9 @@ open class WeatherFlowApiSwift {
     open class func getModelDataBySpot(_ spot: Spot) throws -> ModelDataSet? {
         let parameters = self.parametersForModelDataBySpot(spot)
         let urlString: String = self.urlForService(getModelDataBySpotURL, andParameters: parameters)
-        let dictionary = try self.dictionaryFromURL(urlString)
-        let modelDataSet: ModelDataSet? = ModelDataSet(dictionary: dictionary, andSpot: spot)
+        var dictionary = try self.dictionaryFromURL(urlString)
+        dictionary[ModelDataSet.CodingKeys.spot.stringValue] = spot
+        let modelDataSet: ModelDataSet? = try ModelDataSet(dictionary: dictionary)
         return modelDataSet
     }
 
@@ -514,9 +546,14 @@ open class WeatherFlowApiSwift {
         let urlString: String = self.urlForService(getModelDataBySpotURL, andParameters: parameters)
         self.dictionaryFromURL(urlString) { (result) in
             switch result {
-            case .success(let dictionary):
-                let modelDataSet = ModelDataSet(dictionary: dictionary, andSpot: spot)
-                return completion(.success(modelDataSet))
+            case .success(var dictionary):
+                do {
+                    dictionary[ModelDataSet.CodingKeys.spot.stringValue] = spot
+                    let modelDataSet = try ModelDataSet(dictionary: dictionary)
+                    return completion(.success(modelDataSet))
+                } catch  {
+                    return completion(.error(error: WeatherFlowApiError.jSonError(error: error)))
+                }
             case .error(let error):
                 return completion(.error(error: error))
             }
@@ -536,7 +573,7 @@ open class WeatherFlowApiSwift {
         let parameters = self.parametersForModelDataBySpotID(spotID)
         let urlString: String = self.urlForService(getModelDataBySpotURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
-        let modelDataSet = ModelDataSet(dictionary: dictionary)
+        let modelDataSet = try ModelDataSet(dictionary: dictionary)
         return modelDataSet
     }
 
@@ -546,8 +583,12 @@ open class WeatherFlowApiSwift {
         self.dictionaryFromURL(urlString) { (result) in
             switch result {
             case .success(let dictionary):
-                let modelDataSet = ModelDataSet(dictionary: dictionary)
-                return completion(.success(modelDataSet))
+                do {
+                    let modelDataSet = try ModelDataSet(dictionary: dictionary)
+                    return completion(.success(modelDataSet))
+                } catch  {
+                    return completion(.error(error: WeatherFlowApiError.jSonError(error: error)))
+                }
             case .error(let error):
                 return completion(.error(error: error))
             }
@@ -567,7 +608,7 @@ open class WeatherFlowApiSwift {
         let parameters = self.parametersForModelDataByCoordinate(coordinate)
         let urlString: String = self.urlForService(getModelDataByLatLonURL, andParameters: parameters)
         let dictionary = try self.dictionaryFromURL(urlString)
-        let modelDataSet = ModelDataSet(dictionary: dictionary)
+        let modelDataSet = try ModelDataSet(dictionary: dictionary)
         return modelDataSet
     }
 
@@ -577,8 +618,13 @@ open class WeatherFlowApiSwift {
         self.dictionaryFromURL(urlString) { (result) in
             switch result {
             case .success(let dictionary):
-                let modelDataSet = ModelDataSet(dictionary: dictionary)
-                return completion(.success(modelDataSet))
+                do {
+                    let modelDataSet = try ModelDataSet(dictionary: dictionary)
+                    return completion(.success(modelDataSet))
+                } catch  {
+                    return completion(.error(error: WeatherFlowApiError.jSonError(error: error)))
+                }
+
             case .error(let error):
                 return completion(.error(error: error))
             }

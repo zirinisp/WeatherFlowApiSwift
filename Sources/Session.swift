@@ -6,22 +6,18 @@
 //  Copyright © 2015 Pantelis Zirinis. All rights reserved.
 //
 
-
-open class Session {
-    static var TokenKey = "wf_token"
-
-    open fileprivate (set) var status: Status?
-    open fileprivate (set) var token: String?
-    open fileprivate (set) var user: User?
+public struct Session: Codable {
+    let status: Status?
+    let token: String?
+    let user: User?
     
-    convenience public init(dictionary: [String : Any]) {
-        self.init()
-        self.status = (dictionary[Status.Key] as? Status)
-        self.token = (dictionary[Session.TokenKey] as? String)
-        self.user = (dictionary[User.Key] as? User)
+    enum CodingKeys: String, CodingKey {
+        case status = "status"
+        case token = "wf_token"
+        case user = "wf_user"
     }
     
-    open var description: String {
+    var description: String {
         var description: String = ""
         if let status = self.status {
             description += "\(status) "
