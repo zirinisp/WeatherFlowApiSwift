@@ -73,7 +73,7 @@ public class ModelData: Codable {
         case windSpeed = "wind_speed"
     }
 
-    lazy var modelTime: Date? = {
+    public lazy var modelTime: Date? = {
         if let dateString = self.modelTimeUTC {
             let date: Date? = WeatherFlowApiSwift.dateFormatter.date(from: dateString)
             return date

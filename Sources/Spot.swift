@@ -91,7 +91,7 @@ public struct Spot: Codable {
         return "<\(Swift.type(of: self)): \(self), \(description)>"
     }
     
-    lazy var coordinate: CLLocationCoordinate2D = {
+    public lazy var coordinate: CLLocationCoordinate2D = {
         if let lat = self.lat, let lon = self.lon {
             let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: lon)
             if CLLocationCoordinate2DIsValid(coordinate) {
