@@ -492,7 +492,7 @@ open class WeatherFlowApiSwift {
 
     // Closest Spot By Coordinate
     open class func getClosestSpotByCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int) throws -> Spot? {
-        var set: SpotSet = try self.getSpotSetByCoordinate(coordinate, distance: distance)
+        let set: SpotSet = try self.getSpotSetByCoordinate(coordinate, distance: distance)
         if set.status?.statusCode != 0 {
             return nil
         }
@@ -507,7 +507,7 @@ open class WeatherFlowApiSwift {
     open class func getClosestSpotByCoordinate(_ coordinate: CLLocationCoordinate2D, distance: Int, completion: @escaping SpotCompletion) {
         self.getSpotSetByCoordinate(coordinate, distance: distance) { (result) in
             switch result {
-            case .success(var set):
+            case .success(let set):
                 if set.status?.statusCode != 0 {
                     return completion(.success(nil))
                 }
