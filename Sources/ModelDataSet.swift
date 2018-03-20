@@ -13,7 +13,7 @@ public struct ModelDataSet: Codable {
     public let unitsWind: String?
     public let unitsTemp: String?
     public let unitsDistance: String?
-    public let modelData: [ModelData]?
+    public var modelDataArray: [ModelData]?
     public let status: Status?
     public let maxWind: Double?
     public let maxWindDirTxt: String?
@@ -23,7 +23,16 @@ public struct ModelDataSet: Codable {
     public let isPremium: Bool?
     public let isUpgradeAvailable: Bool?
     public let graphDataExists: Bool?
-    public var spot: Spot?
+    public var spot: Spot? {
+        didSet {
+            guard let modelDataArray = self.modelDataArray, let spot = self.spot else {
+                return
+            }
+            for modelData in modelDataArray {
+                modelData.updateWith(spot: spot)
+            }
+        }
+    }
 
     
     enum CodingKeys: String, CodingKey {
@@ -31,7 +40,7 @@ public struct ModelDataSet: Codable {
         case unitsWind = "units_wind"
         case unitsTemp = "units_temp"
         case unitsDistance = "units_distance"
-        case modelData = "model_data"
+        case modelDataArray = "model_data"
         case status = "status"
         case maxWind = "max_wind"
         case maxWindDirTxt = "max_wind_dir_txt"

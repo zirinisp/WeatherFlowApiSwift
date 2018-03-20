@@ -24,16 +24,112 @@ class WeatherFlowApiSwiftTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    let bigBayCoordinates = CLLocationCoordinate2D(latitude: -33.80, longitude: 18.46)
+
+    lazy var spotSet: SpotSet = {
+        do {
+            var spotSet = try WeatherFlowApiSwift.getSpotSetByCoordinate(bigBayCoordinates, distance: 40)
+            print("Found \(spotSet.spots.count) Spots")
+            return spotSet
+        } catch {
+            XCTFail("\(error)")
+            fatalError(error.localizedDescription)
+        }
+    }()
+    
+    func testSpotSet() {
+        var averageLiveWindFound = false
+
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         XCTAssert(WeatherFlowApiSwift.isReady, "Weather Flow is not ready")
-        do {
-            let spot = try WeatherFlowApiSwift.getClosestSpotByCoordinate(CLLocationCoordinate2D(latitude: 42.56, longitude: -82.806), distance: 10)
+        XCTAssertNotNil(self.spotSet.status)
+        XCTAssertNotNil(self.spotSet.searchLat)
+        XCTAssertNotNil(self.spotSet.searchLon)
+        //XCTAssertNotNil(spotSet.searchDist)
+        XCTAssertNotNil(self.spotSet.currentTimeUTC)
+        XCTAssertNotNil(self.spotSet.unitsWind)
+        XCTAssertNotNil(self.spotSet.unitsTemp)
+        XCTAssertNotNil(self.spotSet.unitsDistance)
+        XCTAssert(self.spotSet.spots.count > 0, "No Spots Found")
+        for spot in self.spotSet.spots {
+            print(spot.name!)
             XCTAssertNotNil(spot)
-        } catch  {
-            XCTFail(error.localizedDescription)
+            XCTAssertNotNil(spot.lat, spot.name ?? "\(spot.spotId)")
+            XCTAssertNotNil(spot.lon, spot.name ?? "\(spot.spotId)")
+            if let _ = spot.avg {
+                averageLiveWindFound = true
+            }
+            //XCTAssertNotNil(spot.gust)
+            XCTAssertNotNil(spot.atemp, spot.name ?? "\(spot.spotId)")
         }
+        XCTAssertTrue(averageLiveWindFound, "Average Wind Not Found Not Found")
+    }
+    
+    func testWeatherForecast() {
+        XCTAssert(self.spotSet.spots.count > 0, "No Spots Found")
+        var waveHeightFound = false
+        var wavePeriodFound = false
+        var waveDirectionFound = false
+        var precipTypeFound = false
+        var totalPrecipFound = false
+        var cloudCoverFound = false
+
+        for spot in self.spotSet.spots {
+            do {
+                guard spot.spotId != 0 else {
+                    XCTFail("SpotId not Set")
+                    continue
+                }
+                guard let modelDataSet = try WeatherFlowApiSwift.getModelDataBySpot(spot) else {
+                    XCTFail("No Model Data Set Found")
+                    continue
+                }
+                guard let modelDataArray = modelDataSet.modelDataArray else {
+                    XCTFail("No Model Data Array Found")
+                    continue
+                }
+                XCTAssert(modelDataArray.count > 0, "Empty model data array")
+                for modelData in modelDataArray {
+                    XCTAssertNotNil(modelData.lat)
+                    XCTAssertNotNil(modelData.lon)
+                    XCTAssertNotNil(modelData.temp)
+                    XCTAssertNotNil(modelData.maxWindSpeed)
+                    XCTAssertNotNil(modelData.modelTimeUTC)
+                    XCTAssertNotNil(modelData.pres)
+                    XCTAssertNotNil(modelData.windDir)
+                    XCTAssertNotNil(modelData.windSpeed)
+                    XCTAssertNotNil(modelData.windGust)
+                    if let _ = modelData.wavePeriod {
+                        wavePeriodFound = true
+                    }
+                    if let _ = modelData.waveHeight {
+                        waveHeightFound = true
+                    }
+                    if let _ = modelData.waveDirection {
+                        waveDirectionFound = true
+                    }
+                    if let _ = modelData.cloudCover {
+                        cloudCoverFound = true
+                    }
+                    if let _ = modelData.precipType {
+                        precipTypeFound = true
+                    }
+                    if let _ = modelData.totalPrecip {
+                        totalPrecipFound = true
+                    }
+                }
+
+            } catch {
+                XCTFail(error.localizedDescription)
+            }
+        }
+        XCTAssertTrue(wavePeriodFound, "Wave Period Not Found")
+        XCTAssertTrue(waveHeightFound, "Wave Height Not Found")
+        XCTAssertTrue(waveDirectionFound, "Wave Direction Not Found")
+        XCTAssertTrue(precipTypeFound, "Precip Type Not Found")
+        XCTAssertTrue(totalPrecipFound, "Total Precip Not Found")
+        XCTAssertTrue(cloudCoverFound, "Cloud Cover Not Found")
     }
 /*
     func testPerformanceExample() {

@@ -16,7 +16,7 @@ import Foundation
 
 public struct Spot: Codable {
     
-    public let spotId: Int = 0
+    public let spotId: Int
     public let name: String?
     public let type: Int?
     public let distance: Double?

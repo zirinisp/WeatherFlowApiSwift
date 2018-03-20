@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct ModelData: Codable {
+public class ModelData: Codable {
     public let cloudCover: Double?
     public let easting: Double?
     public let isShortPremium: Bool?
     public let isUpgradeAvailable: Bool?
-    public let lat: Double?
-    public let lon: Double?
+    public var lat: Double?
+    public var lon: Double?
     public let maxWindSpeed: Double?
     public let maxWindSpeedDistance: Double?
     public let modelID: Int?
@@ -82,5 +82,10 @@ public struct ModelData: Codable {
     var description: String {
         let description: String = "%0.1f %0.1f \(self.lat ?? 0.0) %0.1f \(self.lon ?? 0.0)"
         return "<\(type(of: self)): \(self), \(description)>"
+    }
+    
+    func updateWith(spot: Spot) {
+        self.lat = spot.lat
+        self.lon = spot.lon
     }
 }
