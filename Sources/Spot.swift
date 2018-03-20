@@ -122,7 +122,7 @@ public class Spot: Codable {
         return spot.spotId == self.spotId
     }
     
-    public mutating func distanceFrom(_ location: CLLocation) -> CLLocationDistance? {
+    public func distanceFrom(_ location: CLLocation) -> CLLocationDistance? {
         if CLLocationCoordinate2DIsValid(self.coordinate) {
             let loc: CLLocation = CLLocation(latitude: self.coordinate.latitude, longitude: self.coordinate.longitude)
             let dist: CLLocationDistance = loc.distance(from: location)
