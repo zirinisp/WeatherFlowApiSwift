@@ -25,7 +25,8 @@ class WeatherFlowApiSwiftTests: XCTestCase {
     }
     
     let bigBayCoordinates = CLLocationCoordinate2D(latitude: -33.80, longitude: 18.46)
-
+    let londonCoordinates = CLLocationCoordinate2D(latitude: 51.51, longitude: -0.13)
+    
     lazy var spotSet: SpotSet = {
         do {
             var spotSet = try WeatherFlowApiSwift.getSpotSetByCoordinate(bigBayCoordinates, distance: 40)
@@ -37,6 +38,17 @@ class WeatherFlowApiSwiftTests: XCTestCase {
         }
     }()
     
+    lazy var londonSpotSet: SpotSet = {
+        do {
+            var spotSet = try WeatherFlowApiSwift.getSpotSetByCoordinate(londonCoordinates, distance: 50)
+            print("Found \(spotSet.spots.count) London Spots")
+            return spotSet
+        } catch {
+            XCTFail("\(error)")
+            fatalError(error.localizedDescription)
+        }
+    }()
+
     func testSpotSet() {
         var averageLiveWindFound = false
 
@@ -73,9 +85,13 @@ class WeatherFlowApiSwiftTests: XCTestCase {
         var waveDirectionFound = false
         var precipTypeFound = false
         var totalPrecipFound = false
+        //var precipProbFound = false
         var cloudCoverFound = false
 
-        for spot in self.spotSet.spots {
+        var spots = self.spotSet.spots
+        spots.append(contentsOf: self.londonSpotSet.spots)
+        
+        for spot in spots {
             do {
                 guard spot.spotId != 0 else {
                     XCTFail("SpotId not Set")
@@ -118,6 +134,10 @@ class WeatherFlowApiSwiftTests: XCTestCase {
                     if let _ = modelData.totalPrecip {
                         totalPrecipFound = true
                     }
+                    // For some reason we are not getting this one back anymore
+                    //if let _ = modelData.precipProb {
+                    //    precipProbFound = true
+                    //}
                 }
 
             } catch {
@@ -130,6 +150,7 @@ class WeatherFlowApiSwiftTests: XCTestCase {
         XCTAssertTrue(precipTypeFound, "Precip Type Not Found")
         XCTAssertTrue(totalPrecipFound, "Total Precip Not Found")
         XCTAssertTrue(cloudCoverFound, "Cloud Cover Not Found")
+        //XCTAssertTrue(precipProbFound, "Precip Probability Not Found")
     }
 /*
     func testPerformanceExample() {

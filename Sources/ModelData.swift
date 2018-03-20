@@ -25,6 +25,7 @@ public class ModelData: Codable {
     public let modelTimeUTC: String?
     public let northing: Double?
     public let precipType: String?
+    public let precipProb: Double?
     public let pres: Double?
     public let pressureAtHeight: Double?
     public let relativeHumidity: Double?
@@ -56,6 +57,7 @@ public class ModelData: Codable {
         case modelTimeUTC = "model_time_utc"
         case northing = "northing"
         case precipType = "precip_type"
+        case precipProb = "prob_precip"
         case pres = "pres"
         case pressureAtHeight = "pressure_at_height"
         case relativeHumidity = "relative_humidity"
