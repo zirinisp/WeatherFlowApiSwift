@@ -14,7 +14,7 @@ import Foundation
     import CoreLocation
 #endif
 
-public struct Spot: Codable {
+public class Spot: Codable {
     
     public let spotId: Int
     public let name: String?
