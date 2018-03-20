@@ -9,7 +9,7 @@
 import Foundation
 
 
-public struct SpotSet: Codable {
+public class SpotSet: Codable {
     public let status: Status?
     public let searchLat: Double?
     public let searchLon: Double?
