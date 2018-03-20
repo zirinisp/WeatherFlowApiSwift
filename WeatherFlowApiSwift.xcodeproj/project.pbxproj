@@ -808,6 +808,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C6EDFFA2CBEFB223E9097490 /* Pods-WeatherFlowApiSwift-iOS.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -834,6 +835,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 706DF6CDE177E6EB03D082B7 /* Pods-WeatherFlowApiSwift-iOS.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
