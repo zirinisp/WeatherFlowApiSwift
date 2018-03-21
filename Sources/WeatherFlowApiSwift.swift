@@ -838,6 +838,7 @@ open class WeatherFlowApiSwift {
                 return completion(.error(error: .unknown))
             }
         }
+        self.postRequestSentNotification(urlString: urlString)
         task.resume()
     }
     
