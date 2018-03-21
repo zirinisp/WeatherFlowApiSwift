@@ -828,7 +828,7 @@ open class WeatherFlowApiSwift {
             return completion(WeatherFlowApiResult.error(error: WeatherFlowApiError.urlError))
         }
 
-        self.urlSession.dataTask(with: url) { (data, response, error) in
+        let task = self.urlSession.dataTask(with: url) { (data, response, error) in
             if let result = data {
                 return completion(.success(result))
             } else {
@@ -838,6 +838,7 @@ open class WeatherFlowApiSwift {
                 return completion(.error(error: .unknown))
             }
         }
+        task.resume()
     }
     
     
