@@ -40,6 +40,39 @@ public class ModelData: Codable {
     public let windGust: Double?
     public let windSpeed: Double?
     
+    init(cloudCover: Double?, easting: Double?, isShortPremium: Bool?, isUpgradeAvailable: Bool?, lat: Double?, lon: Double?, maxWindSpeed: Double?, maxWindSpeedDistance: Double?, modelID: Int?, modelRunID: Int?, modelRunName: String?, modelRunTimeUTC: String?, modelTimeLocal: String?, modelTimeUTC: String?, northing: Double?, precipType: String?, precipProb: Double?, pres: Double?, pressureAtHeight: Double?, relativeHumidity: Double?, temp: Double?, totalPrecip: Double?, vis: Double?, waveDirection: Int?, waveHeight: Double?, wavePeriod: Double?, windDir: Int?, windDirTxt: String?, windGust: Double?, windSpeed: Double?) {
+        self.cloudCover = cloudCover
+        self.easting = easting
+        self.isShortPremium = isShortPremium
+        self.isUpgradeAvailable = isUpgradeAvailable
+        self.lat = lat
+        self.lon = lon
+        self.maxWindSpeed = maxWindSpeed
+        self.maxWindSpeedDistance = maxWindSpeedDistance
+        self.modelID = modelID
+        self.modelRunID = modelRunID
+        self.modelRunName = modelRunName
+        self.modelRunTimeUTC = modelRunTimeUTC
+        self.modelTimeLocal = modelTimeLocal
+        self.modelTimeUTC = modelTimeUTC
+        self.northing = northing
+        self.precipType = precipType
+        self.precipProb = precipProb
+        self.pres = pres
+        self.pressureAtHeight = pressureAtHeight
+        self.relativeHumidity = relativeHumidity
+        self.temp = temp
+        self.totalPrecip = totalPrecip
+        self.vis = vis
+        self.waveDirection = waveDirection
+        self.waveHeight = waveHeight
+        self.wavePeriod = wavePeriod
+        self.windDir = windDir
+        self.windDirTxt = windDirTxt
+        self.windGust = windGust
+        self.windSpeed = windSpeed
+    }
+
     enum CodingKeys: String, CodingKey {
         case cloudCover = "cloud_cover"
         case easting = "easting"
