@@ -49,6 +49,42 @@ public class Spot: Codable {
     public let favoriteLists: String?
     public let favSpotId: Int?
     public let windDesc: String?
+    
+    init(spotId: Int, name: String?, type: Int?, distance: Double?, lat: Double?, lon: Double?, provider: Int?, regionId: Int?, favorite: String?, windAlertExists: String?, windAlertActive: String?, upgradeAvailable: String?, timestamp: String?, avg: Double?, lull: Double?, gust: Double?, dir: Int?, dirText: String?, atemp: Double?, wtemp: Double?, status: Status?, spotMessage: String?, sourceMessage: String?, rank: Double?, favSortOrder: Int?, waveHeight: Double?, wavePeriod: Double?, currentTimeLocal: String?, pres: Double?, timezone: String?, favoriteLists: String?, favSpotId: Int?, windDesc: String?) {
+        self.spotId = spotId
+        self.name = name
+        self.type = type
+        self.distance = distance
+        self.lat = lat
+        self.lon = lon
+        self.provider = provider
+        self.regionId = regionId
+        self.favorite = favorite
+        self.windAlertExists = windAlertExists
+        self.windAlertActive = windAlertActive
+        self.upgradeAvailable = upgradeAvailable
+        self.timestamp = timestamp
+        self.avg = avg
+        self.lull = lull
+        self.gust = gust
+        self.dir = dir
+        self.dirText = dirText
+        self.atemp = atemp
+        self.wtemp = wtemp
+        self.status = status
+        self.spotMessage = spotMessage
+        self.sourceMessage = sourceMessage
+        self.rank = rank
+        self.favSortOrder = favSortOrder
+        self.waveHeight = waveHeight
+        self.wavePeriod = wavePeriod
+        self.currentTimeLocal = currentTimeLocal
+        self.pres = pres
+        self.timezone = timezone
+        self.favoriteLists = favoriteLists
+        self.favSpotId = favSpotId
+        self.windDesc = windDesc
+    }
 
     enum CodingKeys: String, CodingKey {
         case spotId = "spot_id"

@@ -172,7 +172,6 @@ class WeatherFlowApiSwiftTests: XCTestCase {
                     XCTFail("SpotId not Set")
                     continue
                 }
-                print(spot.coordinate)
                 let tokenExpectation = expectation(description: "Weather Request for \(spot.name ?? "No Name")")
                 WeatherFlowApiSwift.getModelDataBySpot(spot, completion: { (result) in
                     switch result {
